@@ -29,7 +29,10 @@ class HomePage(Page):
 
     def get_context(self, request):
         context = super(HomePage, self).get_context(request)
-        featured_posts = BlogPage.objects.live().order_by('-first_published_at')[:2]
+        slider_posts = BlogPage.objects.live().order_by('-first_published_at')[:2]
+        context['slider_posts'] = slider_posts
+
+        featured_posts = BlogPage.objects.live().order_by('-first_published_at')[:6]
         context['featured_posts'] = featured_posts
 
         return context
