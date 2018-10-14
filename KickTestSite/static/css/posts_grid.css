@@ -1,0 +1,37 @@
+.main_posts_grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 35px;
+	row-gap: 30px;
+	padding-top: 80px;
+}
+
+.main_grid_single {
+	background: #fff;
+	width: 310px;
+}
+
+.main_grid_single img {
+	max-width: 310px;
+}
+
+.main_grid_single a {
+    text-decoration: none;
+}
+
+.main_grid_single_info {
+	padding: 60px 30px 25px 25px;
+}
+
+.main_grid_single_info span {
+	font-family: Neutra-Light;
+	font-size: 18px;
+	padding-bottom: 15px;
+	display: block;
+}
+
+.main_grid_single_info p {
+	color: #000;
+	font-family: Neutra-Demi;
+	font-size: 30px;
+}

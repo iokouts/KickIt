@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block content %}
+
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/frontpage.css' %}">
+        <link rel="stylesheet" href="{% static 'css/posts_grid.css' %}">
+    	<link rel="stylesheet" href="{% static 'flexslider.css' %}" type="text/css">
+    {% endblock %}
+
+    {% block scripts %}
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script src="{% static 'js/KickTestSite.js' %}"></script>
+        <script src="{% static 'js/jquery.flexslider.js' %}"></script>
+        <script type="text/javascript" charset="utf-8">
+            $(window).load(function () {
+                $('.flexslider').flexslider({
+                    animation: "fade",
+                    slideshow: false,
+                    controlNav: false,
+                    prevText: "<",
+                    nextText: ">"
+                });
+            });
+        </script>
+    {% endblock %}
+
+    <div class="main_container slider_area">
+        <div class="flexslider test_slider">
+            <ul class="slides">
+
+                {% for post in featured_posts %}
+                    {% with post=post.specific %}
+                    <li>
+                        {% image post.main_image original as postImage%}
+                        <img src="{{ postImage.url }}" />
+                        <div class="slider_box">
+                            <div class="slider_box_title">
+                                <span>{{ post.title }}</span>
+                                <span class="slider_box_dot"></span>
+                            </div>
+                            <div class="slider_box_text">
+                                <p>{{ post.specific.intro }}</p>
+                            </div>
+                        </div>
+                    </li>
+                    {% endwith %}
+                {% endfor %}
+
+            </ul>
+            <div class="big_dot"></div>
+        </div>
+    </div>
+
+    {% image page.parallax_image original as my_image %}
+    <div class="main_parallax" style="background-image: url('{{ my_image.url }}');">
+        <div class="main_parallax_title" >
+            <p>{{ page.parallax_text }}</p>
+        </div>
+    </div>
+
+    <div class="posts_area">
+        <div class="main_container ">
+            {% include "includes/posts_grid.html" with posts=featured_posts %}
+        </div>
+    </div>
+
+
+{% endblock %}

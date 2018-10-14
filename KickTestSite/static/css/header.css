@@ -1,0 +1,73 @@
+nav {
+    grid-area: header;
+    height: 70px;
+    z-index: 2000;
+	background: #191b1a;
+	-webkit-transition: -webkit- all .2s ease-in-out;
+	-moz-transition: -moz- all .2s ease-in-out;
+	-ms-transition: -ms- all .2s ease-in-out;
+	-o-transition: -o- all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+.sticky_menu .logo {
+	width: 110px;
+}
+
+#logo_path {
+    fill: #fff !important;
+}
+
+.sticky_menu.sticky {
+	position: fixed;
+	margin: 0;
+    top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+}
+
+.sticky_menu .menu_holder {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 12px;
+}
+
+.sticky_menu .menu ul li a {
+	color: #585857;
+}
+
+.sticky_menu .menu ul li a:active {
+	color: #fff;
+}
+
+.sticky_menu .menu ul li a:hover {
+	text-decoration: underline;
+}
+
+.sticky_menu .logo {
+    padding-right: 150px;
+}
+
+.sticky_menu .logo, .sticky_menu .menu {
+    display: inline-block;
+}
+
+.sticky_menu .logo img {
+	height: 40px;
+}
+
+.sticky_menu .menu ul {
+	list-style: none;
+	display: inline-block;
+}
+
+.sticky_menu .menu ul li {
+	display: inline-block;
+	margin: 0 auto;
+	text-align: center;
+	font-family: Neutra-Demi;
+	font-size: 22px;
+	padding-right: 40px;
+}

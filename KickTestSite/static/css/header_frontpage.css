@@ -1,0 +1,95 @@
+nav {
+	grid-area: header;
+	margin: 55px 0 30px 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    top: 0;
+    position: relative;
+	z-index: 2000;
+	-webkit-transition: -webkit- all .2s ease-in-out;
+	-moz-transition: -moz- all .2s ease-in-out;
+	-ms-transition: -ms- all .2s ease-in-out;
+	-o-transition: -o- all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+.menu_holder {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.sticky_menu .logo {
+	width: 190px;
+}
+
+.sticky_menu.sticky {
+	position: fixed;
+	margin: 0;
+    top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background: #191b1a;
+	height: 70px;
+}
+
+.sticky_menu.sticky .menu_holder {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 12px;
+}
+
+.sticky_menu.sticky .menu ul li a {
+	color: #585857;
+}
+
+.sticky_menu.sticky .menu ul li a:active {
+	color: #fff;
+}
+
+.sticky_menu.sticky .logo {
+	display: inline-block;
+	width: 125px;
+}
+
+.sticky_menu.sticky .logo img {
+	height: 40px;
+}
+
+.sticky_menu.sticky .menu {
+	display: inline-block;
+	padding-top: 0;
+}
+
+.sticky_menu .logo {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.sticky_menu .menu {
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 30px;
+}
+
+n.sticky_menu .menu ul {
+	list-style: none;
+	display: inline-block;
+}
+
+.sticky_menu .menu ul li {
+	display: inline-block;
+	margin: 0 auto;
+	text-align: center;
+	font-family: Neutra-Demi;
+	font-size: 22px;
+	padding-right: 40px;
+}
+
+
+
+
+

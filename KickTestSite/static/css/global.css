@@ -1,0 +1,40 @@
+html {
+	margin: 0;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	overflow-x: auto;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+	display: block;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+p {
+	margin: 0;
+}
+
+input, button, submit {
+	 border: none;
+	 margin: 0;
+	 padding: 0;
+}
+
+.main_container {
+	max-width: 1050px;
+	margin: 0 auto;
+}

@@ -1,0 +1,18 @@
+{% load static wagtailimages_tags %}
+
+<div class="main_posts_grid">
+    {% for post in posts %}
+        {% with post=post.specific %}
+            <div class="main_grid_single">
+                <a href="{{ post.url }}">
+                    {% image post.main_image original as postImage%}
+                    <img src="{{ postImage.url }}" alt="Post Image">
+                    <div class="main_grid_single_info">
+                        <span style="color: {{ post.main_category.color }}">{{ post.main_category.name }}</span>
+                        <p>{{ post.title }}</p>
+                    </div>
+                </a>
+            </div>
+        {% endwith %}
+    {% endfor %}
+</div>

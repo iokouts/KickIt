@@ -1,0 +1,7 @@
+.image_gallery, .tags {
+    display: block;
+}
+
+.image_gallery > div {
+    display: inline-block;
+}

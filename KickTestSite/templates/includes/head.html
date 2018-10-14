@@ -1,0 +1,39 @@
+{% load static wagtailcore_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+            {% block title %}
+                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+            {% endblock %}
+            {% block title_suffix %}
+                {% with self.get_site.site_name as site_name %}
+                    {% if site_name %}- {{ site_name }}{% endif %}
+                {% endwith %}
+            {% endblock %}
+    </title>
+    <meta >
+
+    {# Global stylesheets #}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
+
+    {% if page.slug == 'home' %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/header_frontpage.css' %}">
+    {% else %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+    {% endif %}
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+	 crossorigin="anonymous">
+
+    {# Fonts #}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fonts.css' %}">
+
+    {# Extra CSS #}
+    {% block styles %}
+    {% endblock %}
+</head>

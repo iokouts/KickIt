@@ -1,0 +1,130 @@
+body {
+	display: grid;
+	grid-template-areas:
+		"header"
+        "featured_post"
+        "subfeatured_area"
+		"posts_area"
+		"footer"
+}
+
+.featured_post_container {
+    grid-area: featured_post;
+    //background: #ffed00;
+    height: 625px;
+    padding-top: 80px;
+    position: relative;
+}
+
+.category_image {
+    position: absolute;
+    right: 45px;
+    top: 95px;
+    z-index: 100;
+}
+
+.featured_post_inner {
+    z-index: 200;
+    position: relative;
+}
+
+.featured_post_image, .featured_post_info {
+    display: inline-block;
+}
+
+.featured_post_image img {
+    max-width: 485px;
+}
+
+.featured_post_info {
+    vertical-align: top;
+    padding: 15px 0 0 25px;
+}
+
+.featured_post_title {
+    font-family: PFRegal-Bold;
+    font-size: 45px;
+    line-height: 50px;
+    color: #191b1a;
+    max-width: 400px;
+}
+
+.featured_post_title a:hover {
+    text-decoration: underline;
+}
+
+.featured_post_subtitle {
+	font-family: Neutra-Book;
+    font-size: 18px;
+    color: #191b1a;
+    max-width: 400px;
+    line-height: 22px;
+}
+
+.featured_post_extra {
+    padding-top: 20px;
+    font-family: Neutra-Bold;
+    font-size: 12px;
+}
+
+.featured_post_extra .holder * {
+    display: inline-block;
+}
+
+.featured_post_extra .holder .time {
+    font-family: Neutra-Book;
+    color: #9d9d9c;
+}
+
+.subfeatured_area {
+    grid-area: subfeatured_area;
+    margin-top: -150px;
+    z-index: 100;
+}
+
+.subfeatured_grid {
+    padding-block-end: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 54px;
+}
+
+.subfeatured_single {
+    max-width: 490px;
+}
+
+.subfeatured_single img {
+    width: -moz-available;
+}
+
+.subfeatured_title {
+    padding-top: 5px;
+    font-family: Neutra-Bold;
+    font-size: 20px;
+}
+
+.subfeatured_text {
+    padding-top: 5px;
+    font-family: Neutra-Light;
+    font-size: 17px;
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.posts_area {
+    grid-area: posts_area;
+    background: #f7f6f6;
+    padding-bottom: 50px;
+}
+
+.load_more_posts {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.load_more_posts a {
+    font-family: Neutra-Demi;
+    font-size: 30px;
+    color: #70706f;
+}
