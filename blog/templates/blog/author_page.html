@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-blogpage{% endblock %}
+
+{% block content %}
+    <h1>{{ page.name }}</h1>
+    <p class="meta">{{ page.description }}</p>
+
+    {{ page.body|richtext }}
+
+
+
+{% endblock %}
