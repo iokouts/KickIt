@@ -9,10 +9,13 @@
 .main_grid_single {
 	background: #fff;
 	width: 310px;
+	height: 370px;
 }
 
-.main_grid_single img {
-	max-width: 310px;
+.grid_img_container {
+    height: 180px;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .main_grid_single a {
