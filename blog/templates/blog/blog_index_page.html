@@ -25,7 +25,7 @@
                 <div class="featured_post_title"><a href="{{ post.url }}">{{ post.title  }}</a></div>
                 <div class="featured_post_subtitle">{{ post.specific.intro }}</div>
                 <div class="featured_post_extra">
-                    <div class="author">Austin Moderns</div>
+                    <a class="author" href="{{ post.specific.author.url }}">{{ post.specific.author.name }}</a>
                     <div class="holder">
                         <div class="main_tag">{{ page.main_category.name|upper }}</div>
                         /

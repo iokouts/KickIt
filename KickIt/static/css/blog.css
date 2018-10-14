@@ -75,6 +75,10 @@ body {
     font-size: 12px;
 }
 
+.featured_post_extra .author {
+    margin-bottom: 5px;
+}
+
 .featured_post_extra .holder * {
     display: inline-block;
 }

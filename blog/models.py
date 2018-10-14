@@ -1,19 +1,18 @@
 from django.db import models
 from django import forms
 
-from modelcluster.fields import ParentalKey
-
 from wagtail.core.models import Page, Orderable
 from wagtail.core.fields import RichTextField
-from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
+
+from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel, PageChooserPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.snippets.models import register_snippet
+from wagtail.snippets.edit_handlers import SnippetChooserPanel
 from wagtail.search import index
 
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from taggit.models import TaggedItemBase
-
-from wagtail.snippets.models import register_snippet
 
 # Create your models here.
 
@@ -80,9 +79,12 @@ class BlogPage(Page):
     categories = ParentalManyToManyField('blog.BlogCategory', blank=True)
     show_in_homepage_slider = models.BooleanField(
         verbose_name='show in homepage slider',
-        default=False,
-        help_text="Show post in the main slider of the HomePage"
+        default=False
     )
+    author = models.ForeignKey(
+         'blog.AuthorPage', null=True, blank=True,
+         on_delete=models.SET_NULL, related_name='+'
+     )
 
     def main_image(self):
         gallery_item = self.gallery_images.first()
@@ -94,20 +96,28 @@ class BlogPage(Page):
     search_fields = Page.search_fields + [
         index.SearchField('intro'),
         index.SearchField('body'),
+        index.SearchField('author'),
+        index.SearchField('categories'),
+        index.SearchField('tags'),
     ]
 
     content_panels = Page.content_panels + [
         MultiFieldPanel([
             FieldPanel('date'),
             FieldPanel('tags'),
-            FieldPanel('main_category'),
+            SnippetChooserPanel('main_category'),
             FieldPanel('categories', widget=forms.CheckboxSelectMultiple),
             FieldPanel('show_in_homepage_slider'),
-        ], heading="Blog information"),
+            PageChooserPanel('author'),
+        ], heading="Post information"),
         FieldPanel('intro'),
         FieldPanel('body'),
         InlinePanel('gallery_images', label="Gallery images"),
     ]
+
+    class Meta:
+        verbose_name = 'Post'
+        verbose_name_plural = 'Posts'
 
 
 class BlogPageGalleryImage(Orderable):
@@ -121,6 +131,54 @@ class BlogPageGalleryImage(Orderable):
         ImageChooserPanel('image'),
         FieldPanel('caption'),
     ]
+
+
+class AuthorPage(Page):
+    name = models.CharField("Name", max_length=254)
+    description = models.CharField(max_length=250)
+    body = RichTextField(blank=True)
+    image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+
+    content_panels = Page.content_panels + [
+        FieldPanel('name'),
+        FieldPanel('description'),
+        ImageChooserPanel('image'),
+        FieldPanel('body')
+    ]
+
+    search_fields = [
+        index.SearchField('name'),
+    ]
+
+    def thumb_image(self):
+        # Returns an empty string if there is no profile pic or the rendition
+        # file can't be found.
+        try:
+            return self.image.get_rendition('fill-50x50').img_tag()
+        except:
+            return ''
+
+    class Meta:
+        verbose_name = 'Author'
+        verbose_name_plural = 'Authors'
+
+
+class AuthorIndexPage(Page):
+
+    def get_context(self, request):
+        # Update context to include only published posts, ordered by reverse-chron
+        context = super().get_context(request)
+        author_pages = self.get_children().order_by('-first_published_at')
+
+        context['authors'] = author_pages
+
+        return context
 
 
 @register_snippet
@@ -142,4 +200,5 @@ class BlogCategory(models.Model):
         return self.name
 
     class Meta:
-        verbose_name_plural = 'blog categories'
+        verbose_name = 'Post Category'
+        verbose_name_plural = 'Post Categories'
