@@ -19,6 +19,7 @@ body {
 
 .slider_box {
 	width: 680px;
+	height: 110px;
 	margin: 0 auto;
 	padding: 20px 10px 20px 30px;
 	background-color: #f7f6f6;
@@ -38,8 +39,9 @@ body {
 	width: 275px;
 }
 
-.slider_box_title span {
-	font-family: Neutra-Bold;
+.slider_box_title a {
+    display: initial;
+    font-family: Neutra-Bold;
 	font-size: 23px;
 }
 
@@ -94,6 +96,7 @@ body {
 
 .slides li img {
     width: inherit;
+    max-height: 600px;
 }
 
 .slider_buttons {
