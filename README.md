@@ -16,17 +16,23 @@ music blog
 * Main menu [wagtailmenus](https://github.com/rkhleics/wagtailmenus)
 * Post Index Pagination [demo](https://simpleisbetterthancomplex.com/tutorial/2017/03/13/how-to-create-infinite-scroll-with-django.html)
 * SEO / Share Buttons (BlogPage)
-	** [wagtail-metadata](https://github.com/takeflight/wagtail-metadata)
-	** [twitter cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards)
-	** [facebook share button](https://developers.facebook.com/docs/plugins/share-button/#)
+	* [wagtail-metadata](https://github.com/takeflight/wagtail-metadata)
+	* [twitter cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards)
+	* [facebook share button](https://developers.facebook.com/docs/plugins/share-button/#)
 * Newsletter 
-	** [django-newsletter](https://github.com/dokterbob/django-newsletter)
+	* [django-newsletter](https://github.com/dokterbob/django-newsletter)
 * Add Video Embed App [wagtail-embedvideos](https://github.com/infoportugal/wagtail-embedvideos)
-* Manage Cookies (?)
+* Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
+
+#### Server
+* Domain Name
+* Setup with dokku
+* HTTPS
 
 ### Design
 * Post Page
 * Author / Author Index Pages
+* Hover animations in post grid
 * Tags Index Page
 * Other Main Menu Pages
 * 404 / 500 error pages
