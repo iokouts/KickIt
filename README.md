@@ -6,20 +6,27 @@ music blog
 
 * [Wagtail](https://wagtail.io) - the powerfull CMS for modern websites
 
-
 ## TODO
 
 ### Dev
-* Main menu (IndexPage: Promote - show in menus)
+* Change PostPage Image Gallery => Image
 * Post Slider (BlogPage: Promote - show in frontpage slider)
+* Related Posts in PostPage
+
+* Main menu [wagtailmenus](https://github.com/rkhleics/wagtailmenus)
 * Post Index Pagination [demo](https://simpleisbetterthancomplex.com/tutorial/2017/03/13/how-to-create-infinite-scroll-with-django.html)
-* Share Buttons (BlogPage)
-* Newsletter (subscribe with form / send)
-* Change Post Page Image Gallery to Image
-* Cookies ?
+* SEO / Share Buttons (BlogPage)
+	** [wagtail-metadata](https://github.com/takeflight/wagtail-metadata)
+	** [twitter cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards)
+	** [facebook share button](https://developers.facebook.com/docs/plugins/share-button/#)
+* Newsletter 
+	** [django-newsletter](https://github.com/dokterbob/django-newsletter)
+* Add Video Embed App [wagtail-embedvideos](https://github.com/infoportugal/wagtail-embedvideos)
+* Manage Cookies (?)
 
 ### Design
 * Post Page
 * Author / Author Index Pages
 * Tags Index Page
 * Other Main Menu Pages
+* 404 / 500 error pages
