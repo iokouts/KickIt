@@ -1,0 +1,160 @@
+body {
+	display: grid;
+	grid-template-areas:
+		"header"
+        "post_image_area"
+        "post_article_area"
+        "post_video_area"
+        "post_share_area"
+        "post_tags_area"
+        "post_related_area"
+		"footer"
+}
+
+.post_image_area {
+    grid-area: post_image_area;
+    padding-top: 150px;
+}
+
+.post_image_container {
+    text-align: center;
+}
+
+.post_image_container img {
+    max-width: 1000px;
+}
+
+.post_article_area {
+    grid-area: post_article_area;
+    padding-top: 60px;
+}
+
+.post_article_title_container{
+    margin: 0 auto;
+    max-width: 810px;
+    padding-bottom: 40px;
+}
+
+.post_article_title {
+    font-family: PFRegal-Bold;
+    font-size: 30px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.post_article_extra {
+    font-family: Neutra-Bold;
+    font-size: 12px;
+    color: #9d9d9c;
+    text-align: left;
+}
+
+.post_article_extra > div {
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.post_article_extra .category {
+    color: #ddca00;
+}
+
+.post_article_body {
+    font-family: Neutra-Book;
+    font-size: 18px;
+    padding-bottom: 55px;
+}
+
+.post_article_body .rich-text > p {
+    padding-bottom: 25px;
+}
+
+.post_video_area {
+    grid-area: post_video_area;
+    padding-bottom: 20px;
+}
+
+.post_video_container {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.post_video_container img {
+    max-width: 770px;
+}
+
+.post_share_area {
+    grid-area: post_share_area;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.share_title {
+    padding-bottom: 15px;
+    font-family: Neutra-Demi;
+    font-size: 16px;
+}
+
+.share_social {
+    font-size: 38px;
+}
+
+.share_social a {
+    display: inline-block;
+}
+
+.post_tags_area {
+    grid-area: post_tags_area;
+}
+
+.post_tags_area ul {
+    list-style: none;
+    text-align: center;
+}
+
+.post_tags_area ul li {
+    display: inline-block;
+    font-family: Neutra-Demi;
+    font-size: 16px;
+    padding-right: 17px;
+}
+
+.post_tags_area ul li a {
+    color: #9d9d9c;
+}
+
+.post_related_title_container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.post_related_title {
+    border-bottom: 1px solid #000;
+    line-height: 0px;
+}
+
+.post_related_title span {
+    font-family: Neutra-Bold;
+    font-size: 20px;
+    background: #fff;
+}
+
+.post_tags_area ul li:last-child {
+    padding-right: 0;
+}
+
+.post_related_area {
+    grid-area: post_related_area;
+    padding: 40px 0 70px 0;
+}
+
+.main_posts_grid {
+    margin-top: 50px !important;
+}
+
+.load_more_posts {
+    display: none !important;
+}
+
+.main_grid_single {
+    border: 1px solid #000;
+}
