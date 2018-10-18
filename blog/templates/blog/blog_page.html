@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags wagtailimages_tags static %}
+{% load wagtailcore_tags wagtailimages_tags static embed_video_tags %}
 
 {% block content %}
 
@@ -32,8 +32,9 @@
 
     <div class="main_container post_video_area">
         <div class="post_video_container">
-            {% image page.main_image original as pageImage %}
-            <img src="{{ pageImage.url }}" alt="{{ page.title }}"/>
+             {% video page.video.url as video %}
+                     {% video video '800x400' %}
+             {% endvideo %}
         </div>
     </div>
 
@@ -56,14 +57,7 @@
         </div>
     {% endif %}
 
-
-    <div class="posts_area">
-        <div class="main_container ">
-
-        </div>
-        <div class="load_more_posts"><a href="#">Not enough?</a></div>
-    </div>
-
+    {% if blogpages %}
     <div class="main_container post_related_area">
         <div class="post_related_title_container">
             <div class="post_related_title"><span>RELATED</span></div>
@@ -71,9 +65,10 @@
 
         {% include "includes/posts_grid.html" with posts=blogpages %}
     </div>
+    {% endif %}
 
+    <p style="display: none;"><a href="{{ page.get_parent.url }}">Return to blog</a></p>
 
-
-    <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
+    <div class="main_container just_space"></div>
 
 {% endblock %}
