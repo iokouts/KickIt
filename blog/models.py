@@ -9,6 +9,7 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.models import register_snippet
 from wagtail.snippets.edit_handlers import SnippetChooserPanel
 from wagtail.search import index
+from wagtail_embed_videos.edit_handlers import EmbedVideoChooserPanel
 
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 from modelcluster.contrib.taggit import ClusterTaggableManager
@@ -85,6 +86,22 @@ class BlogPage(Page):
          'blog.AuthorPage', null=True, blank=True,
          on_delete=models.SET_NULL, related_name='+'
      )
+    video = models.ForeignKey(
+        'wagtail_embed_videos.EmbedVideo',
+        verbose_name="Video",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+
+    def get_context(self, request):
+        # Update context to include only published posts, ordered by reverse-chron
+        context = super().get_context(request)
+        blogpages = BlogPage.objects.live().order_by('-first_published_at')[:3]
+        context['blogpages'] = blogpages
+
+        return context
 
     def main_image(self):
         gallery_item = self.gallery_images.first()
@@ -112,6 +129,7 @@ class BlogPage(Page):
         ], heading="Post information"),
         FieldPanel('intro'),
         FieldPanel('body'),
+        EmbedVideoChooserPanel('video'),
         InlinePanel('gallery_images', label="Gallery images"),
     ]
 

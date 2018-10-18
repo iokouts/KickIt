@@ -34,7 +34,7 @@ $ python manage.py runserver
 	* [facebook share button](https://developers.facebook.com/docs/plugins/share-button/#)
 - [ ] Newsletter 
 	* [django-newsletter](https://github.com/dokterbob/django-newsletter)
-- [ ] Add Video Embed App [wagtail-embedvideos](https://github.com/infoportugal/wagtail-embedvideos)
+- [x] ~~Add Video Embed App~~ [wagtail-embedvideos](https://github.com/infoportugal/wagtail-embedvideos)
 - [ ] Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
 
 ### Server
@@ -43,7 +43,7 @@ $ python manage.py runserver
 - [ ] HTTPS
 
 ### Design
-- [ ] Post Page
+- [x] ~~Post Page~~
 - [ ] Author / Author Index Pages
 - [ ] Hover animations in post grid
 - [ ] Tags Index Page

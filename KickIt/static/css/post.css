@@ -8,6 +8,7 @@ body {
         "post_share_area"
         "post_tags_area"
         "post_related_area"
+        "just_space"
 		"footer"
 }
 
@@ -144,11 +145,11 @@ body {
 
 .post_related_area {
     grid-area: post_related_area;
-    padding: 40px 0 70px 0;
+    padding-top: 40px;
 }
 
 .main_posts_grid {
-    margin-top: 50px !important;
+    padding-top: 50px !important;
 }
 
 .load_more_posts {
@@ -157,4 +158,9 @@ body {
 
 .main_grid_single {
     border: 1px solid #000;
+}
+
+.just_space {
+    height: 70px;
+    grid-area: just_space;
 }
