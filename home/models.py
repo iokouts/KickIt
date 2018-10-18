@@ -5,10 +5,12 @@ from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import (FieldPanel, MultiFieldPanel)
 from wagtail.images.edit_handlers import ImageChooserPanel
 
+from wagtailmetadata.models import MetadataPageMixin
+
 from blog.models import BlogPage
 
 
-class HomePage(Page):
+class HomePage(MetadataPageMixin, Page):
     body = RichTextField(blank=True)
     parallax_text = models.CharField(max_length=250, default='DEFAULT PARALLAX')
     parallax_image = models.ForeignKey(

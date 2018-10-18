@@ -6,6 +6,10 @@
 
 {% block content %}
 
+    {% block meta_title %}
+        <title>KickIt!</title>
+    {% endblock %}
+
     {% block styles %}
         <link rel="stylesheet" href="{% static 'css/frontpage.css' %}">
         <link rel="stylesheet" href="{% static 'css/posts_grid.css' %}">

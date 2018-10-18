@@ -9,7 +9,9 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.models import register_snippet
 from wagtail.snippets.edit_handlers import SnippetChooserPanel
 from wagtail.search import index
+
 from wagtail_embed_videos.edit_handlers import EmbedVideoChooserPanel
+from wagtailmetadata.models import MetadataPageMixin
 
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 from modelcluster.contrib.taggit import ClusterTaggableManager
@@ -18,7 +20,7 @@ from taggit.models import TaggedItemBase
 # Create your models here.
 
 
-class BlogIndexPage(Page):
+class BlogIndexPage(MetadataPageMixin, Page):
     intro = RichTextField(blank=True)
     main_category = models.ForeignKey(
         'blog.BlogCategory', null=True, blank=True,
@@ -68,7 +70,7 @@ class BlogPageTag(TaggedItemBase):
     )
 
 
-class BlogPage(Page):
+class BlogPage(MetadataPageMixin, Page):
     date = models.DateField("Post date")
     intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
@@ -151,7 +153,7 @@ class BlogPageGalleryImage(Orderable):
     ]
 
 
-class AuthorPage(Page):
+class AuthorPage(MetadataPageMixin, Page):
     name = models.CharField("Name", max_length=254)
     description = models.CharField(max_length=250)
     body = RichTextField(blank=True)
@@ -187,7 +189,7 @@ class AuthorPage(Page):
         verbose_name_plural = 'Authors'
 
 
-class AuthorIndexPage(Page):
+class AuthorIndexPage(MetadataPageMixin, Page):
 
     def get_context(self, request):
         # Update context to include only published posts, ordered by reverse-chron
