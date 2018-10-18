@@ -79,10 +79,6 @@ body {
     text-align: center;
 }
 
-.post_video_container img {
-    max-width: 770px;
-}
-
 .post_share_area {
     grid-area: post_share_area;
     text-align: center;

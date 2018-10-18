@@ -31,6 +31,8 @@ INSTALLED_APPS = [
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.contrib.styleguide',
+    'wagtail.contrib.settings',
+    'wagtail.contrib.modeladmin',
     'wagtail.embeds',
     'wagtail.sites',
     'wagtail.users',
@@ -42,6 +44,7 @@ INSTALLED_APPS = [
     'wagtail.core',
     'wagtail_embed_videos',
     'embed_video',
+    'wagtailmetadata',
 
     'modelcluster',
     'taggit',

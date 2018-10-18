@@ -1,2 +1,7 @@
 Django>=2.0,<2.1
 wagtail>=2.2,<2.3
+django-embed-video==1.2.0
+django-modelcluster==4.2
+django-taggit==0.23.0
+wagtail-embed-videos==0.4.2
+wagtail-metadata==2.0.1

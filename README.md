@@ -14,6 +14,13 @@ music blog
 $ pip install -r requirements.txt
 $ python manage.py migrate
 ```
+* if that fails, try:
+```bash
+$ pip install -r pip-freeze-requirements.txt
+$ python manage.py migrate
+```
+
+
 * creates a SQLite database file in the project directory
 ```bash
 $ python manage.py createsuperuser
@@ -29,9 +36,11 @@ $ python manage.py runserver
 - [ ] Main menu [wagtailmenus](https://github.com/rkhleics/wagtailmenus)
 - [ ] Post Index Pagination [demo](https://simpleisbetterthancomplex.com/tutorial/2017/03/13/how-to-create-infinite-scroll-with-django.html)
 - [ ] SEO / Share Buttons (BlogPage)
-	* [wagtail-metadata](https://github.com/takeflight/wagtail-metadata)
+	* [wagtail-metadata](https://github.com/takeflight/wagtail-metadata) (done!)
+	* adjust open-graph / twitter tags
 	* [twitter cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards)
-	* [facebook share button](https://developers.facebook.com/docs/plugins/share-button/#)
+	* [Facebook Share Dialog](https://developers.facebook.com/docs/sharing/reference/share-dialog)
+	* [~~facebook share button~~](https://developers.facebook.com/docs/plugins/share-button/#)
 - [ ] Newsletter 
 	* [django-newsletter](https://github.com/dokterbob/django-newsletter)
 - [x] ~~Add Video Embed App~~ [wagtail-embedvideos](https://github.com/infoportugal/wagtail-embedvideos)

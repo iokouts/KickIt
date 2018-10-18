@@ -1,21 +1,19 @@
-{% load static wagtailcore_tags %}
+{% load static wagtailcore_tags wagtailmetadata_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>
-            {% block title %}
-                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
-            {% endblock %}
-            {% block title_suffix %}
-                {% with self.get_site.site_name as site_name %}
-                    {% if site_name %}- {{ site_name }}{% endif %}
-                {% endwith %}
-            {% endblock %}
-    </title>
-    <meta >
+        {% meta_tags %}
+
+        {% if page.slug == 'home' %}
+            <title>KickIt!</title>
+        {% else %}
+            <title>KickIt!: {{ page.title }}</title>
+        {% endif %}
+
+    </meta>
 
     {# Global stylesheets #}
     <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}">
