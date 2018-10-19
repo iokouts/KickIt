@@ -30,7 +30,7 @@ $ python manage.py runserver
 ## TODO
 ### Dev
 - [ ] Change PostPage Image Gallery => Image
-- [ ] Post Slider (BlogPage: Promote - show in frontpage slider)
+- [x] ~~Post Slider (BlogPage: Promote - show in frontpage slider)~~
 - [ ] Related Posts in PostPage
 
 - [ ] Main menu [wagtailmenus](https://github.com/rkhleics/wagtailmenus)
