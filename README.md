@@ -36,11 +36,11 @@ $ python manage.py runserver
 - [ ] Main menu [wagtailmenus](https://github.com/rkhleics/wagtailmenus)
 - [ ] Post Index Pagination [demo](https://simpleisbetterthancomplex.com/tutorial/2017/03/13/how-to-create-infinite-scroll-with-django.html)
 - [ ] SEO / Share Buttons (BlogPage)
-	* [wagtail-metadata](https://github.com/takeflight/wagtail-metadata) (done!)
+	* [~~wagtail-metadata~~](https://github.com/takeflight/wagtail-metadata) (done!)
 	* adjust open-graph / twitter tags
-	* [twitter cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards)
-	* [Facebook Share Dialog](https://developers.facebook.com/docs/sharing/reference/share-dialog)
-	* [~~facebook share button~~](https://developers.facebook.com/docs/plugins/share-button/#)
+	* [twitter cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards) / [twitter button guides](https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview.html)
+	* [Facebook Share Dialog](https://developers.facebook.com/docs/sharing/reference/share-dialog) / [~~facebook share button~~](https://developers.facebook.com/docs/plugins/share-button/#)
+	* [tumblr buttons](https://www.tumblr.com/buttons)
 - [ ] Newsletter 
 	* [django-newsletter](https://github.com/dokterbob/django-newsletter)
 - [x] ~~Add Video Embed App~~ [wagtail-embedvideos](https://github.com/infoportugal/wagtail-embedvideos)
