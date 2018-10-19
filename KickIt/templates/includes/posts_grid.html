@@ -5,8 +5,11 @@
         {% with post=post.specific %}
             <div class="main_grid_single">
                 <a href="{{ post.url }}">
-                    {% image post.main_image original as postImage%}
-                    <div class="grid_img_container" style="background-image: url({{ postImage.url }})"></div>
+                    <div class="grid_img_container">
+                        {% image post.main_image original as postImage%}
+                        <img src="{{ postImage.url }}"/>
+
+                    </div>
                     <div class="main_grid_single_info">
                         <span style="color: {{ post.main_category.color }}">{{ post.main_category.name }}</span>
                         <p>{{ post.title }}</p>
