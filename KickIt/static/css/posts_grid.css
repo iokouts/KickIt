@@ -10,13 +10,44 @@
 	background: #fff;
 	width: 310px;
 	height: 370px;
+
+    /*background: linear-gradient(to right, black 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;*/
 }
 
 .grid_img_container {
+    width: 310px;
     height: 180px;
-    background-size: cover;
-    background-repeat: no-repeat;
+    overflow: hidden;
 }
+
+.grid_img_container img {
+    width: 100%;
+    height: 100%;
+    filter: none;
+    -webkit-filter: grayscale(0);
+}
+
+.main_grid_single:hover {
+  /*background-position: left bottom;*/
+}
+
+.main_grid_single::after {
+  background-color: white;
+  transform-origin:left;
+  transition:width 0.25s ease;
+}
+
+.main_grid_single:hover .grid_img_container img {
+    filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
+    filter: gray; /* IE5+ */
+    -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+    -webkit-transition: all .5s ease-in-out;
+    -webkit-transform: scale(1.1);
+}
+
 
 .main_grid_single a {
     text-decoration: none;
