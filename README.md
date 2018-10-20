@@ -40,6 +40,8 @@ $ python manage.py runserver
 	* adjust open-graph / twitter tags
 	* [twitter cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards) / [twitter button guides](https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview.html)
 	* [Facebook Share Dialog](https://developers.facebook.com/docs/sharing/reference/share-dialog) / [~~facebook share button~~](https://developers.facebook.com/docs/plugins/share-button/#)
+	* [Facebook Include JS SDK](https://developers.facebook.com/docs/javascript/quickstart)
+	* get FB App ID
 	* [tumblr buttons](https://www.tumblr.com/buttons)
 - [ ] Newsletter 
 	* [django-newsletter](https://github.com/dokterbob/django-newsletter)
@@ -58,3 +60,6 @@ $ python manage.py runserver
 - [ ] Tags Index Page
 - [ ] Other Main Menu Pages
 - [ ] 404 / 500 error pages
+- [ ] Responsive Design
+    * small desktop / tablet
+    * mobile

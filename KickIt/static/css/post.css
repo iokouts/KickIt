@@ -95,6 +95,10 @@ body {
     font-size: 38px;
 }
 
+.share_social i:hover {
+    cursor: pointer;
+}
+
 .share_social a {
     display: inline-block;
 }
