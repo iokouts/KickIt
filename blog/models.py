@@ -61,6 +61,9 @@ class BlogTagIndexPage(Page):
         context['blogpages'] = blogpages
         return context
 
+    def get_meta_image(self):
+        pass
+
 
 class BlogPageTag(TaggedItemBase):
     content_object = ParentalKey(
@@ -111,6 +114,21 @@ class BlogPage(MetadataPageMixin, Page):
             return gallery_item.image
         else:
             return None
+
+    def get_meta_image(self):
+        """A relevant Wagtail Image to show. Optional."""
+        gallery_item = self.gallery_images.first()
+        if gallery_item:
+            return gallery_item.image
+        else:
+            return None
+
+    def get_meta_description(self):
+        """
+        A short text description of this object.
+        This should be plain text, not HTML.
+        """
+        return self.intro
 
     search_fields = Page.search_fields + [
         index.SearchField('intro'),
