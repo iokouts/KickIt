@@ -3,7 +3,7 @@
 <div class="main_posts_grid">
     {% for post in posts %}
         {% with post=post.specific %}
-            <div class="main_grid_single">
+            <div class="main_grid_single" onmouseenter="changeBackground(this, '{{ post.main_category.color|safe }}')" onmouseleave="resetBackground(this)">
                 <a href="{{ post.url }}">
                     <div class="grid_img_container">
                         {% image post.main_image original as postImage%}
@@ -19,3 +19,13 @@
         {% endwith %}
     {% endfor %}
 </div>
+
+<script>
+    function changeBackground(x, color){
+        x.style.background = color;
+    }
+
+    function resetBackground(x){
+        x.style.background = '#fff';
+    }
+</script>

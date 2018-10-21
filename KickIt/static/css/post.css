@@ -50,7 +50,7 @@ body {
     text-align: left;
 }
 
-.post_article_extra > div {
+.post_article_extra > * {
     display: inline-block;
     padding-right: 5px;
 }

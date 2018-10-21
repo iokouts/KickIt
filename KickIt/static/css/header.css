@@ -34,12 +34,20 @@ nav {
 	padding-top: 12px;
 }
 
+.sticky_menu .menu {
+    min-width: 500px;
+}
+
 .sticky_menu .menu ul li a {
 	color: #585857;
 }
 
-.sticky_menu .menu ul li a:active {
+.sticky_menu .menu ul li:active a {
 	color: #fff;
+}
+
+.menu .active {
+	color: #fff !important;
 }
 
 .sticky_menu .menu ul li a:hover {

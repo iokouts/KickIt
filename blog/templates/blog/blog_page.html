@@ -39,10 +39,10 @@
         <div class="post_article_title_container">
             <div class="post_article_title">{{ page.title }}</div>
             <div class="post_article_extra">
-                <div class="author">{{ page.author.name }}</div>/
-                <div class="category">{{ page.main_category }}</div>/
+                <a class="author" href="{{ page.specific.author.url }}">{{ page.specific.author.name }}</a>/
+                <a class="category" href="{{ page.get_parent.url }}">{{ page.main_category }}</a>/
                 <div class="main_tag">{{ page.main_category|upper }}</div>/
-                <div class="time">{{ page.date }}</div>
+                <div class="time">{{ page.greek_date }}</div>
             </div>
         </div>
 
@@ -72,7 +72,7 @@
         <div class="main_container post_tags_area">
             <ul>
                 {% for tag in page.tags.all %}
-                    <li><a href="{% slugurl 'tags' %}?tag={{ tag }}">{{ tag }}</a></li>
+                    <li><a href="{% slugurl 'tags' %}?tag={{ tag }}">#{{ tag }}</a></li>
                 {% endfor %}
             </ul>
         </div>
