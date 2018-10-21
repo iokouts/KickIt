@@ -10,11 +10,6 @@
 	background: #fff;
 	width: 310px;
 	height: 370px;
-
-    /*background: linear-gradient(to right, black 50%, white 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
-    transition: all .5s ease-out;*/
 }
 
 .grid_img_container {
@@ -26,31 +21,39 @@
 .grid_img_container img {
     width: 100%;
     height: 100%;
-    filter: none;
-    -webkit-filter: grayscale(0);
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    filter: grayscale(0%);
+    -moz-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
 }
 
-.main_grid_single:hover {
-  /*background-position: left bottom;*/
+.main_grid_single, .main_grid_single .main_grid_single_info > * {
+    -moz-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
 }
 
-.main_grid_single::after {
-  background-color: white;
-  transform-origin:left;
-  transition:width 0.25s ease;
+.main_grid_single:hover, .main_grid_single:hover .main_grid_single_info > * {
+    color: #fff !important;
+    -moz-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+    -webkit-transition: all .5s ease-in;
 }
 
 .main_grid_single:hover .grid_img_container img {
     filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
     filter: gray; /* IE5+ */
     -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
-    -webkit-transition: all .5s ease-in-out;
-    -webkit-transform: scale(1.1);
+    -moz-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+    -webkit-transition: all .5s ease-in;
 }
-
 
 .main_grid_single a {
     text-decoration: none;
+    height: 100%;
 }
 
 .main_grid_single_info {

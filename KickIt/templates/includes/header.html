@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags %}
+{% load static wagtailcore_tags menu_tags %}
 
 {% block main_navigation %}
     <nav class="sticky_menu" id="sticky_menu">
@@ -20,16 +20,7 @@
 
                 <!-- <object  type="image/svg+xml" data="{% static 'assets/logo.svg' %}"></object> -->
             </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="{% slugurl 'latest' %}">The Latest</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Turntablism</a></li>
-                    <li><a href="#">Colors</a></li>
-                    <li><a href="#">Podcasts</a></li>
-                    <li><a href="#">Events</a></li>
-                </ul>
-            </div>
+            {% main_menu max_levels=2 use_specific=USE_SPECIFIC_TOP_LEVEL apply_active_classes=True template="menus/main/level_1.html" %}
         </div>
     </nav>
 {% endblock %}

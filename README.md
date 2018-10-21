@@ -32,8 +32,9 @@ $ python manage.py runserver
 - [ ] Change PostPage Image Gallery => Image
 - [x] ~~Post Slider (BlogPage: Promote - show in frontpage slider)~~
 - [ ] Related Posts in PostPage
+- [X] ~~Greek Dates~~
 
-- [ ] Main menu [wagtailmenus](https://github.com/rkhleics/wagtailmenus)
+- [x] ~~Main menu~~ [wagtailmenus](https://github.com/rkhleics/wagtailmenus)
 - [ ] Post Index Pagination [demo](https://simpleisbetterthancomplex.com/tutorial/2017/03/13/how-to-create-infinite-scroll-with-django.html)
 - [ ] SEO / Share Buttons (BlogPage)
 	* [~~wagtail-metadata~~](https://github.com/takeflight/wagtail-metadata) (done!)
@@ -47,16 +48,19 @@ $ python manage.py runserver
 	* [django-newsletter](https://github.com/dokterbob/django-newsletter)
 - [x] ~~Add Video Embed App~~ [wagtail-embedvideos](https://github.com/infoportugal/wagtail-embedvideos)
 - [ ] Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
+- [ ] Check posts_grid.html js
 
 ### Server
-- [ ] Domain Name
+- [x] ~~Domain Name~~
+- [ ] Connect server with domain
 - [ ] Setup with dokku
 - [ ] HTTPS
 
 ### Design
 - [x] ~~Post Page~~
+- [ ] footer logo (img or font?)
 - [ ] Author / Author Index Pages
-- [ ] Hover animations in post grid
+- [x] ~~Hover animations in post grid~~
 - [ ] Tags Index Page
 - [ ] Other Main Menu Pages
 - [ ] 404 / 500 error pages

@@ -17,6 +17,8 @@ from modelcluster.fields import ParentalKey, ParentalManyToManyField
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from taggit.models import TaggedItemBase
 
+from babel.dates import format_date
+
 # Create your models here.
 
 
@@ -74,7 +76,7 @@ class BlogPageTag(TaggedItemBase):
 
 
 class BlogPage(MetadataPageMixin, Page):
-    date = models.DateField("Post date")
+    date = models.DateField("Post date", default=models.fields.datetime.date.today)
     intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
@@ -114,6 +116,9 @@ class BlogPage(MetadataPageMixin, Page):
             return gallery_item.image
         else:
             return None
+
+    def greek_date(self):
+        return format_date(self.date, locale='el_GR')
 
     def get_meta_image(self):
         """A relevant Wagtail Image to show. Optional."""
