@@ -3,3 +3,4 @@ venv
 .idea
 KickIt/static/fonts
 __pycache__
+media
