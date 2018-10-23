@@ -19,6 +19,8 @@ from taggit.models import TaggedItemBase
 
 from babel.dates import format_date
 
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 # Create your models here.
 
 
@@ -35,20 +37,24 @@ class BlogIndexPage(MetadataPageMixin, Page):
     ]
 
     def get_context(self, request):
-        # Update context to include only published posts, ordered by reverse-chron
         context = super().get_context(request)
         blogpages = self.get_children().order_by('-first_published_at')
 
         context['blog_featured'] = blogpages[:3]
 
-        if blogpages.count() > 3:
-            context['blogpages'] = blogpages[3:]
+        page = request.GET.get('page', 1)
+        paginator = Paginator(blogpages[3:], 6)
+
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            posts = paginator.page(1)
+        except EmptyPage:
+            posts = paginator.page(paginator.num_pages)
+
+        context['posts'] = posts
 
         return context
-
-    def featured_posts(self):
-        featured_posts = self.get_children()  # .live().order_by('-first_published_at')
-        return featured_posts
 
 
 class BlogTagIndexPage(Page):

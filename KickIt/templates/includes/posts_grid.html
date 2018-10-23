@@ -1,6 +1,6 @@
 {% load static wagtailimages_tags %}
 
-<div class="main_posts_grid">
+<div class="main_posts_grid infinite-item">
     {% for post in posts %}
         {% with post=post.specific %}
             <div class="main_grid_single" onmouseenter="changeBackground(this, '{{ post.main_category.color|safe }}')" onmouseleave="resetBackground(this)">
@@ -11,7 +11,7 @@
 
                     </div>
                     <div class="main_grid_single_info">
-                        <span style="color: {{ post.main_category.color }}">{{ post.main_category.name }}</span>
+                        <span style="color:{{ post.main_category.color }}">{{ post.main_category.name }}</span>
                         <p>{{ post.title }}</p>
                     </div>
                 </a>
