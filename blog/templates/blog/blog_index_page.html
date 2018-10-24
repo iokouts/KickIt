@@ -74,9 +74,7 @@
             {% include "includes/posts_grid.html" with posts=posts %}
         </div>
         {% if posts.has_next %}
-            <div class="load_more_posts">
-                <a class="infinite-more-link" href="?page={{ posts.next_page_number }}">Not enough?</a>
-            </div>
+            <button type="button" id="load_more_posts">Not enough btn?</button>
         {% endif %}
     </div>
 
@@ -87,19 +85,22 @@
     {% block scripts %}
         {{ block.super }}
 
-        <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-        <script src="{% static 'js/infinite.min.js' %}"></script>
-
         <script>
-            var infinite = new Waypoint.Infinite({
-              element: $('.infinite-container')[0],
-              onBeforePageLoad: function () {
-                $('.loading').show();
-              },
-              onAfterPageLoad: function ($items) {
-                $('.loading').hide();
-              }
+            $("#load_more_posts").click(function(){
+                $.ajax({
+                    url: "?page={{ posts.next_page_number }}",
+                    type: "GET",
+                    success: function (result) {
+                        alert('putsa');
+                    },
+                    error: function(result) {
+                       alert('error');
+                    }
+                });
             });
+
+            {#$("infinite-container").append(page={{ posts.next_page_number }});#}
+
         </script>
     {% endblock %}
 
