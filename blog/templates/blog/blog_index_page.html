@@ -70,38 +70,23 @@
     </div>
 
     <div class="posts_area">
-        <div class="main_container infinite-container">
-            {% include "includes/posts_grid.html" with posts=posts %}
+        <div class="main_container">
+            <div class="main_posts_grid">
+                {% include "blog/posts_grid.html" %}
+            </div>
         </div>
         {% if posts.has_next %}
-            <button type="button" id="load_more_posts">Not enough btn?</button>
+            <div class="load_more_posts">
+                <a class="" href="?page={{ posts.next_page_number}}">Not enough?</a>
+            </div>
         {% endif %}
     </div>
-
-      <div class="loading" style="display: none;">
-        Loading...
-      </div>
 
     {% block scripts %}
         {{ block.super }}
 
-        <script>
-            $("#load_more_posts").click(function(){
-                $.ajax({
-                    url: "?page={{ posts.next_page_number }}",
-                    type: "GET",
-                    success: function (result) {
-                        alert('putsa');
-                    },
-                    error: function(result) {
-                       alert('error');
-                    }
-                });
-            });
-
-            {#$("infinite-container").append(page={{ posts.next_page_number }});#}
-
-        </script>
+        <script type="text/javascript" src="{% static 'el-pagination/js/el-pagination.js' %}"></script>
+        <script>$.endlessPaginate();</script>
     {% endblock %}
 
 {% endblock %}
