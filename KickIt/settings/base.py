@@ -59,6 +59,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'el_pagination',
+
 
 ]
 
@@ -92,6 +94,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
 
                 'wagtailmenus.context_processors.wagtailmenus',
+                'django.template.context_processors.request',  # For EL-pagination
             ],
         },
     },

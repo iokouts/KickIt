@@ -42,19 +42,19 @@ class BlogIndexPage(MetadataPageMixin, Page):
 
         context['blog_featured'] = blogpages[:3]
 
-        page = request.GET.get('page', 1)
-        paginator = Paginator(blogpages[3:], 6)
+        context['page_template'] = 'home/article_thumbnail.html'
 
-        try:
-            posts = paginator.page(page)
-        except PageNotAnInteger:
-            posts = paginator.page(1)
-        except EmptyPage:
-            posts = paginator.page(paginator.num_pages)
-
-        context['posts'] = posts
+        context['posts'] = blogpages[3:]
 
         return context
+
+    def get_template(self, request):
+        if request.is_ajax():
+            # Template to render objects retrieved via Ajax
+            return 'blog/posts_grid.html'
+        else:
+            # Original template
+            return 'blog/blog_index_page.html'
 
 
 class BlogTagIndexPage(Page):
