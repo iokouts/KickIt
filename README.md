@@ -34,10 +34,9 @@ $ python manage.py runserver
 - [ ] Related Posts in PostPage
 - [X] ~~Greek Dates~~
 
-- [x] ~~Main menu~~ [wagtailmenus](https://github.com/rkhleics/wagtailmenus)
+- [x] ~~Main menu~~
 - [ ] Post Index Pagination [demo](https://simpleisbetterthancomplex.com/tutorial/2017/03/13/how-to-create-infinite-scroll-with-django.html)
 - [ ] SEO / Share Buttons (BlogPage)
-	* [~~wagtail-metadata~~](https://github.com/takeflight/wagtail-metadata) (done!)
 	* adjust open-graph / twitter tags
 	* [twitter cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards) / [twitter button guides](https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview.html)
 	* [Facebook Share Dialog](https://developers.facebook.com/docs/sharing/reference/share-dialog) / [~~facebook share button~~](https://developers.facebook.com/docs/plugins/share-button/#)
@@ -46,7 +45,7 @@ $ python manage.py runserver
 	* [tumblr buttons](https://www.tumblr.com/buttons)
 - [ ] Newsletter 
 	* [django-newsletter](https://github.com/dokterbob/django-newsletter)
-- [x] ~~Add Video Embed App~~ [wagtail-embedvideos](https://github.com/infoportugal/wagtail-embedvideos)
+- [x] ~~Add Video Embed App~~
 - [ ] Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
 - [ ] Check posts_grid.html js
 
@@ -67,3 +66,12 @@ $ python manage.py runserver
 - [ ] Responsive Design
     * small desktop / tablet
     * mobile
+    
+## Resources
+* [you might not need jquery](http://youmightnotneedjquery.com/)
+
+### Wagtail
+* [wagtailmenus](https://github.com/rkhleics/wagtailmenus)
+* [wagtail metadata](https://github.com/takeflight/wagtail-metadata)
+* [wagtail embed videos](https://github.com/infoportugal/wagtail-embedvideos)
+
