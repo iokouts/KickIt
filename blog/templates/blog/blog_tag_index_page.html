@@ -11,18 +11,25 @@
 
     <div class="main_container">
         {% if request.GET.tag|length %}
-            <h4>#"{{ request.GET.tag }}"</h4>
+            <h4>#{{ request.GET.tag }}</h4>
         {% else %}
             <h4>No pages found with that tag.</h4>
         {% endif %}
     </div>
 
-    <div class="posts_area" style="margin-bottom:40px;">
+    <div class="tags_posts_area">
         <div class="main_container">
             <div class="main_posts_grid">
                 {% include "blog/posts_grid_paginate.html" %}
             </div>
         </div>
     </div>
+
+    {% block scripts %}
+        {{ block.super }}
+
+        <script type="text/javascript" src="{% static 'el-pagination/js/el-pagination.js' %}"></script>
+        <script>$.endlessPaginate();</script>
+    {% endblock %}
 
 {% endblock %}
