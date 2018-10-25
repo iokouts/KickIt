@@ -73,6 +73,7 @@
             <ul>
                 {% for tag in page.tags.all %}
                     <li><a href="{% slugurl 'tags' %}?tag={{ tag }}">#{{ tag }}</a></li>
+                    <button type="button">{{ tag }}</button>
                 {% endfor %}
             </ul>
         </div>

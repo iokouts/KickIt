@@ -1,24 +1,28 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags %}
+
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block content %}
 
-    {% if request.GET.tag|length %}
-        <h4>Showing pages tagged "{{ request.GET.tag }}"</h4>
-    {% endif %}
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/tags_page.css' %}">
+        <link rel="stylesheet" href="{% static 'css/posts_grid.css' %}">
+    {% endblock %}
 
-    {% for blogpage in blogpages %}
+    <div class="main_container">
+        {% if request.GET.tag|length %}
+            <h4>#"{{ request.GET.tag }}"</h4>
+        {% else %}
+            <h4>No pages found with that tag.</h4>
+        {% endif %}
+    </div>
 
-          <p>
-              <strong><a href="{% pageurl blogpage %}">{{ blogpage.title }}</a></strong><br />
-              <small>Revised: {{ blogpage.latest_revision_created_at }}</small><br />
-              {% if blogpage.author %}
-                <p>By {{ blogpage.author.profile }}</p>
-              {% endif %}
-          </p>
-
-    {% empty %}
-        No pages found with that tag.
-    {% endfor %}
+    <div class="posts_area" style="margin-bottom:40px;">
+        <div class="main_container">
+            <div class="main_posts_grid">
+                {% include "blog/posts_grid_paginate.html" %}
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

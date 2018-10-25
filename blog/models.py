@@ -15,13 +15,38 @@ from wagtailmetadata.models import MetadataPageMixin
 
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 from modelcluster.contrib.taggit import ClusterTaggableManager
-from taggit.models import TaggedItemBase
+from taggit.models import TaggedItemBase, Tag as TaggitTag
 
 from babel.dates import format_date
 
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
 # Create your models here.
+
+
+class BlogTagIndexPage(Page):
+    def get_context(self, request):
+        # Filter by tag
+        tag = request.GET.get('tag')
+        posts = BlogPage.objects.live().filter(tags__name=tag)
+
+        # Update template context
+        context = super().get_context(request)
+        context['posts'] = posts
+        return context
+
+    def get_template(self, request):
+        if request.is_ajax():
+            # Template to render objects retrieved via Ajax
+            return 'blog/posts_grid_paginate.html'
+        else:
+            # Original template
+            return 'blog/blog_tag_index_page.html'
+
+    def get_meta_image(self):
+        pass
+
+
+class BlogPageTag(TaggedItemBase):
+    content_object = ParentalKey('BlogPage', related_name='post_tags', on_delete=models.CASCADE)
 
 
 class BlogIndexPage(MetadataPageMixin, Page):
@@ -41,9 +66,7 @@ class BlogIndexPage(MetadataPageMixin, Page):
         blogpages = self.get_children().order_by('-first_published_at')
 
         context['blog_featured'] = blogpages[:3]
-
         context['page_template'] = 'home/article_thumbnail.html'
-
         context['posts'] = blogpages[3:]
 
         return context
@@ -55,30 +78,6 @@ class BlogIndexPage(MetadataPageMixin, Page):
         else:
             # Original template
             return 'blog/blog_index_page.html'
-
-
-class BlogTagIndexPage(Page):
-
-    def get_context(self, request):
-        # Filter by tag
-        tag = request.GET.get('tag')
-        blogpages = BlogPage.objects.filter(tags__name=tag)
-
-        # Update template context
-        context = super().get_context(request)
-        context['blogpages'] = blogpages
-        return context
-
-    def get_meta_image(self):
-        pass
-
-
-class BlogPageTag(TaggedItemBase):
-    content_object = ParentalKey(
-        'BlogPage',
-        related_name='tagged_items',
-        on_delete=models.CASCADE
-    )
 
 
 class BlogPage(MetadataPageMixin, Page):
@@ -228,6 +227,12 @@ class AuthorIndexPage(MetadataPageMixin, Page):
         context['authors'] = author_pages
 
         return context
+
+
+@register_snippet
+class Tag(TaggitTag):
+    class Meta:
+        proxy = True
 
 
 @register_snippet
