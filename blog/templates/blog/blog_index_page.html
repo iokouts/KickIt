@@ -72,14 +72,9 @@
     <div class="posts_area">
         <div class="main_container">
             <div class="main_posts_grid">
-                {% include "blog/posts_grid.html" %}
+                {% include "blog/posts_grid_paginate.html" %}
             </div>
         </div>
-        {% if posts.has_next %}
-            <div class="load_more_posts">
-                <a class="" href="?page={{ posts.next_page_number}}">Not enough?</a>
-            </div>
-        {% endif %}
     </div>
 
     {% block scripts %}

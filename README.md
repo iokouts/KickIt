@@ -33,9 +33,9 @@ $ python manage.py runserver
 - [x] ~~Post Slider (BlogPage: Promote - show in frontpage slider)~~
 - [ ] Related Posts in PostPage
 - [X] ~~Greek Dates~~
-
+- [ ] Check posts_grid.html js
 - [x] ~~Main menu~~
-- [ ] Post Index Pagination [demo](https://simpleisbetterthancomplex.com/tutorial/2017/03/13/how-to-create-infinite-scroll-with-django.html)
+- [x] ~~Post Index Pagination~~
 - [ ] SEO / Share Buttons (BlogPage)
 	* adjust open-graph / twitter tags
 	* [twitter cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards) / [twitter button guides](https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview.html)
@@ -47,7 +47,6 @@ $ python manage.py runserver
 	* [django-newsletter](https://github.com/dokterbob/django-newsletter)
 - [x] ~~Add Video Embed App~~
 - [ ] Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
-- [ ] Check posts_grid.html js
 
 ### Server
 - [x] ~~Domain Name~~
@@ -70,8 +69,10 @@ $ python manage.py runserver
 ## Resources
 * [you might not need jquery](http://youmightnotneedjquery.com/)
 
-### Wagtail
+### Django / Wagtail
 * [wagtailmenus](https://github.com/rkhleics/wagtailmenus)
 * [wagtail metadata](https://github.com/takeflight/wagtail-metadata)
 * [wagtail embed videos](https://github.com/infoportugal/wagtail-embedvideos)
-
+* Pagination
+    * [django-el-pagination](https://django-el-pagination.readthedocs.io/en/latest/)
+    * [reddit help](https://www.reddit.com/r/django/comments/9p70uf/adding_load_more_functionality_to_wagtail_via/)

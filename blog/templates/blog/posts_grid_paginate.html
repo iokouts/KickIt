@@ -18,14 +18,7 @@
             </div>
         {% endwith %}
     {% endfor %}
-{% show_more %}
+{% show_more '<button type="button" class="load_more_posts" >Not enough?</button>' %}
 
-<script>
-    function changeBackground(x, color){
-        x.style.background = color;
-    }
 
-    function resetBackground(x){
-        x.style.background = '#fff';
-    }
-</script>
+
