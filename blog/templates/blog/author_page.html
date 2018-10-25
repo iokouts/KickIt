@@ -1,15 +1,34 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags wagtailimages_tags %}
-
-{% block body_class %}template-blogpage{% endblock %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block content %}
-    <h1>{{ page.name }}</h1>
-    <p class="meta">{{ page.description }}</p>
 
-    {{ page.body|richtext }}
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/tags_page.css' %}">
+        <link rel="stylesheet" href="{% static 'css/posts_grid.css' %}">
+    {% endblock %}
 
+    <div class="main_container">
+        <h4>{{ page.name }}</h4>
+        <h5>{{ page.description }}</h5>
 
+        {{ page.body|richtext }}
+    </div>
+
+    <div class="tags_posts_area">
+        <div class="main_container">
+            <div class="main_posts_grid">
+                {% include "blog/posts_grid_paginate.html" %}
+            </div>
+        </div>
+    </div>
+
+    {% block scripts %}
+        {{ block.super }}
+
+        <script type="text/javascript" src="{% static 'el-pagination/js/el-pagination.js' %}"></script>
+        <script>$.endlessPaginate();</script>
+    {% endblock %}
 
 {% endblock %}

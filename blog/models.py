@@ -204,6 +204,14 @@ class AuthorPage(MetadataPageMixin, Page):
         index.SearchField('name'),
     ]
 
+    def get_context(self, request):
+        context = super().get_context(request)
+        author_posts = BlogPage.objects.live().filter(author=self)
+
+        context['posts'] = author_posts
+
+        return context
+
     def thumb_image(self):
         # Returns an empty string if there is no profile pic or the rendition
         # file can't be found.
@@ -211,6 +219,14 @@ class AuthorPage(MetadataPageMixin, Page):
             return self.image.get_rendition('fill-50x50').img_tag()
         except:
             return ''
+
+    def get_template(self, request):
+        if request.is_ajax():
+            # Template to render objects retrieved via Ajax
+            return 'blog/posts_grid_paginate.html'
+        else:
+            # Original template
+            return 'blog/author_page.html'
 
     class Meta:
         verbose_name = 'Author'
