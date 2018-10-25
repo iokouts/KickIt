@@ -51,7 +51,7 @@ class BlogIndexPage(MetadataPageMixin, Page):
     def get_template(self, request):
         if request.is_ajax():
             # Template to render objects retrieved via Ajax
-            return 'blog/posts_grid.html'
+            return 'blog/posts_grid_paginate.html'
         else:
             # Original template
             return 'blog/blog_index_page.html'

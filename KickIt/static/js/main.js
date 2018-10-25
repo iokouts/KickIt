@@ -9,7 +9,7 @@ window.onload = function() {
 
     //logo_image = document.getElementById("logo_path");//.getElementsByTagName("path");
     logo_image = $("#logo_path");
-}
+};
 
 window.addEventListener("scroll", function(e){
     requestAnimationFrame(function(){
@@ -22,5 +22,12 @@ window.addEventListener("scroll", function(e){
             logo_image.css("fill","#000");
         }
     })
-})
+});
 
+function changeBackground(x, color){
+    x.style.background = color;
+}
+
+function resetBackground(x){
+    x.style.background = '#fff';
+}

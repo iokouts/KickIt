@@ -7,18 +7,18 @@
 {% block content %}
 
     {% block meta_title %}
-      <title>KickIt!</title>
+        <title>KickIt!</title>
     {% endblock %}
 
     {% block styles %}
-      <link rel="stylesheet" href="{% static 'css/frontpage.css' %}" type="text/css">
-      <link rel="stylesheet" href="{% static 'css/posts_grid.css' %}" type="text/css">
-    	<link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/frontpage.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/posts_grid.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css">
     {% endblock %}
 
     {% block scripts %}
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-        <script src="{% static 'js/KickTestSite.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script src="{% static 'js/main.js' %}"></script>
         <script src="{% static 'js/jquery.flexslider.js' %}"></script>
         <script type="text/javascript" charset="utf-8">
             $(window).load(function () {
@@ -39,19 +39,19 @@
 
                 {% for post in slider_posts %}
                     {% with post=post.specific %}
-                    <li>
-                        {% image post.main_image original as postImage%}
-                        <img src="{{ postImage.url }}" />
-                        <div class="slider_box">
-                            <div class="slider_box_title">
-                                <a href="{{ post.url }}">{{ post.title }}</a>
-                                <span class="slider_box_dot"></span>
+                        <li>
+                            {% image post.main_image original as postImage %}
+                            <img src="{{ postImage.url }}"/>
+                            <div class="slider_box">
+                                <div class="slider_box_title">
+                                    <a href="{{ post.url }}">{{ post.title }}</a>
+                                    <span class="slider_box_dot"></span>
+                                </div>
+                                <div class="slider_box_text">
+                                    <p>{{ post.specific.intro }}</p>
+                                </div>
                             </div>
-                            <div class="slider_box_text">
-                                <p>{{ post.specific.intro }}</p>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
                     {% endwith %}
                 {% endfor %}
 
@@ -62,7 +62,7 @@
 
     {% image page.parallax_image original as my_image %}
     <div class="main_parallax" style="background-image: url('{{ my_image.url }}');">
-        <div class="main_parallax_title" >
+        <div class="main_parallax_title">
             <p>{{ page.parallax_text }}</p>
         </div>
     </div>

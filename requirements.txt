@@ -8,3 +8,4 @@ wagtail-metadata==2.0.1
 Babel==2.6.0
 wagtailmenus==2.11.1
 wagtail-condensedinlinepanel==0.5.0
+django-el-pagination==3.2.4
