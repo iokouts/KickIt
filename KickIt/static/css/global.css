@@ -38,3 +38,36 @@ input, button, submit {
 	width: 1050px;
 	margin: 0 auto;
 }
+
+.load_more_posts {
+    padding: 15px;
+    font-family: Neutra-Demi;
+    font-size: 30px;
+    color: #70706f;
+    background: transparent;
+}
+
+.endless_container {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.load_more_posts:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.endless_loading {
+    font-size: 15px;
+    font-family: Neutra-Demi;
+    color: #70706f;
+    padding-top: 20px;
+    text-transform: uppercase;
+    -moz-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+}
