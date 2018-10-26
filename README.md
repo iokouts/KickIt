@@ -30,8 +30,9 @@ $ python manage.py runserver
 ## TODO
 ### Dev
 - [ ] Change PostPage Image Gallery => Image
+- [ ] Change categories functionality (remove snippet, move properties to BlogIndexPage)
 - [x] ~~Post Slider (BlogPage: Promote - show in frontpage slider)~~
-- [ ] Related Posts in PostPage
+- [ ] Related Posts in PostPage: show the 3 posts with the biggest number of common tags
 - [X] ~~Greek Dates~~
 - [ ] Check posts_grid.html js
 - [x] ~~Main menu~~
@@ -56,9 +57,10 @@ $ python manage.py runserver
 
 ### Design
 - [x] ~~Post Page~~
-- [ ] footer logo (img or font?)
-- [ ] Author / Author Index Pages
+- [ ] footer logo = font
 - [x] ~~Hover animations in post grid~~
+- [ ] Blog Page featured posts hover animations
+- [ ] Author / Author Index Pages
 - [ ] Tags Index Page
 - [ ] Other Main Menu Pages
 - [ ] 404 / 500 error pages
@@ -68,11 +70,13 @@ $ python manage.py runserver
     
 ## Resources
 * [you might not need jquery](http://youmightnotneedjquery.com/)
+* Responsive Design
+	* [by google](https://developers.google.com/web/fundamentals/design-and-ux/responsive/)
 
 ### Django / Wagtail
 * [wagtailmenus](https://github.com/rkhleics/wagtailmenus)
 * [wagtail metadata](https://github.com/takeflight/wagtail-metadata)
 * [wagtail embed videos](https://github.com/infoportugal/wagtail-embedvideos)
 * Pagination
-    * [django-el-pagination](https://django-el-pagination.readthedocs.io/en/latest/)
-    * [reddit help](https://www.reddit.com/r/django/comments/9p70uf/adding_load_more_functionality_to_wagtail_via/)
+	* [django-el-pagination](https://django-el-pagination.readthedocs.io/en/latest/)
+	* [reddit help](https://www.reddit.com/r/django/comments/9p70uf/adding_load_more_functionality_to_wagtail_via/)
