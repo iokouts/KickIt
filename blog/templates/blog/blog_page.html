@@ -40,8 +40,9 @@
             <div class="post_article_title">{{ page.title }}</div>
             <div class="post_article_extra">
                 <a class="author" href="{{ page.specific.author.url }}">{{ page.specific.author.name }}</a>/
-                <a class="category" href="{{ page.get_parent.url }}">{{ page.main_category }}</a>/
-                <div class="main_tag">{{ page.main_category|upper }}</div>/
+                {% with page.get_parent as post_category %}
+                <a class="category" href="{{ post_category.url }}">{{ post_category.title }}</a>/
+                {% endwith %}
                 <div class="time">{{ page.greek_date }}</div>
             </div>
         </div>
