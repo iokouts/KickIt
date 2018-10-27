@@ -30,7 +30,7 @@ $ python manage.py runserver
 ## TODO
 ### Dev
 - [ ] Change PostPage Image Gallery => Image
-- [ ] Change categories functionality (remove snippet, move properties to BlogIndexPage)
+- [x] ~~Change categories functionality (remove snippet, move properties to BlogIndexPage)~~
 - [x] ~~Post Slider (BlogPage: Promote - show in frontpage slider)~~
 - [ ] Related Posts in PostPage: show the 3 posts with the biggest number of common tags
 - [X] ~~Greek Dates~~

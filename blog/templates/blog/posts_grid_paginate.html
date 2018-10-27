@@ -3,7 +3,8 @@
 {% lazy_paginate 6 posts %}
     {% for post in posts %}
         {% with post=post.specific %}
-            <div class="main_grid_single" onmouseenter="changeBackground(this, '{{ post.main_category.color|safe }}')" onmouseleave="resetBackground(this)">
+            {% with post.get_parent as category%}
+            <div class="main_grid_single" onmouseenter="changeBackground(this, '{{ category.specific.main_color|safe }}')" onmouseleave="resetBackground(this)">
                 <a href="{{ post.url }}">
                     <div class="grid_img_container">
                         {% image post.main_image original as postImage%}
@@ -11,11 +12,12 @@
 
                     </div>
                     <div class="main_grid_single_info">
-                        <span style="color:{{ post.main_category.color }}">{{ post.main_category.name }}</span>
+                        <span style="color:{{ category.color }}">{{ category.title }}</span>
                         <p>{{ post.title }}</p>
                     </div>
                 </a>
             </div>
+            {% endwith %}
         {% endwith %}
     {% endfor %}
 {% show_more '<button type="button" class="load_more_posts" >Not enough?</button>' %}
