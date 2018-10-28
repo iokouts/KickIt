@@ -34,7 +34,7 @@
     {% endblock %}
 
     <div class="main_container slider_area">
-        <div class="flexslider test_slider">
+        <div class="flexslider test_slider" id="test_slider">
             <ul class="slides">
 
                 {% for post in slider_posts %}
@@ -56,7 +56,7 @@
                 {% endfor %}
 
             </ul>
-            <div class="big_dot"></div>
+            <div class="big_dot" id="big_dot"></div>
         </div>
     </div>
 
@@ -72,6 +72,5 @@
             {% include "includes/posts_grid.html" with posts=featured_posts %}
         </div>
     </div>
-
 
 {% endblock %}

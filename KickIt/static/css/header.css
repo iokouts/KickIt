@@ -34,10 +34,6 @@ nav {
 	padding-top: 12px;
 }
 
-.sticky_menu .menu {
-    min-width: 500px;
-}
-
 .sticky_menu .menu ul li a {
 	color: #585857;
 }

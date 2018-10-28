@@ -22,7 +22,7 @@ body {
 }
 
 .post_image_container img {
-    max-width: 1000px;
+    width: 100%;
 }
 
 .post_article_area {
