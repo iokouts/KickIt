@@ -1,6 +1,7 @@
 .main_posts_grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	/*grid-template-columns: repeat(3, 1fr);*/
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
 	column-gap: 35px;
 	row-gap: 30px;
 	padding-top: 80px;
@@ -8,8 +9,8 @@
 
 .main_grid_single {
 	background: #fff;
-	width: 310px;
 	height: 370px;
+    justify-self: center;
 }
 
 .grid_img_container {

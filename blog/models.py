@@ -51,14 +51,16 @@ class BlogPageTag(TaggedItemBase):
 
 class BlogIndexPage(MetadataPageMixin, Page):
     intro = RichTextField(blank=True)
-    main_category = models.ForeignKey(
-        'blog.BlogCategory', null=True, blank=True,
+    icon = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True,
         on_delete=models.SET_NULL, related_name='+'
     )
+    main_color = models.CharField(max_length=7, default='#000')
 
     content_panels = Page.content_panels + [
         FieldPanel('intro', classname="full"),
-        FieldPanel('main_category'),
+        ImageChooserPanel('icon'),
+        FieldPanel('main_color'),
     ]
 
     def get_context(self, request):
@@ -85,11 +87,6 @@ class BlogPage(MetadataPageMixin, Page):
     intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
-    main_category = models.ForeignKey(
-        'blog.BlogCategory', null=True, blank=True,
-        on_delete=models.SET_NULL, related_name='+'
-    )
-    categories = ParentalManyToManyField('blog.BlogCategory', blank=True)
     show_in_homepage_slider = models.BooleanField(
         verbose_name='show in homepage slider',
         default=False
@@ -144,7 +141,6 @@ class BlogPage(MetadataPageMixin, Page):
         index.SearchField('intro'),
         index.SearchField('body'),
         index.SearchField('author'),
-        index.SearchField('categories'),
         index.SearchField('tags'),
     ]
 
@@ -152,8 +148,6 @@ class BlogPage(MetadataPageMixin, Page):
         MultiFieldPanel([
             FieldPanel('date'),
             FieldPanel('tags'),
-            SnippetChooserPanel('main_category'),
-            FieldPanel('categories', widget=forms.CheckboxSelectMultiple),
             FieldPanel('show_in_homepage_slider'),
             PageChooserPanel('author'),
         ], heading="Post information"),
@@ -249,26 +243,3 @@ class AuthorIndexPage(MetadataPageMixin, Page):
 class Tag(TaggitTag):
     class Meta:
         proxy = True
-
-
-@register_snippet
-class BlogCategory(models.Model):
-    name = models.CharField(max_length=255)
-    icon = models.ForeignKey(
-        'wagtailimages.Image', null=True, blank=True,
-        on_delete=models.SET_NULL, related_name='+'
-    )
-    color = models.CharField(max_length=7, default='#000')
-
-    panels = [
-        FieldPanel('name'),
-        ImageChooserPanel('icon'),
-        FieldPanel('color'),
-    ]
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = 'Post Category'
-        verbose_name_plural = 'Post Categories'
