@@ -1,13 +1,11 @@
 var stickymenu;
 var stickymenuoffset;
-var scrolltimer;
 var logo_image;
 
 window.onload = function() {
     stickymenu = document.getElementById("sticky_menu");
     stickymenuoffset = stickymenu.offsetTop + 200;
 
-    //logo_image = document.getElementById("logo_path");//.getElementsByTagName("path");
     logo_image = $("#logo_path");
 };
 
