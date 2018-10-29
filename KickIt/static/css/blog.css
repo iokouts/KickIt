@@ -90,13 +90,16 @@ body {
 
 .subfeatured_area {
     grid-area: subfeatured_area;
+    margin: auto;
     margin-top: -150px;
     z-index: 100;
+    width: 100%;
 }
 
 .subfeatured_grid {
     padding-block-end: 60px;
     display: grid;
+    /*grid-template-columns: repeat(auto-fill, minmax(485px, 1fr));*/
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 54px;
 }
@@ -129,5 +132,6 @@ body {
 .posts_area {
     grid-area: posts_area;
     background: #f7f6f6;
-    padding-bottom: 50px;
+    padding-bottom: 100px;
+    position: relative;
 }

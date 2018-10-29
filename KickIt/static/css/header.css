@@ -32,6 +32,8 @@ nav {
 	justify-content: center;
 	align-items: center;
 	padding-top: 12px;
+    max-width: 1250px;
+    margin: 0 auto;
 }
 
 .sticky_menu .menu ul li a {
@@ -50,12 +52,9 @@ nav {
 	text-decoration: underline;
 }
 
-.sticky_menu .logo {
-    padding-right: 150px;
-}
-
 .sticky_menu .logo, .sticky_menu .menu {
     display: inline-block;
+	margin: 0 auto;
 }
 
 .sticky_menu .logo img {
