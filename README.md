@@ -31,6 +31,7 @@ $ python manage.py runserver
 ### Dev
 - [ ] Change PostPage Image Gallery => Image
 - [ ] HomePage(slider) vs base jQuery version
+- [ ] hamburger menu
 - [x] ~~Change categories functionality (remove snippet, move properties to BlogIndexPage)~~
 - [x] ~~Post Slider (BlogPage: Promote - show in frontpage slider)~~
 - [ ] Related Posts in PostPage: show the 3 posts with the biggest number of common tags
@@ -58,7 +59,7 @@ $ python manage.py runserver
 
 ### Design
 - [x] ~~Post Page~~
-- [ ] footer logo = font
+- [x] ~~footer logo = font~~
 - [x] ~~Hover animations in post grid~~
 - [ ] Blog Page featured posts hover animations
 - [ ] Author / Author Index Pages
