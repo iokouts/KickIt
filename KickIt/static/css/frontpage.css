@@ -12,9 +12,10 @@ body {
 	grid-area: slider_area;
 }
 
-.slider, .test_slider {
+.test_slider {
 	position: relative;
-	height: 600px;
+	height: 100%;
+	margin: 0 !important;
 }
 
 .slider_box {
@@ -66,8 +67,8 @@ body {
 .flex-direction-nav {
 	list-style: none;
 	position: absolute;
-	right: 54px;
-	bottom: 15px;
+	right: 8%;
+	bottom: 10%;
 	z-index: 100;
 }
 
@@ -131,13 +132,13 @@ body {
 	background: #ffed00;
 	position: absolute;
 	right: -13%;
-	top: 93%;
+	top: 85%;
 	z-index: 100;
 }
 
 .main_parallax {
 	grid-area: parallax_area;
-	margin-top: 70px;
+	margin-top: 40px;
 	height: 245px;
 	text-align: center;
     background: #000 no-repeat fixed center;
