@@ -39,6 +39,8 @@ nav {
 	justify-content: center;
 	align-items: center;
 	padding-top: 12px;
+	max-width: 1250px;
+	margin: 0 auto;
 }
 
 .sticky_menu.sticky .menu ul li a {

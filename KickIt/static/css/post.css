@@ -14,7 +14,7 @@ body {
 
 .post_image_area {
     grid-area: post_image_area;
-    padding-top: 150px;
+    padding-top: 80px;
 }
 
 .post_image_container {
@@ -22,7 +22,7 @@ body {
 }
 
 .post_image_container img {
-    max-width: 1000px;
+    width: 100%;
 }
 
 .post_article_area {
@@ -47,7 +47,7 @@ body {
     font-family: Neutra-Bold;
     font-size: 12px;
     color: #9d9d9c;
-    text-align: left;
+    text-align: center;
 }
 
 .post_article_extra > * {
@@ -66,7 +66,10 @@ body {
 }
 
 .post_article_body .rich-text > p {
-    padding-bottom: 25px;
+    padding: 0 15px 25px 15px;
+    text-align: justify;
+    line-height: 25px;
+    text-indent: 1em;
 }
 
 .post_video_area {
@@ -131,6 +134,7 @@ body {
 .post_related_title {
     border-bottom: 1px solid #000;
     line-height: 0px;
+    margin-left: 15px;
 }
 
 .post_related_title span {
@@ -163,4 +167,10 @@ body {
 .just_space {
     height: 70px;
     grid-area: just_space;
+}
+
+@media screen and (min-width: 1100px) {
+    .post_image_area{
+        padding-top: 150px;
+    }
 }

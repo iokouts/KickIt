@@ -1,10 +1,9 @@
 .main_posts_grid {
 	display: grid;
-	/*grid-template-columns: repeat(3, 1fr);*/
     grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
 	column-gap: 35px;
 	row-gap: 30px;
-	padding-top: 80px;
+	padding: 80px 10px 0 10px;
 }
 
 .main_grid_single {
@@ -59,6 +58,7 @@
 
 .main_grid_single_info {
 	padding: 60px 30px 25px 25px;
+    max-width: 250px;
 }
 
 .main_grid_single_info span {
@@ -71,5 +71,5 @@
 .main_grid_single_info p {
 	color: #000;
 	font-family: Neutra-Demi;
-	font-size: 30px;
+	font-size: 28px;
 }

@@ -88,6 +88,17 @@ footer {
 	display: inline-block;
 }
 
-.footer_logo {
+.footer_logo_container {
     text-align: center;
+    width: 100%;
+}
+
+.footer_logo {
+    font-family: Neutra-Demi;
+	font-size: 70px;
+    background: #000;
+    color: #ffed00;
+    width: 50px;
+    padding: 20px 10px;
+    margin: 0 auto;
 }
