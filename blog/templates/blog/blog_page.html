@@ -62,10 +62,8 @@
         <div class="share_title">Tell a friend</div>
         <div class="share_social">
             <i id="fb_shareBtn" class="fab fa-facebook" style="color: #1f71b8;"></i>
-            <a href="#" onClick="MyWindow=window.open('https://twitter.com/intent/tweet','MyWindow',width=400,height=200); return false;">
-                <i class="fab fa-twitter-square" style="color: #009fe3;"></i>
-            </a>
-            <a href="#"><i class="fab fa-tumblr-square" style="color: #141d33;"></i></a>
+            <i id="twitter_shareBtn" class="fab fa-twitter-square" style="color: #009fe3;"></i>
+            <i id="tumblr_shareBtn" class="fab fa-tumblr-square" style="color: #141d33;"></i>
         </div>
     </div>
 
@@ -94,13 +92,23 @@
     <div class="main_container just_space"></div>
 
     <script>
+        var window = document.window;
+
         document.getElementById('fb_shareBtn').onclick = function() {
           FB.ui({
             method: 'share',
             display: 'popup',
-            href: '{{ request.build_absolute_uri }}',
+            href: '{{ request.build_absolute_uri }}'
           }, function(response){});
-        }
+        };
+
+        document.getElementById('tumblr_shareBtn').onclick = function() {
+            window.open('https://www.tumblr.com/widgets/share/tool?canonicalUrl={{ request.build_absolute_uri }}','ShareTumblr','width=540,height=600');
+        };
+
+        document.getElementById('twitter_shareBtn').onclick = function() {
+            window.open('https://twitter.com/intent/tweet','ShareTwitter','width=540,height=600');
+        };
     </script>
 
 {% endblock %}
