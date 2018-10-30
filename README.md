@@ -30,11 +30,13 @@ $ python manage.py runserver
 ## TODO
 ### Dev
 - [ ] Change PostPage Image Gallery => Image
+- [ ] HomePage(slider) vs base jQuery version
+- [ ] hamburger menu
 - [x] ~~Change categories functionality (remove snippet, move properties to BlogIndexPage)~~
 - [x] ~~Post Slider (BlogPage: Promote - show in frontpage slider)~~
 - [ ] Related Posts in PostPage: show the 3 posts with the biggest number of common tags
-- [X] ~~Greek Dates~~
-- [ ] Check posts_grid.html js
+- [x] ~~Greek Dates~~
+- [x] ~~Check posts_grid.html js~~ (should be ok)
 - [x] ~~Main menu~~
 - [x] ~~Post Index Pagination~~
 - [ ] SEO / Share Buttons (BlogPage)
@@ -57,13 +59,14 @@ $ python manage.py runserver
 
 ### Design
 - [x] ~~Post Page~~
-- [ ] footer logo = font
+- [x] ~~footer logo = font~~
 - [x] ~~Hover animations in post grid~~
 - [ ] Blog Page featured posts hover animations
 - [ ] Author / Author Index Pages
 - [ ] Tags Index Page
 - [ ] Other Main Menu Pages
 - [ ] 404 / 500 error pages
+- [ ] favicon
 - [ ] Responsive Design
     * small desktop / tablet
     * mobile
