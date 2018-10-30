@@ -39,13 +39,10 @@ $ python manage.py runserver
 - [x] ~~Check posts_grid.html js~~ (should be ok)
 - [x] ~~Main menu~~
 - [x] ~~Post Index Pagination~~
-- [ ] SEO / Share Buttons (BlogPage)
-	* adjust open-graph / twitter tags
-	* [twitter cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards) / [twitter button guides](https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview.html)
-	* [Facebook Share Dialog](https://developers.facebook.com/docs/sharing/reference/share-dialog) / [~~facebook share button~~](https://developers.facebook.com/docs/plugins/share-button/#)
-	* [Facebook Include JS SDK](https://developers.facebook.com/docs/javascript/quickstart)
+- [ ] SEO / Share Buttons
+	* adjust ~~open-graph~~ / twitter tags
 	* get FB App ID
-	* [tumblr buttons](https://www.tumblr.com/buttons)
+	* get tumblr account
 - [ ] Newsletter 
 	* [django-newsletter](https://github.com/dokterbob/django-newsletter)
 - [x] ~~Add Video Embed App~~
@@ -53,7 +50,7 @@ $ python manage.py runserver
 
 ### Server
 - [x] ~~Domain Name~~
-- [ ] Connect server with domain
+- [x] ~~Connect server with domain~~ (51.15.117.113)
 - [ ] Setup with dokku
 - [ ] HTTPS
 
@@ -75,11 +72,19 @@ $ python manage.py runserver
 * [you might not need jquery](http://youmightnotneedjquery.com/)
 * Responsive Design
 	* [by google](https://developers.google.com/web/fundamentals/design-and-ux/responsive/)
+* Social Sharing
+    * [twitter cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards) / [twitter button guides](https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview.html)
+	* [Facebook Share Dialog](https://developers.facebook.com/docs/sharing/reference/share-dialog) / [~~facebook share button~~](https://developers.facebook.com/docs/plugins/share-button/#)
+	* [Facebook Include JS SDK](https://developers.facebook.com/docs/javascript/quickstart)
+    * [tumblr buttons](https://www.tumblr.com/buttons)
+
 
 ### Django / Wagtail
 * [wagtailmenus](https://github.com/rkhleics/wagtailmenus)
 * [wagtail metadata](https://github.com/takeflight/wagtail-metadata)
+    * don't forget site name in Wagtail Admin -> Settings -> Site
 * [wagtail embed videos](https://github.com/infoportugal/wagtail-embedvideos)
 * Pagination
 	* [django-el-pagination](https://django-el-pagination.readthedocs.io/en/latest/)
 	* [reddit help](https://www.reddit.com/r/django/comments/9p70uf/adding_load_more_functionality_to_wagtail_via/)
+

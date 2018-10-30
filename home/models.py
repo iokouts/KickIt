@@ -39,3 +39,6 @@ class HomePage(MetadataPageMixin, Page):
 
         return context
 
+    def get_meta_title(self):
+        return self.title
+
