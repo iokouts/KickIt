@@ -66,6 +66,7 @@ $ python manage.py runserver
 - [ ] Tags Index Page
 - [ ] Other Main Menu Pages
 - [ ] 404 / 500 error pages
+- [ ] favicon
 - [ ] Responsive Design
     * small desktop / tablet
     * mobile
