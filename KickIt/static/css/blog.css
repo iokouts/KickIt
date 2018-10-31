@@ -16,11 +16,10 @@ body {
     position: relative;
 }
 
-.category_image {
+#category_image {
+    height: 100%;
     position: absolute;
-    right: 45px;
-    top: 95px;
-    z-index: 100;
+    top: 0;
 }
 
 .featured_post_inner {
