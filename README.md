@@ -14,13 +14,6 @@ music blog
 $ pip install -r requirements.txt
 $ python manage.py migrate
 ```
-* if that fails, try:
-```bash
-$ pip install -r pip-freeze-requirements.txt
-$ python manage.py migrate
-```
-
-
 * creates a SQLite database file in the project directory
 ```bash
 $ python manage.py createsuperuser
