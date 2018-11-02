@@ -36,8 +36,8 @@ $ python manage.py runserver
 	* adjust ~~open-graph~~ / twitter tags
 	* get FB App ID
 	* get tumblr account
-- [ ] Newsletter 
-	* [django-newsletter](https://github.com/dokterbob/django-newsletter)
+- [ ] Newsletter with MailChimp (?)
+
 - [x] ~~Add Video Embed App~~
 - [ ] Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
 
@@ -71,6 +71,7 @@ $ python manage.py runserver
 	* [Facebook Include JS SDK](https://developers.facebook.com/docs/javascript/quickstart)
     * [tumblr buttons](https://www.tumblr.com/buttons)
 
+* [MailChimp API](https://developer.mailchimp.com/documentation/mailchimp/guides/get-started-with-mailchimp-api-3/#resources)
 
 ### Django / Wagtail
 * [wagtailmenus](https://github.com/rkhleics/wagtailmenus)
@@ -80,4 +81,4 @@ $ python manage.py runserver
 * Pagination
 	* [django-el-pagination](https://django-el-pagination.readthedocs.io/en/latest/)
 	* [reddit help](https://www.reddit.com/r/django/comments/9p70uf/adding_load_more_functionality_to_wagtail_via/)
-
+* [django-newsletter](https://github.com/dokterbob/django-newsletter)
