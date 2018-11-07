@@ -4,8 +4,8 @@
     <div class="newsletter_title">Newsletter</div>
     <div class="newsletter_subtitle">Join the Fam with no spam</div>
     <form>
-        <input type="email" placeholder="Your email" />
-        <button type="submit"><span>Kick It!</span></button>
+        <input action="" method="POST" type="email" placeholder="Your email" data_url/>
+        <button id="submit" type="submit"><span>Kick It!</span></button>
     </form>
 </div>
 <div class="footer_main">
@@ -19,3 +19,16 @@
         <div class="footer_logo">K</div>
     </div>
 </div>
+
+<script>
+	$(function(){
+		 $('form').on('submit', function(e){
+		     e.preventDefault();
+		     $.ajax({
+		         url: $(this).attr('action'),
+		         method: $(this).attr('method'),
+		         success: function(data){ $('#target').html(data) }
+		     });
+		 });
+	});
+</script>

@@ -82,3 +82,4 @@ $ python manage.py runserver
 	* [django-el-pagination](https://django-el-pagination.readthedocs.io/en/latest/)
 	* [reddit help](https://www.reddit.com/r/django/comments/9p70uf/adding_load_more_functionality_to_wagtail_via/)
 * [django-newsletter](https://github.com/dokterbob/django-newsletter)
+* [wagtail site settings](https://vix.digital/insights/creating-using-custom-settings-in-your-wagtail-site/)
