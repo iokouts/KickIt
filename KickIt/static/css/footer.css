@@ -24,6 +24,10 @@ footer {
 	font-size: 18px;
 }
 
+#mc_embed_signup div {
+	display: inline-block;
+}
+
 .newsletter form {
 	padding-top: 35px;
 }
@@ -32,11 +36,11 @@ footer {
 	width: 260px;
 	height: 28px;
 	padding-left: 5px;
-	margin-right: 20px;
+	margin-right: 5px;
 	font-family: Neutra-Light;
 }
 
-.newsletter form button {
+.newsletter form #submit {
 	width: 100px;
 	height: 28px;
 	border-radius: 5px;
@@ -44,11 +48,11 @@ footer {
     box-shadow: none;
 }
 
-.newsletter form button:hover {
+.newsletter form #submit:hover {
     cursor: pointer;
 }
 
-.newsletter form button span {
+.newsletter form #submit span {
     font-family: Neutra-Demi;
     font-size: 20px;
     line-height: 15px;

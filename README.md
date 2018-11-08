@@ -36,7 +36,7 @@ $ python manage.py runserver
 	* adjust ~~open-graph~~ / twitter tags
 	* get FB App ID
 	* get tumblr account
-- [ ] Newsletter with MailChimp (?)
+- [x] ~~Newsletter with MailChimp~~
 
 - [x] ~~Add Video Embed App~~
 - [ ] Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
