@@ -27,7 +27,6 @@ footer {
 #mc_embed_signup div {
 	display: inline-block;
 }
-
 .newsletter form {
 	padding-top: 35px;
 }
@@ -41,6 +40,11 @@ footer {
 }
 
 .newsletter form #submit {
+	margin-right: 20px;
+	font-family: Neutra-Light;
+}
+
+.newsletter form button {
 	width: 100px;
 	height: 28px;
 	border-radius: 5px;
