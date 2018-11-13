@@ -20,6 +20,11 @@ $ python manage.py createsuperuser
 $ python manage.py runserver
 ```
 
+## Setup
+* set site name in Wagtail Admin -> Settings -> Site
+* add social media accounts: Settings -> SiteSettings
+* set mailchimp newsletter Subscribe Form: KickIt/templates/includes/footer.html
+
 ## TODO
 ### Dev
 - [ ] Change PostPage Image Gallery => Image
@@ -37,7 +42,6 @@ $ python manage.py runserver
 	* get FB App ID
 	* get tumblr account
 - [x] ~~Newsletter with MailChimp~~
-
 - [x] ~~Add Video Embed App~~
 - [ ] Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
 
@@ -76,7 +80,6 @@ $ python manage.py runserver
 ### Django / Wagtail
 * [wagtailmenus](https://github.com/rkhleics/wagtailmenus)
 * [wagtail metadata](https://github.com/takeflight/wagtail-metadata)
-    * don't forget site name in Wagtail Admin -> Settings -> Site
 * [wagtail embed videos](https://github.com/infoportugal/wagtail-embedvideos)
 * Pagination
 	* [django-el-pagination](https://django-el-pagination.readthedocs.io/en/latest/)
