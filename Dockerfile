@@ -1,5 +1,4 @@
-FROM python:3.6
-LABEL maintainer="hello@wagtail.io"
+FROM python:3.7
 
 ENV PYTHONUNBUFFERED 1
 ENV DJANGO_ENV dev
@@ -11,11 +10,9 @@ RUN pip install gunicorn
 COPY . /code/
 WORKDIR /code/
 
-RUN python manage.py migrate
-
 RUN useradd wagtail
 RUN chown -R wagtail /code
 USER wagtail
 
 EXPOSE 8000
-CMD exec gunicorn KickIt.wsgi:application --bind 0.0.0.0:8000 --workers 3
+CMD ./bin/gunicorn.sh
