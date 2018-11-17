@@ -7,7 +7,7 @@ music blog
 * [Wagtail](https://wagtail.io) - the powerfull CMS for modern websites
 	* [Wagtail Docs](http://docs.wagtail.io/en/latest/index.html)
 
-## Installation (probably)
+## Installation
 * pull
 * use venv with python 3.6
 ```bash
@@ -29,12 +29,12 @@ $ python manage.py runserver
 ### Dev
 - [ ] Change PostPage Image Gallery => Image
 - [ ] HomePage(slider) vs base jQuery version
-- [ ] hamburger menu
+- [ ] Ηamburger Μenu
 - [x] ~~Change categories functionality (remove snippet, move properties to BlogIndexPage)~~
 - [x] ~~Post Slider (BlogPage: Promote - show in frontpage slider)~~
 - [ ] Related Posts in PostPage: show the 3 posts with the biggest number of common tags
 - [x] ~~Greek Dates~~
-- [x] ~~Check posts_grid.html js~~ (should be ok)
+- [x] ~~Check posts_grid.html js~~
 - [x] ~~Main menu~~
 - [x] ~~Post Index Pagination~~
 - [ ] SEO / Share Buttons
@@ -44,6 +44,7 @@ $ python manage.py runserver
 - [x] ~~Newsletter with MailChimp~~
 - [x] ~~Add Video Embed App~~
 - [ ] Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
+- [ ] Clean Repo README
 
 ### Server
 - [x] ~~Domain Name~~
