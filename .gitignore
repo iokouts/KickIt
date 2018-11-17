@@ -4,3 +4,4 @@ venv
 KickIt/static/fonts
 __pycache__
 media
+static
