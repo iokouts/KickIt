@@ -40,16 +40,15 @@ footer {
 }
 
 .newsletter form #submit {
-	margin-right: 20px;
 	font-family: Neutra-Light;
-}
-
-.newsletter form button {
+	color: #191b1a;
 	width: 100px;
 	height: 28px;
 	border-radius: 5px;
 	background-color: #ffed00;
     box-shadow: none;
+	padding: 0;
+	margin: 0;
 }
 
 .newsletter form #submit:hover {
@@ -109,4 +108,10 @@ footer {
     width: 50px;
     padding: 20px 10px;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+	.newsletter form input {
+		width: 150px;
+	}
 }

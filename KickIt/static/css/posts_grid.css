@@ -73,3 +73,18 @@
 	font-family: Neutra-Demi;
 	font-size: 28px;
 }
+
+@media screen and (max-width: 500px) {
+
+    .main_grid_single {
+        height: 350px;
+        background: #f7f6f6;
+    }
+
+    .grid_img_container {
+        width: 350px;
+        height: 200px;
+        overflow: hidden;
+    }
+
+}

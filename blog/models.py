@@ -68,7 +68,7 @@ class BlogIndexPage(MetadataPageMixin, Page):
         blogpages = self.get_children().order_by('-first_published_at')
 
         context['blog_featured'] = blogpages[:3]
-        context['page_template'] = 'home/article_thumbnail.html'
+        # context['page_template'] = 'home/article_thumbnail.html'
         context['posts'] = blogpages[3:]
 
         return context

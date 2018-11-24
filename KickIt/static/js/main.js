@@ -27,5 +27,7 @@ function changeBackground(x, color){
 }
 
 function resetBackground(x){
-    x.style.background = '#fff';
+    var color;
+    (screen.width <= 500) ? color = '#f7f6f6' : color='#fff';
+    x.style.background = color;
 }

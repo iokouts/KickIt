@@ -13,6 +13,8 @@
         {% image page.icon original as pageImage %}
         <img id="category_image" src="{{ pageImage.url }}" alt="{{ page.title }}"/>
 
+        <div id="category_label">LATEST</div>
+
         <div class="main_container featured_post_inner">
 
             {% with blog_featured|first as post %}
