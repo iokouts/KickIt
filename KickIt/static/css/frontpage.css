@@ -196,5 +196,10 @@ body {
         background: #fff;
     }
 
+    .main_grid_single_info {
+        padding: 30px 0 0 20px !important;
+        display: block !important;
+    }
+
 
 }

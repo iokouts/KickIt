@@ -3,17 +3,17 @@
     grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
 	column-gap: 35px;
 	row-gap: 30px;
-	padding: 80px 10px 0 10px;
+	padding-top: 80px;
 }
 
 .main_grid_single {
 	background: #fff;
+    width: 310px;
 	height: 370px;
     justify-self: center;
 }
 
 .grid_img_container {
-    width: 310px;
     height: 180px;
     overflow: hidden;
 }
@@ -58,7 +58,6 @@
 
 .main_grid_single_info {
 	padding: 60px 30px 25px 25px;
-    max-width: 250px;
 }
 
 .main_grid_single_info span {
@@ -72,17 +71,28 @@
 	color: #000;
 	font-family: Neutra-Demi;
 	font-size: 28px;
+    max-width: 250px;
 }
 
 @media screen and (max-width: 500px) {
 
     .main_grid_single {
+        max-width: 350px;
+        min-width: 300px;
         height: 350px;
         background: #f7f6f6;
     }
 
+    .main_grid_single_info {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 150px;
+        width: 100%;
+    }
+
     .grid_img_container {
-        width: 350px;
         height: 200px;
         overflow: hidden;
     }

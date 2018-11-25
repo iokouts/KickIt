@@ -28,6 +28,11 @@
        }(document, 'script', 'facebook-jssdk'));
     </script>
 
+    {% with page.get_parent as post_category %}
+    <div class="post_mobile_banner" style="background: {{ post_category.specific.main_color }}">
+        <div id="category_label">LATEST</div>
+    </div>
+
     <div class="main_container post_image_area">
         <div class="post_image_container">
             {% image page.main_image original as pageImage %}
@@ -40,21 +45,24 @@
             <div class="post_article_title">{{ page.title }}</div>
             <div class="post_article_extra">
                 <a class="author" href="{{ page.specific.author.url }}">{{ page.specific.author.name }}</a>/
-                {% with page.get_parent as post_category %}
-                <a class="category" href="{{ post_category.url }}">{{ post_category.title }}</a>/
-                {% endwith %}
+
+                <a class="category" style="color: {{ post_category.specific.main_color }};" href="{{ post_category.url }}">{{ post_category.title }}</a>/
+
                 <div class="time">{{ page.greek_date }}</div>
             </div>
         </div>
 
         <div class="post_article_body">{{ page.body|richtext }}</div>
     </div>
+    {% endwith %}
 
     <div class="main_container post_video_area">
         <div class="post_video_container">
-             {% video page.video.url as video %}
-                     {% video video '800x400' %}
-             {% endvideo %}
+            {% if page.video %}
+                {% video page.video.url as video %}
+                    {% video video '800x400' %}
+                {% endvideo %}
+             {% endif %}
         </div>
     </div>
 
