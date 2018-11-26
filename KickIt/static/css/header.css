@@ -79,7 +79,7 @@ nav {
     padding-right: 40px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 725px) {
 
     .hamburger {
         display: inline-block;
