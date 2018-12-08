@@ -18,7 +18,7 @@
                         </a>
                 </svg>
 
-                <!-- <object  type="image/svg+xml" data="{% static 'assets/logo.svg' %}"></object> -->
+
             </div>
             <button class="hamburger hamburger--spin" type="button" onclick="hamburgerButtonClick()">
                 <span class="hamburger-box">
@@ -27,6 +27,7 @@
             </button>
 
             {% main_menu max_levels=2 use_specific=USE_SPECIFIC_TOP_LEVEL apply_active_classes=True template="menus/main/level_1.html" %}
+
         </div>
     </nav>
 {% endblock %}

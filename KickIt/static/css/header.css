@@ -1,16 +1,16 @@
 nav {
     grid-area: header;
     height: 70px;
-    z-index: 2000;
+    z-index: 300;
     background: #191b1a;
     -webkit-transition: -webkit- all .2s ease-in-out;
-    -moz-transition: -moz- all .2s ease-in-out;
+    /*-moz-transition: -moz- all .2s ease-in-out;*/
     -ms-transition: -ms- all .2s ease-in-out;
     -o-transition: -o- all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
 
-.hamburger {
+.hamburger, .social_menu_mobile {
     display: none;
 }
 
@@ -19,7 +19,7 @@ nav {
 }
 
 #logo_path {
-    fill: #fff !important;
+    fill: #fff;
 }
 
 .sticky_menu.sticky {
@@ -83,9 +83,9 @@ nav {
 
     .hamburger {
         display: inline-block;
-        border-radius: 50px;
-        width: 50px;
-        height: 50px;
+        border-radius: 45px;
+        width: 45px;
+        height: 45px;
         background: #ffed00;
     }
 
@@ -96,10 +96,15 @@ nav {
     .mobile_menu {
         display: block !important;
         width: 100%;
-        position: absolute;
+        position: fixed;
         top: 70px;
         background: #191b1a;
         padding-top: 10px;
+        color: #ffffff;
+    }
+
+    .mobile_menu * {
+        color: #ffffff;
     }
 
     .mobile_menu ul {
@@ -126,6 +131,10 @@ nav {
     .mobile_menu ul li a {
         font-size: 30px;
         color: #ffffff !important;
+    }
+
+    .social_menu_mobile {
+        display: block !important;
     }
 
     /*!
@@ -171,7 +180,7 @@ nav {
     }
 
     .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-        width: 33px;
+        width: 27px;
         height: 4px;
         background-color: #000;
         border-radius: 4px;

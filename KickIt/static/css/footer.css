@@ -65,21 +65,8 @@ footer {
 	background: #f7f6f6;
 }
 
-.footer_main .social {
-	padding-top: 35px;
-    display: flex;
-    justify-content: space-evenly;
-    max-width: 300px;
-    margin: 0 auto;
-}
-
-.footer_main .social a {
-	display: inline-block;
-	font-size: 38px;
-}
-
-.footer_main .social i:last-child {
-	//margin-right: 0;
+.footer_social_container a {
+    color: #000;
 }
 
 .footer_copyright {
