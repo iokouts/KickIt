@@ -44,10 +44,8 @@
         <div class="post_article_title_container">
             <div class="post_article_title">{{ page.title }}</div>
             <div class="post_article_extra">
-                <a class="author" href="{{ page.specific.author.url }}">{{ page.specific.author.name }}</a>/
-
+                <p class="author">{{ page.specific.author.name }}</p>/
                 <a class="category" style="color: {{ post_category.specific.main_color }};" href="{{ post_category.url }}">{{ post_category.title }}</a>/
-
                 <div class="time">{{ page.greek_date }}</div>
             </div>
         </div>
@@ -99,24 +97,28 @@
 
     <div class="main_container just_space"></div>
 
-    <script>
-        var window = document.window;
+    {% block scripts %}
+    {{ block.super }}
+        <script>
+            var window = document.window;
 
-        document.getElementById('fb_shareBtn').onclick = function() {
-          FB.ui({
-            method: 'share',
-            display: 'popup',
-            href: '{{ request.build_absolute_uri }}'
-          }, function(response){});
-        };
+            document.getElementById('fb_shareBtn').onclick = function() {
+              FB.ui({
+                method: 'share',
+                display: 'popup',
+                href: '{{ request.build_absolute_uri }}'
+              }, function(response){});
+            };
 
-        document.getElementById('tumblr_shareBtn').onclick = function() {
-            window.open('https://www.tumblr.com/widgets/share/tool?canonicalUrl={{ request.build_absolute_uri }}','ShareTumblr','width=540,height=600');
-        };
+            document.getElementById('tumblr_shareBtn').onclick = function() {
+                window.open('https://www.tumblr.com/widgets/share/tool?canonicalUrl={{ request.build_absolute_uri }}','ShareTumblr','width=540,height=600');
+            };
 
-        document.getElementById('twitter_shareBtn').onclick = function() {
-            window.open('https://twitter.com/intent/tweet','ShareTwitter','width=540,height=600');
-        };
-    </script>
+            document.getElementById('twitter_shareBtn').onclick = function() {
+                window.open('https://twitter.com/intent/tweet','ShareTwitter','width=540,height=600');
+            };
+        </script>
+    {% endblock %}
+
 
 {% endblock %}

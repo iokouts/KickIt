@@ -63,6 +63,10 @@ body {
     padding-right: 5px;
 }
 
+.post_article_extra .author {
+    color: #000000;
+}
+
 .post_article_body {
     font-family: Neutra-Book;
     font-size: 18px;
