@@ -268,11 +268,12 @@ body {
     .subfeatured_grid {
         grid-template-columns: 1fr;
         padding-block-end: 0;
+        padding: 0;
     }
 
     .subfeatured_single {
         max-width: 350px;
-        min-width: 300px;
+        min-width: 310px;
         text-align: center;
         margin-bottom: 20px;
         background: #f7f6f6;
@@ -290,9 +291,6 @@ body {
         justify-content: center;
         height: 150px;
         max-width: 100%;
-    }
-
-    .subfeatured_title a {
         font-size: 28px;
     }
 
