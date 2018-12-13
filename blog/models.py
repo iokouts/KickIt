@@ -23,6 +23,15 @@ from babel.dates import format_date
 
 
 class BlogTagIndexPage(Page):
+    icon = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True,
+        on_delete=models.SET_NULL, related_name='+'
+    )
+
+    content_panels = Page.content_panels + [
+        ImageChooserPanel('icon'),
+    ]
+
     def get_context(self, request):
         # Filter by tag
         tag = request.GET.get('tag')
