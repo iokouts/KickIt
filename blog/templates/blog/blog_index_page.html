@@ -13,7 +13,10 @@
         {% image page.icon original as pageImage %}
         <img id="category_image" src="{{ pageImage.url }}" alt="{{ page.title }}"/>
 
-        <div id="category_label">LATEST</div>
+        <div id="category_label">
+            {% image page.mobile_banner original as mobile_banner %}
+            <img src="{{ mobile_banner.url }}" alt="{{ page.title }}"/>
+        </div>
 
         <div class="main_container featured_post_inner">
 

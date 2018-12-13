@@ -20,6 +20,11 @@ body {
     height: 50px;
 }
 
+#category_label {
+    height: 30px;
+    padding: 10px;
+}
+
 .post_image_area {
     grid-area: post_image_area;
     padding-top: 80px;

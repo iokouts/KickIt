@@ -30,7 +30,10 @@
 
     {% with page.get_parent as post_category %}
     <div class="post_mobile_banner" style="background: {{ post_category.specific.main_color }}">
-        <div id="category_label">LATEST</div>
+        <div id="category_label">
+            {% image post_category.specific.mobile_banner original as mobile_banner %}
+            <img src="{{ mobile_banner.url }}" alt="{{ post_category.title }}"/>
+        </div>
     </div>
 
     <div class="main_container post_image_area">

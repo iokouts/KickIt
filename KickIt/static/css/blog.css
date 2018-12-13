@@ -17,12 +17,16 @@ body {
 
 #category_label {
     display: none;
+    position: absolute;
+    top: 20px;
+    left: 50px;
 }
 
 #category_image {
     height: 100%;
     position: absolute;
     top: 0;
+    right: 0;
 }
 
 .featured_post_inner {
@@ -179,9 +183,16 @@ body {
 }
 
 @media screen and (min-width: 501px) and (max-width: 930px) {
+    #category_label {
+        display: block;
+    }
 
     .featured_post_inner {
         text-align: center;
+    }
+
+    .subfeatured_area {
+        margin-top: -25px;
     }
 
     .subfeatured_grid {
@@ -215,9 +226,6 @@ body {
 
     #category_label {
         display: block;
-        position: absolute;
-        top: 20px;
-        left: 50px;
     }
 
     .featured_post_container {

@@ -56,10 +56,15 @@ class BlogIndexPage(MetadataPageMixin, Page):
         on_delete=models.SET_NULL, related_name='+'
     )
     main_color = models.CharField(max_length=7, default='#000')
+    mobile_banner = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True,
+        on_delete=models.SET_NULL, related_name='+'
+    )
 
     content_panels = Page.content_panels + [
         FieldPanel('intro', classname="full"),
         ImageChooserPanel('icon'),
+        ImageChooserPanel('mobile_banner'),
         FieldPanel('main_color'),
     ]
 
