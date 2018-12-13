@@ -22,6 +22,8 @@ nav {
     display: block;
 	text-align: center;
 	padding-top: 30px;
+    margin: 0 auto;
+    float: none;
 }
 
 .sticky_menu .menu ul li a {
@@ -36,6 +38,7 @@ nav {
 	display: block;
 	text-align: center;
     width: 190px;
+    margin: 0 auto;
 }
 
 /*sticky*/
@@ -80,6 +83,7 @@ nav {
 
     .sticky_menu .logo {
         width: 130px;
+        display: inline-block;
     }
 
     .sticky_menu.sticky {
@@ -92,11 +96,6 @@ nav {
     }
 
     .sticky_menu .menu_holder {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         padding-top: 12px;
-        max-width: 1250px;
-        margin: 0 auto;
     }
 }
