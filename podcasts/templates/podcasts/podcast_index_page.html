@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/podcasts_index.css' %}">
+    {% endblock %}
+
+    <div class="banner">
+        <div class="main_container">
+            <div class="icon_container">
+                {% image page.icon original as icon %}
+                <img src="{{ icon.url }}" alt="{{ page.title }}"/>
+            </div>
+            <div class="banner_title">Choose your mood & Play</div>
+        </div>
+    </div>
+
+    <div class="podcasts_top">
+        <div class="main_container">
+            <div class="main_posts_grid">
+                {% include "blog/posts_grid_paginate.html" %}
+            </div>
+        </div>
+    </div>
+
+    {% block scripts %}
+        {{ block.super }}
+    {% endblock %}
+
+{% endblock %}
