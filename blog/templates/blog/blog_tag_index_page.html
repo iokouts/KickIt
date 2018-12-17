@@ -9,7 +9,11 @@
         <link rel="stylesheet" href="{% static 'css/posts_grid.css' %}">
     {% endblock %}
 
-    <div class="main_container">
+    <div class="main_container tags_main_container">
+        <div class="tags_banner_container">
+            {% image page.icon original as tags_banner %}
+            <img src="{{ tags_banner.url }}" alt="{{ page.title }}"/>
+        </div>
         {% if request.GET.tag|length %}
             <h4>#{{ request.GET.tag }}</h4>
         {% else %}

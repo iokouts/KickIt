@@ -12,10 +12,11 @@ body {
 	grid-area: slider_area;
 }
 
-.test_slider {
+.frontpage_slider {
 	position: relative;
 	height: 100%;
 	margin: 0 !important;
+    border: none !important;
 }
 
 .slider_box {
@@ -169,4 +170,54 @@ body {
     .main_parallax_title p {
 	    font-size: 112px;
     }
+}
+
+@media screen and (min-width:501px) and (max-width: 725px) {
+    .slider_box {
+        height: 80px;
+        margin-top: -90px;
+    }
+
+    .flex-direction-nav {
+        right: 5%;
+    }
+
+    .big_dot {
+        height: 110px;
+        width: 110px;
+        right: -8%;
+        top: 90%;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .main_parallax {
+	    display: none;
+    }
+
+    .big_dot {
+	    display: none;
+    }
+
+    .slider_box {
+        width: 80%;
+        height: 75px;
+        margin-top: -60px;
+    }
+
+    .flex-direction-nav {
+        bottom: 4%;
+    }
+
+    .posts_area {
+        background: #fff;
+    }
+
+    .main_grid_single_info {
+        padding: 30px 0 0 20px !important;
+        display: block !important;
+    }
+
+
 }
