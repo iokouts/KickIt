@@ -1,76 +1,257 @@
 nav {
     grid-area: header;
     height: 70px;
-    z-index: 2000;
-	background: #191b1a;
-	-webkit-transition: -webkit- all .2s ease-in-out;
-	-moz-transition: -moz- all .2s ease-in-out;
-	-ms-transition: -ms- all .2s ease-in-out;
-	-o-transition: -o- all .2s ease-in-out;
-	transition: all .2s ease-in-out;
+    z-index: 300;
+    background: #191b1a;
+    -webkit-transition: -webkit- all .2s ease-in-out;
+    /*-moz-transition: -moz- all .2s ease-in-out;*/
+    -ms-transition: -ms- all .2s ease-in-out;
+    -o-transition: -o- all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.hamburger, .social_menu_mobile {
+    display: none;
 }
 
 .sticky_menu .logo {
-	width: 110px;
+    width: 110px;
 }
 
 #logo_path {
-    fill: #fff !important;
+    fill: #fff;
 }
 
 .sticky_menu.sticky {
-	position: fixed;
-	margin: 0;
+    position: fixed;
+    margin: 0;
     top: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
 }
 
 .sticky_menu .menu_holder {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding-top: 12px;
-    max-width: 1250px;
+    display: block;
+    padding-top: 12px;
+    max-width: 1050px;
     margin: 0 auto;
 }
 
+.sticky_menu .menu {
+    float: right;
+    padding-top: 15px;
+}
+
 .sticky_menu .menu ul li a {
-	color: #585857;
+    color: #585857;
 }
 
 .sticky_menu .menu ul li:active a {
-	color: #fff;
+    color: #fff;
 }
 
 .menu .active {
-	color: #fff !important;
+    color: #fff !important;
 }
 
 .sticky_menu .menu ul li a:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .sticky_menu .logo, .sticky_menu .menu {
     display: inline-block;
-	margin: 0 auto;
 }
 
 .sticky_menu .logo img {
-	height: 40px;
+    height: 40px;
 }
 
 .sticky_menu .menu ul {
-	list-style: none;
-	display: inline-block;
+    list-style: none;
+    display: inline-block;
 }
 
 .sticky_menu .menu ul li {
-	display: inline-block;
-	margin: 0 auto;
-	text-align: center;
-	font-family: Neutra-Demi;
-	font-size: 22px;
-	padding-right: 40px;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Neutra-Demi;
+    font-size: 22px;
+    padding-right: 40px;
+}
+
+@media screen and (min-width: 726px) and (max-width: 1100px) {
+    .sticky_menu .logo {
+        padding-left: 40px;
+    }
+}
+
+@media screen and (max-width: 725px) {
+
+    .sticky_menu .menu_holder {
+        text-align: center;
+    }
+
+    .sticky_menu .logo {
+        padding-left: 60px;
+    }
+
+
+    .hamburger {
+        display: inline-block;
+        border-radius: 45px;
+        width: 45px;
+        height: 45px;
+        background: #ffed00;
+        float: right;
+    }
+
+    .menu {
+        display: none !important;
+    }
+
+    .mobile_menu {
+        display: block !important;
+        width: 100%;
+        position: fixed;
+        top: 70px;
+        background: #191b1a;
+        padding-top: 10px;
+        color: #ffffff;
+    }
+
+    .mobile_menu * {
+        color: #ffffff;
+    }
+
+    .mobile_menu ul {
+        display: block !important;
+    }
+
+    .mobile_menu ul li {
+        display: block !important;
+        height: 40px;
+        text-align: center;
+        padding: 10px 0 0 0 !important;
+    }
+
+    .mobile_menu ul li:after {
+        content : "";
+        position: absolute;
+        border-bottom: 1px solid #b2b2b2;
+        width: 180px;
+        left: 50%;
+        margin-left: -90px;
+        padding-top: 5px;
+    }
+
+    .mobile_menu ul li a {
+        font-size: 30px;
+        color: #ffffff !important;
+    }
+
+    .social_menu_mobile {
+        display: block !important;
+    }
+
+    /*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+    .hamburger {
+        cursor: pointer;
+        transition-property: opacity, filter;
+        transition-duration: 0.15s;
+        transition-timing-function: linear;
+        text-transform: none;
+        margin-right: 15px;
+    }
+
+    .hamburger:hover {
+        opacity: 0.7;
+    }
+
+    .hamburger.is-active:hover {
+        opacity: 0.7;
+    }
+
+    .hamburger.is-active .hamburger-inner,
+    .hamburger.is-active .hamburger-inner::before,
+    .hamburger.is-active .hamburger-inner::after {
+        background-color: #000;
+    }
+
+    .hamburger-box {
+        margin-left: 9px;
+        display: block;
+        position: absolute;
+    }
+
+    .hamburger-inner {
+        display: block;
+        top: 50%;
+        margin-top: -2px;
+    }
+
+    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+        width: 27px;
+        height: 4px;
+        background-color: #000;
+        border-radius: 4px;
+        position: absolute;
+        transition-property: transform;
+        transition-duration: 0.15s;
+        transition-timing-function: ease;
+    }
+
+    .hamburger-inner::before, .hamburger-inner::after {
+        content: "";
+        display: block;
+    }
+
+    .hamburger-inner::before {
+        top: -10px;
+    }
+
+    .hamburger-inner::after {
+        bottom: -10px;
+    }
+
+    /*
+   * Spin
+   */
+    .hamburger--spin .hamburger-inner {
+        transition-duration: 0.22s;
+        transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+    .hamburger--spin .hamburger-inner::before {
+        transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+    }
+
+    .hamburger--spin .hamburger-inner::after {
+        transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+    .hamburger--spin.is-active .hamburger-inner {
+        transform: rotate(225deg);
+        transition-delay: 0.12s;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    .hamburger--spin.is-active .hamburger-inner::before {
+        top: 0;
+        opacity: 0;
+        transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+    }
+
+    .hamburger--spin.is-active .hamburger-inner::after {
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
 }

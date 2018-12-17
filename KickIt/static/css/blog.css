@@ -10,16 +10,23 @@ body {
 
 .featured_post_container {
     grid-area: featured_post;
-    //background: #ffed00;
     height: 625px;
     padding-top: 80px;
     position: relative;
+}
+
+#category_label {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 50px;
 }
 
 #category_image {
     height: 100%;
     position: absolute;
     top: 0;
+    right: 0;
 }
 
 .featured_post_inner {
@@ -84,7 +91,7 @@ body {
 
 .featured_post_extra .holder .time {
     font-family: Neutra-Book;
-    color: #9d9d9c;
+    color: #9d9d9c !important;
 }
 
 .subfeatured_area {
@@ -96,21 +103,30 @@ body {
 }
 
 .subfeatured_grid {
-    padding-block-end: 60px;
+    padding: 0 10px 60px 10px;
     display: grid;
-    /*grid-template-columns: repeat(auto-fill, minmax(485px, 1fr));*/
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 54px;
 }
 
 .subfeatured_single {
     max-width: 485px;
+    width: 100%;
+    justify-self: center;
+}
+
+.subfeatured_single a {
+    text-decoration: none;
 }
 
 .subfeatured_img_container {
     height: 280px;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.subfeatured_info_container {
+    padding: 10px;
 }
 
 .subfeatured_title {
@@ -128,9 +144,165 @@ body {
     text-overflow: ellipsis;
 }
 
+.subfeatured_img_container {
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    filter: grayscale(0%);
+    -moz-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
+}
+
+.subfeatured_single, .subfeatured_title .subfeatured_text > * {
+    -moz-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
+}
+
+.subfeatured_single a:hover {
+    color: #fff !important;
+    -moz-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+    -webkit-transition: all .5s ease-in;
+}
+
+.subfeatured_single:hover .subfeatured_img_container {
+    filter: grayscale(1);
+    filter: gray; /* IE5+ */
+    -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+    -moz-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+    -webkit-transition: all .5s ease-in;
+}
+
 .posts_area {
     grid-area: posts_area;
     background: #f7f6f6;
     padding-bottom: 100px;
     position: relative;
+}
+
+@media screen and (min-width: 501px) and (max-width: 930px) {
+    #category_label {
+        display: block;
+    }
+
+    .featured_post_inner {
+        text-align: center;
+    }
+
+    .subfeatured_area {
+        margin-top: -25px;
+    }
+
+    .subfeatured_grid {
+        grid-template-columns: 1fr;
+        padding-block-end: 0;
+    }
+
+    .subfeatured_single {
+        width: 420px;
+        justify-self: center;
+        margin-bottom: 20px;
+    }
+
+    .subfeatured_img_container {
+        height: 230px;
+        padding-bottom: 10px;
+    }
+
+    .subfeatured_info_container {
+        border: 1px solid #f7f6f6;
+        border-top: none;
+        text-align: center;
+    }
+
+    .subfeatured_info_container:hover {
+        border:none !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    #category_label {
+        display: block;
+    }
+
+    .featured_post_container {
+        padding-top: 100px;
+        height: 315px;
+    }
+
+    .posts_area {
+        background: #ffffff;
+    }
+
+    .featured_post_inner {
+        text-align: center;
+        width: 310px;
+        height: 200px;
+    }
+
+    .featured_post_img_container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .featured_post_image {
+        background-size: contain;
+    }
+
+    .featured_post_title {
+        font-family: Neutra-Demi;
+	    font-size: 28px;
+        text-align: center;
+        padding-top: 0;
+    }
+
+    .featured_post_info {
+        padding: 0;
+    }
+
+    .featured_post_subtitle, .featured_post_extra, .main_grid_single_info span, .subfeatured_text {
+        display: none !important;
+    }
+
+    .subfeatured_area {
+        margin-top: 70px;
+        width: auto;
+    }
+
+    .subfeatured_grid {
+        grid-template-columns: 1fr;
+        padding-block-end: 0;
+        padding: 0;
+    }
+
+    .subfeatured_single {
+        max-width: 350px;
+        min-width: 310px;
+        text-align: center;
+        margin-bottom: 20px;
+        background: #f7f6f6;
+    }
+
+    .subfeatured_img_container {
+        height: 200px;
+    }
+
+    .subfeatured_title {
+        padding-top: 0;
+        font-family: Neutra-Demi;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 150px;
+        max-width: 100%;
+        font-size: 28px;
+    }
+
+    .main_posts_grid {
+        padding: 20px 0 0 0 !important;
+    }
 }
