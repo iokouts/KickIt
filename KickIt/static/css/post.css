@@ -2,6 +2,7 @@ body {
 	display: grid;
 	grid-template-areas:
 		"header"
+        "post_mobile_banner"
         "post_image_area"
         "post_article_area"
         "post_video_area"
@@ -10,6 +11,18 @@ body {
         "post_related_area"
         "just_space"
 		"footer"
+}
+
+.post_mobile_banner {
+    grid-area: post_mobile_banner;
+    display: none;
+    width: 100%;
+    height: 50px;
+}
+
+#category_label {
+    height: 30px;
+    padding: 10px;
 }
 
 .post_image_area {
@@ -55,8 +68,8 @@ body {
     padding-right: 5px;
 }
 
-.post_article_extra .category {
-    color: #ddca00;
+.post_article_extra .author {
+    color: #000000;
 }
 
 .post_article_body {
@@ -65,8 +78,12 @@ body {
     padding-bottom: 55px;
 }
 
+.post_article_body .rich-text {
+    padding: 0 15px;
+}
+
 .post_article_body .rich-text > p {
-    padding: 0 15px 25px 15px;
+    padding-bottom: 25px;
     text-align: justify;
     line-height: 25px;
     text-indent: 1em;
@@ -169,8 +186,115 @@ body {
     grid-area: just_space;
 }
 
+.responsive-object {
+    padding: 0 20px !important;
+    text-align: center;
+}
+
+.responsive-object iframe {
+    width: 100%;
+    height: 400px;
+    max-width: 800px;
+}
+
 @media screen and (min-width: 1100px) {
     .post_image_area{
         padding-top: 150px;
     }
 }
+
+@media screen and (max-width: 1100px) {
+    .post_video_container iframe {
+        width: 100%;
+        max-width: 800px;
+        height: 350px;
+    }
+
+    .responsive-object iframe {
+        height: 350px;
+    }
+
+    .post_related_area .main_posts_grid {
+        grid-template-columns: none;
+    }
+
+    .post_related_area .main_posts_grid .main_grid_single {
+        width: 500px;
+        height: 180px;
+    }
+
+    .post_related_area .main_posts_grid .grid_img_container,
+    .post_related_area .main_posts_grid .main_grid_single_info {
+        display: inline-block;
+    }
+
+    .post_related_area .main_posts_grid .grid_img_container {
+        width: 180px;
+        height: 180px;
+    }
+
+    .post_related_area .main_posts_grid .grid_img_container img {
+        object-fit: cover;
+    }
+
+    .post_related_area .main_posts_grid .main_grid_single_info {
+        vertical-align: top;
+        padding-top: 30px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .post_mobile_banner {
+        display: block;
+    }
+
+    .post_image_area {
+        padding-top: 50px;
+    }
+
+    .post_video_container iframe, .responsive-object iframe  {
+        height: 300px;
+    }
+
+    .post_related_area .main_posts_grid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .post_related_area .main_posts_grid .main_grid_single {
+        width: 100%;
+        max-width: none;
+        height: 145px;
+        border: none;
+        /*background: #ffffff !important;*/
+    }
+
+    .post_related_area .main_posts_grid .grid_img_container {
+        width: 145px;
+        height: 145px;
+    }
+
+    .post_related_area .main_posts_grid .main_grid_single_info {
+        vertical-align: top;
+        width: 50%;
+        padding: 10px 0 0 5px;
+        word-wrap: break-word;
+    }
+
+    .post_related_area .main_posts_grid .main_grid_single_info p {
+        width: 100%;
+        max-width: none;
+        font-size: 24px;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+    .post_related_area .main_posts_grid .grid_img_container {
+        width: 100px;
+        height: 100%;
+    }
+}
+
+

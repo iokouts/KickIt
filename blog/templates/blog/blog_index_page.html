@@ -13,6 +13,11 @@
         {% image page.icon original as pageImage %}
         <img id="category_image" src="{{ pageImage.url }}" alt="{{ page.title }}"/>
 
+        <div id="category_label">
+            {% image page.mobile_banner original as mobile_banner %}
+            <img src="{{ mobile_banner.url }}" alt="{{ page.title }}"/>
+        </div>
+
         <div class="main_container featured_post_inner">
 
             {% with blog_featured|first as post %}
@@ -24,7 +29,7 @@
                 <div class="featured_post_title"><a href="{{ post.url }}">{{ post.title  }}</a></div>
                 <div class="featured_post_subtitle">{{ post.specific.intro }}</div>
                 <div class="featured_post_extra">
-                    <a class="author" href="{{ post.specific.author.url }}">{{ post.specific.author.name }}</a>
+                    <p class="author">{{ post.specific.author.name }}</p>
                     <div class="holder">
                         <div class="main_tag">{{ page.title|upper }}</div>
                         /
@@ -41,26 +46,34 @@
             <div class="subfeatured_grid">
                 {% if blog_featured.1 %}
                     {% with post=blog_featured.1 %}
-                        <div class="subfeatured_single">
-                            {% image post.specific.main_image original as postImage %}
+                        <div class="subfeatured_single"
+                            onmouseenter="changeBackground(this, '{{ page.main_color }}')"
+                            onmouseleave="resetBackground(this)">
                             <a href="{{ post.url }}">
+                                {% image post.specific.main_image original as postImage %}
                                 <div class="subfeatured_img_container" style="background-image: url({{ postImage.url }})"></div>
+                                <div class="subfeatured_info_container">
+                                    <div class="subfeatured_title"><p>{{ post.title }}</p></div>
+                                    <div class="subfeatured_text"><p>{{ post.specific.intro }}</p></div>
+                                </div>
                             </a>
-                            <div class="subfeatured_title"><a href="{{ post.url }}">{{ post.title  }}</a></div>
-                            <div class="subfeatured_text">{{ post.specific.intro }}</div>
                         </div>
                     {% endwith %}
                 {% endif%}
 
                 {% if blog_featured.2 %}
                     {% with post=blog_featured.2 %}
-                        <div class="subfeatured_single">
-                            {% image post.specific.main_image original as postImage %}
+                        <div class="subfeatured_single"
+                             onmouseenter="changeBackground(this, '{{ page.main_color|safe }}')"
+                             onmouseleave="resetBackground(this)">
                             <a href="{{ post.url }}">
+                                {% image post.specific.main_image original as postImage %}
                                 <div class="subfeatured_img_container" style="background-image: url({{ postImage.url }})"></div>
+                                <div class="subfeatured_info_container">
+                                    <div class="subfeatured_title">{{ post.title }}</div>
+                                    <div class="subfeatured_text">{{ post.specific.intro }}</div>
+                                </div>
                             </a>
-                            <div class="subfeatured_title"><a href="{{ post.url }}">{{ post.title }}</a></div>
-                            <div class="subfeatured_text">{{ post.specific.intro }}</div>
                         </div>
                     {% endwith %}
                 {% endif%}
@@ -78,6 +91,27 @@
 
     {% block scripts %}
         {{ block.super }}
+
+        <script>
+            //Change the color of the featured post (black or white) according to the background color
+            var rgb = $(".featured_post_container").css("background-color");
+
+            //parse the rgb string rgb(100,100,100)
+            var match = rgb.match(/rgb?\((\d{1,3}), ?(\d{1,3}), ?(\d{1,3})\)?(?:, ?(\d(?:\.\d?))\))?/);
+
+            //calculate the weight of the background color
+            var o = Math.round(((parseInt(match[1]) * 299) +
+                      (parseInt(match[2]) * 587) +
+                      (parseInt(match[3]) * 114)) / 1000);
+
+            //choose foreground color according to threshold
+            var fore = (o > 125) ? 'black' : 'white';
+
+            //set the color to all children of the featured_post_info
+            $(".featured_post_info").find('*').css("color", fore, "important");
+
+
+        </script>
 
         <script type="text/javascript" src="{% static 'el-pagination/js/el-pagination.js' %}"></script>
         <script>$.endlessPaginate();</script>
