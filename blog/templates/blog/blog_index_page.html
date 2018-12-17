@@ -92,6 +92,27 @@
     {% block scripts %}
         {{ block.super }}
 
+        <script>
+            //Change the color of the featured post (black or white) according to the background color
+            var rgb = $(".featured_post_container").css("background-color");
+
+            //parse the rgb string rgb(100,100,100)
+            var match = rgb.match(/rgb?\((\d{1,3}), ?(\d{1,3}), ?(\d{1,3})\)?(?:, ?(\d(?:\.\d?))\))?/);
+
+            //calculate the weight of the background color
+            var o = Math.round(((parseInt(match[1]) * 299) +
+                      (parseInt(match[2]) * 587) +
+                      (parseInt(match[3]) * 114)) / 1000);
+
+            //choose foreground color according to threshold
+            var fore = (o > 125) ? 'black' : 'white';
+
+            //set the color to all children of the featured_post_info
+            $(".featured_post_info").find('*').css("color", fore, "important");
+
+
+        </script>
+
         <script type="text/javascript" src="{% static 'el-pagination/js/el-pagination.js' %}"></script>
         <script>$.endlessPaginate();</script>
     {% endblock %}

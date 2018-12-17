@@ -91,7 +91,7 @@ body {
 
 .featured_post_extra .holder .time {
     font-family: Neutra-Book;
-    color: #9d9d9c;
+    color: #9d9d9c !important;
 }
 
 .subfeatured_area {
