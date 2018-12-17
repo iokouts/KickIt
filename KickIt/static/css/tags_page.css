@@ -1,7 +1,14 @@
+.tags_main_container {
+    text-align: center;
+    padding-top: 30px;
+}
+
 h4 {
-    color: #9d9d9c;
-    font-family: Neutra-Demi;
-    font-size: 25px;
+    color: #000000;
+    font-family: PFRegal-Bold;
+    font-size: 35px;
+    margin: 0;
+    padding-bottom: 20px;
 }
 
 .main_posts_grid {
@@ -9,5 +16,11 @@ h4 {
 }
 
 .tags_posts_area {
-    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 190px;
+    background: #e84070;
+}
+
+.tags_posts_area .endless_container {
+    bottom: 60px;
 }
