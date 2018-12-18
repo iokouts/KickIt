@@ -1,25 +1,17 @@
 from django.db import models
-
 from wagtail.core.models import Page, Orderable
-from wagtail.core.fields import RichTextField
 
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel, PageChooserPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 
-from wagtail.snippets.models import register_snippet
-from wagtail.snippets.edit_handlers import SnippetChooserPanel
-from wagtail.search import index
-
 from wagtailmetadata.models import MetadataPageMixin
-
-from modelcluster.fields import ParentalKey, ParentalManyToManyField
-from modelcluster.contrib.taggit import ClusterTaggableManager
-from taggit.models import TaggedItemBase, Tag as TaggitTag
 
 from babel.dates import format_date
 
+# Create your models here.
 
-class PodcastsIndexPage(Page):
+
+class PodcastIndexPage(MetadataPageMixin, Page):
     icon = models.ForeignKey(
         'wagtailimages.Image', null=True, blank=True,
         on_delete=models.SET_NULL, related_name='+'
@@ -31,7 +23,7 @@ class PodcastsIndexPage(Page):
 
     def get_context(self, request):
         context = super().get_context(request)
-        podcasts = self.get_children().order_by('-first_published_at')
+        podcasts = self.get_children().live().order_by('-first_published_at')
 
         context['podcasts'] = podcasts
 
@@ -46,7 +38,7 @@ class PodcastsIndexPage(Page):
     #         return 'blog/blog_index_page.html'
 
 
-class PodcastsPage(Page):
+class PodcastPage(Page):
     podcast_image = models.ForeignKey(
         'wagtailimages.Image', null=True, blank=True,
         on_delete=models.SET_NULL, related_name='+'
@@ -60,10 +52,35 @@ class PodcastsPage(Page):
         FieldPanel('media_url'),
     ]
 
+    # search_fields = Page.search_fields + [
+    #     index.SearchField('intro'),
+    #     index.SearchField('body'),
+    #     index.SearchField('author'),
+    #     index.SearchField('tags'),
+    # ]
+
     # def get_context(self, request):
     #     # Update context to include only published posts, ordered by reverse-chron
     #     context = super().get_context(request)
     #     blogpages = BlogPage.objects.live().order_by('-first_published_at')[:3]
     #     context['blogpages'] = blogpages
+
+    def greek_date(self):
+        return format_date(self.date, locale='el_GR')
+
+    def get_meta_image(self):
+        """A relevant Wagtail Image to show. Optional."""
+
+        if self.podcast_image:
+            return self.podcast_image
+        else:
+            return None
+
+    def get_meta_description(self):
+        """
+        A short text description of this object.
+        This should be plain text, not HTML.
+        """
+        return self.title
 
 
