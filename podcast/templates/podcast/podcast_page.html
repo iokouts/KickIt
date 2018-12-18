@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/podcast.css' %}">
+    {% endblock %}
+
+
+
+    {% block scripts %}
+        {{ block.super }}
+    {% endblock %}
+
+{% endblock %}

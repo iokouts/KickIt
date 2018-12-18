@@ -79,7 +79,7 @@ class BlogIndexPage(MetadataPageMixin, Page):
 
     def get_context(self, request):
         context = super().get_context(request)
-        blogpages = self.get_children().order_by('-first_published_at')
+        blogpages = self.get_children().live().order_by('-first_published_at')
 
         context['blog_featured'] = blogpages[:3]
         # context['page_template'] = 'home/article_thumbnail.html'
