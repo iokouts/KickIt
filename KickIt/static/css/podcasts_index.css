@@ -1,0 +1,29 @@
+body {
+	display: grid;
+	grid-template-areas:
+		"header"
+        "banner"
+		"podcasts_top"
+        "podcasts_bottom"
+		"footer"
+}
+
+.banner {
+    grid-area: banner;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.banner_title {
+    font-family: PFRegal-Bold;
+    font-size: 25px;
+}
+
+.podcasts_top {
+    grid-area: podcasts_top;
+}
+
+.podcasts_bottom{
+    grid-area: podcasts_bottom;
+    background-color: #e84070;
+}
