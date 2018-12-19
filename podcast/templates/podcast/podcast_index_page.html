@@ -6,6 +6,7 @@
 
     {% block styles %}
         <link rel="stylesheet" href="{% static 'css/podcasts_index.css' %}">
+        <link rel="stylesheet" href="{% static 'css/podcasts_grid.css' %}">
     {% endblock %}
 
     <div class="banner">
@@ -20,8 +21,8 @@
 
     <div class="podcasts_top">
         <div class="main_container">
-            <div class="main_posts_grid">
-
+            <div class="podcasts_grid">
+                {% include "podcast/podcasts_grid_paginate.html" %}
             </div>
         </div>
     </div>
@@ -36,6 +37,9 @@
 
     {% block scripts %}
         {{ block.super }}
+
+        <script type="text/javascript" src="{% static 'el-pagination/js/el-pagination.js' %}"></script>
+        <script>$.endlessPaginate();</script>
     {% endblock %}
 
 {% endblock %}

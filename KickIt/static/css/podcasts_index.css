@@ -17,13 +17,29 @@ body {
 .banner_title {
     font-family: PFRegal-Bold;
     font-size: 25px;
+    padding-top: 15px;
 }
 
 .podcasts_top {
     grid-area: podcasts_top;
+    padding-bottom: 20px;
+    background: linear-gradient(180deg, #Ffffff 50%, #e84070 50%);
 }
 
-.podcasts_bottom{
+.podcasts_bottom {
     grid-area: podcasts_bottom;
     background-color: #e84070;
+}
+
+.podcasts_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+	column-gap: 10px;
+	row-gap: 20px;
+    position: relative;
+    padding-bottom: 80px;
+}
+
+.load_more_posts {
+    color: #ffffff;
 }

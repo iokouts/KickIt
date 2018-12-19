@@ -29,13 +29,13 @@ class PodcastIndexPage(MetadataPageMixin, Page):
 
         return context
 
-    # def get_template(self, request):
-    #     if request.is_ajax():
-    #         # Template to render objects retrieved via Ajax
-    #         return 'blog/posts_grid_paginate.html'
-    #     else:
-    #         # Original template
-    #         return 'blog/blog_index_page.html'
+    def get_template(self, request):
+        if request.is_ajax():
+            # Template to render objects retrieved via Ajax
+            return 'podcast/podcasts_grid_paginate.html'
+        else:
+            # Original template
+            return 'podcast/podcast_index_page.html'
 
 
 class PodcastPage(Page):
@@ -45,11 +45,13 @@ class PodcastPage(Page):
     )
     date = models.DateField("Podcast date", default=models.fields.datetime.date.today)
     media_url = models.CharField(max_length=250)
+    description_tag = models.CharField(max_length=250, default='')
 
     content_panels = Page.content_panels + [
         ImageChooserPanel('podcast_image'),
         FieldPanel('date'),
         FieldPanel('media_url'),
+        FieldPanel('description_tag'),
     ]
 
     # search_fields = Page.search_fields + [
