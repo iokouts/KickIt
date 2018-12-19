@@ -59,7 +59,6 @@ INSTALLED_APPS = [
     'wagtailmetadata',
 
     'wagtailmenus',
-    'condensedinlinepanel',
 
     'modelcluster',
     'taggit',
@@ -109,7 +108,13 @@ TEMPLATES = [
                 'wagtail.contrib.settings.context_processors.settings',
 
                 'wagtailmenus.context_processors.wagtailmenus',
+
                 'django.template.context_processors.request',  # For EL-pagination
+
+                # 'django.template.context_processors.i18n',
+                # 'django.template.context_processors.media',
+                # 'django.template.context_processors.static',
+                # 'django.template.context_processors.tz',
             ],
         },
     },
