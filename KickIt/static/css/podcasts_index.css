@@ -3,8 +3,7 @@ body {
 	grid-template-areas:
 		"header"
         "banner"
-		"podcasts_top"
-        "podcasts_bottom"
+		"podcasts_grid_container"
 		"footer"
 }
 
@@ -20,26 +19,16 @@ body {
     padding-top: 15px;
 }
 
-.podcasts_top {
-    grid-area: podcasts_top;
+.podcasts_grid_container {
+    grid-area: podcasts_grid_container;
     padding-bottom: 20px;
-    background: linear-gradient(180deg, #Ffffff 50%, #e84070 50%);
-}
-
-.podcasts_bottom {
-    grid-area: podcasts_bottom;
-    background-color: #e84070;
 }
 
 .podcasts_grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
 	column-gap: 10px;
-	row-gap: 20px;
+	row-gap: 30px;
     position: relative;
     padding-bottom: 80px;
-}
-
-.load_more_posts {
-    color: #ffffff;
 }

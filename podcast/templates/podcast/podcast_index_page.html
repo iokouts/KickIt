@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <div class="podcasts_top">
+    <div class="podcasts_grid_container">
         <div class="main_container">
             <div class="podcasts_grid">
                 {% include "podcast/podcasts_grid_paginate.html" %}
@@ -27,16 +27,16 @@
         </div>
     </div>
 
-    <div class="podcasts_bottom">
-        <div class="main_container">
-            <div class="main_posts_grid">
-
-            </div>
-        </div>
-    </div>
-
     {% block scripts %}
         {{ block.super }}
+
+        <script>
+            $('.load_more_posts').click(
+                function () {
+                    $('.podcasts_grid_container').css('background',
+                            'linear-gradient(180deg, #ffffff 830px, #e84070 0)');
+            });
+        </script>
 
         <script type="text/javascript" src="{% static 'el-pagination/js/el-pagination.js' %}"></script>
         <script>$.endlessPaginate();</script>
