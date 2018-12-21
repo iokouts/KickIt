@@ -1,0 +1,56 @@
+body {
+	display: grid;
+	grid-template-areas:
+		"header"
+        "banner"
+        "podcast_area "
+		"post_share_area"
+		"footer"
+}
+
+.banner {
+    grid-area: banner;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.banner_title {
+    font-family: PFRegal-Bold;
+    font-size: 25px;
+    padding-top: 15px;
+}
+
+.banner_subtitle {
+    font-family: Neutra-Light;
+    font-size: 20px;
+    color: #d70b52;
+    padding-top: 10px;
+}
+
+.podcast_area {
+    grid-area: podcast_area;
+}
+
+.post_share_area {
+    grid-area: post_share_area;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.share_title {
+    padding-bottom: 15px;
+    font-family: Neutra-Demi;
+    font-size: 16px;
+}
+
+.share_social {
+    font-size: 38px;
+}
+
+.share_social i:hover {
+    cursor: pointer;
+}
+
+.share_social a {
+    display: inline-block;
+}

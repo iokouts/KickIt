@@ -8,10 +8,37 @@
         <link rel="stylesheet" href="{% static 'css/podcast.css' %}">
     {% endblock %}
 
+    <div class="banner">
+        <div class="main_container">
+            <div class="icon_container">
+                {% with  page.get_parent.specific as podcast_category %}
+                    {% image podcast_category.icon original as icon %}
+                    <img src="{{ icon.url }}" alt="{{ podcast_category.title }}"/>
+                {% endwith %}
+            </div>
+            <div class="banner_title">{{ page.title }}</div>
+            <div class="banner_subtitle"> {{ page.description_tag }} </div>
+        </div>
+    </div>
 
+    <div class="podcast_area">
+        <div class="main_container">
+        </div>
+    </div>
+
+    <div class="main_container post_share_area">
+        <div class="share_title">Tell a friend</div>
+        <div class="share_social">
+            <i id="fb_shareBtn" class="fab fa-facebook" style="color: #1f71b8;"></i>
+            <i id="twitter_shareBtn" class="fab fa-twitter-square" style="color: #009fe3;"></i>
+            <i id="tumblr_shareBtn" class="fab fa-tumblr-square" style="color: #141d33;"></i>
+        </div>
+    </div>
 
     {% block scripts %}
         {{ block.super }}
+
+        <script src="{% static 'js/social.js' %}"></script>
     {% endblock %}
 
 {% endblock %}
