@@ -45,6 +45,7 @@ $ python manage.py runserver
 - [x] ~~Add Video Embed App~~
 - [ ] Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
 - [ ] Clean Repo README
+- [ ] Remove fontawesome - include icons
 
 ### Server
 - [x] ~~Domain Name~~
