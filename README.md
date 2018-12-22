@@ -39,8 +39,8 @@ $ python manage.py runserver
 - [x] ~~Post Index Pagination~~
 - [ ] SEO / Share Buttons
 	* adjust ~~open-graph~~ / twitter tags
-	* get FB App ID
-	* get tumblr account
+	* ~~get FB App ID~~
+	* ~~get tumblr account (no need)~~
 - [x] ~~Newsletter with MailChimp~~
 - [x] ~~Add Video Embed App~~
 - [ ] Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
