@@ -8,6 +8,11 @@
         <link rel="stylesheet" href="{% static 'css/podcast.css' %}">
     {% endblock %}
 
+    <script>
+        var fb_app_id = '{{ settings.sitesettings.SocialMediaSettings.fb_app_id|escapejs }}';
+        var absolute_uri= '{{ request.build_absolute_uri }}';
+    </script>
+
     <div class="banner">
         <div class="main_container">
             <div class="icon_container">

@@ -9,6 +9,11 @@
         <link rel="stylesheet" href="{% static 'css/posts_grid.css' %}">
     {% endblock %}
 
+    <script>
+        var fb_app_id = '{{ settings.sitesettings.SocialMediaSettings.fb_app_id|escapejs }}';
+        var absolute_uri= '{{ request.build_absolute_uri }}';
+    </script>
+
     {% with page.get_parent as post_category %}
     <div class="post_mobile_banner" style="background: {{ post_category.specific.main_color }}">
         <div id="category_label">

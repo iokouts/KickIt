@@ -2,7 +2,7 @@ var window = document.window;
 
 window.fbAsyncInit = function() {
     FB.init({
-      appId            : 'your-app-id',
+      appId            : fb_app_id, //declared in html template
       autoLogAppEvents : true,
       xfbml            : true,
       version          : 'v3.1'
@@ -23,12 +23,12 @@ document.getElementById('fb_shareBtn').onclick = function() {
     FB.ui({
     method: 'share',
     display: 'popup',
-    href: '{{ request.build_absolute_uri }}'
+    href: absolute_uri //declared in html template
     }, function(response){});
 };
 
 document.getElementById('tumblr_shareBtn').onclick = function() {
-    window.open('https://www.tumblr.com/widgets/share/tool?canonicalUrl={{ request.build_absolute_uri }}','ShareTumblr','width=540,height=600');
+    window.open('https://www.tumblr.com/widgets/share/tool?canonicalUrl='+absolute_uri,'ShareTumblr','width=540,height=600');
 };
 
 document.getElementById('twitter_shareBtn').onclick = function() {
