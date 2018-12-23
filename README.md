@@ -55,7 +55,7 @@ $ python manage.py runserver
 - [x] ~~Domain Name~~
 - [x] ~~Connect server with domain~~ (51.15.117.113)
 - [x] ~~Setup with dokku~~
-- [ ] HTTPS
+- [x] ~~HTTPS~~
 
 ### Design
 - [x] ~~Post Page~~
@@ -73,6 +73,7 @@ $ python manage.py runserver
     * mobile
     
 ## Resources
+* [Let's Encrypt SSL Certificate](https://letsencrypt.org/)
 * [ngrok - tunnels to locahost. for test purposes](https://ngrok.com/)
 * [you might not need jquery](http://youmightnotneedjquery.com/)
 * Responsive Design
