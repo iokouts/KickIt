@@ -1,0 +1,29 @@
+.social {
+	padding-top: 35px;
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.social a {
+    color: #000000;
+	display: inline-block;
+	font-size: 38px;
+}
+
+@media screen and (max-width: 725px) {
+    .mobile_menu .social {
+        max-width: 250px;
+    }
+
+    .mobile_menu .social a {
+    }
+
+    .mobile_menu_punchline {
+        text-align: center;
+        padding: 20px 0;
+        font-family: Neutra-Demi;
+        font-size: 23px;
+    }
+}
