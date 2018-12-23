@@ -1,0 +1,28 @@
+{% load static wagtailimages_tags el_pagination_tags %}
+
+{% lazy_paginate 8 podcasts %}
+    {% for podcast in podcasts %}
+        {% with podcast=podcast.specific %}
+
+                <div class="podcast_single"
+                     onmouseenter="changeBackground(this, '#d70b52')"
+                     onmouseleave="resetBackground(this)">
+
+                    <a href="{{ podcast.url }}">
+                        <div class="podcast_img_container">
+                            {% image podcast.podcast_image fill-245x245 as podcast_image%}
+                            <img src="{{ podcast_image.url }}"/>
+
+                        </div>
+                        <div class="podcast_single_info">
+                            <p>{{ podcast.title }}</p>
+                            <span> {{ podcast.description_tag }} </span>
+                        </div>
+                    </a>
+                </div>
+
+        {% endwith %}
+    {% endfor %}
+{% show_more '<button type="button" class="load_more_posts" >Not enough?</button>' %}
+
+
