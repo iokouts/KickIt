@@ -5,5 +5,4 @@ KickIt/static/fonts
 KickIt/static/css/fonts.css
 __pycache__
 media
-static
 .env

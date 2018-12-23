@@ -63,7 +63,7 @@ nav {
 
 .sticky_menu.sticky .menu {
 	display: inline-block;
-	padding-top: 0;
+	padding-top: 10px;
 }
 
 .sticky_menu.sticky .menu ul li a {

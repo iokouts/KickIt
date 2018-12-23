@@ -39,12 +39,13 @@ $ python manage.py runserver
 - [x] ~~Post Index Pagination~~
 - [ ] SEO / Share Buttons
 	* adjust ~~open-graph~~ / twitter tags
-	* get FB App ID
-	* get tumblr account
+	* ~~get FB App ID~~
+	* ~~get tumblr account (no need)~~
 - [x] ~~Newsletter with MailChimp~~
 - [x] ~~Add Video Embed App~~
 - [ ] Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
 - [ ] Clean Repo README
+- [ ] Remove fontawesome - include icons
 
 ### Server
 - [x] ~~Domain Name~~
@@ -58,15 +59,17 @@ $ python manage.py runserver
 - [x] ~~Hover animations in post grid~~
 - [x] ~~Blog Page featured posts hover animations~~
 - [ ] Author / Author Index Pages
-- [ ] Tags Index Page
-- [ ] Other Main Menu Pages
+- [ ] Podcast Page
+- [x] ~~Tags Index Page~~
+- [x] ~~Other Main Menu Pages~~
 - [ ] 404 / 500 error pages
 - [ ] favicon
 - [ ] Responsive Design
-    * small desktop / tablet
+    * ~~small desktop / tablet~~
     * mobile
     
 ## Resources
+* [ngrok - tunnels to locahost. for test purposes](https://ngrok.com/)
 * [you might not need jquery](http://youmightnotneedjquery.com/)
 * Responsive Design
 	* [by google](https://developers.google.com/web/fundamentals/design-and-ux/responsive/)

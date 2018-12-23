@@ -11,7 +11,7 @@ body {
 .featured_post_container {
     grid-area: featured_post;
     height: 625px;
-    padding-top: 80px;
+    padding: 80px 10px 0 10px;
     position: relative;
 }
 
@@ -19,7 +19,7 @@ body {
     display: none;
     position: absolute;
     top: 20px;
-    left: 50px;
+    left: 40px;
 }
 
 #category_image {
@@ -208,7 +208,6 @@ body {
 
     .subfeatured_img_container {
         height: 230px;
-        padding-bottom: 10px;
     }
 
     .subfeatured_info_container {
@@ -217,7 +216,7 @@ body {
         text-align: center;
     }
 
-    .subfeatured_info_container:hover {
+    .subfeatured_single:hover .subfeatured_info_container {
         border:none !important;
     }
 }
@@ -229,7 +228,7 @@ body {
     }
 
     .featured_post_container {
-        padding-top: 100px;
+        padding: 100px 0 0 0;
         height: 315px;
     }
 
