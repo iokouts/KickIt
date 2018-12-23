@@ -10,7 +10,7 @@
 
                     <a href="{{ podcast.url }}">
                         <div class="podcast_img_container">
-                            {% image podcast.podcast_image original as podcast_image%}
+                            {% image podcast.podcast_image fill-245x245 as podcast_image%}
                             <img src="{{ podcast_image.url }}"/>
 
                         </div>
