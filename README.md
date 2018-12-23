@@ -31,7 +31,7 @@ $ python manage.py runserver
 ## TODO
 ### Dev
 - [ ] Change PostPage Image Gallery => Image
-- [ ] HomePage(slider) vs base jQuery version
+- [x] ~~HomePage(slider) vs base jQuery version~~
 - [x] ~~Ηamburger Μenu~~
 - [x] ~~Change categories functionality (remove snippet, move properties to BlogIndexPage)~~
 - [x] ~~Post Slider (BlogPage: Promote - show in frontpage slider)~~

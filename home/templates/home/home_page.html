@@ -17,8 +17,7 @@
     {% endblock %}
 
     {% block scripts %}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-        <script src="{% static 'js/main.js' %}"></script>
+        {{ block.super }}
         <script src="{% static 'js/jquery.flexslider.js' %}"></script>
         <script type="text/javascript" charset="utf-8">
             $(window).load(function () {
