@@ -1,4 +1,4 @@
-wagtail==2.3
+wagtail==2.4
 Django==2.0.9
 django-embed-video==1.2.0
 django-modelcluster==4.2
