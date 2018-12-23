@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/podcasts_index.css' %}">
+        <link rel="stylesheet" href="{% static 'css/podcasts_grid.css' %}">
+    {% endblock %}
+
+    <div class="banner">
+        <div class="main_container">
+            <div class="icon_container">
+                {% image page.icon original as icon %}
+                <img src="{{ icon.url }}" alt="{{ page.title }}"/>
+            </div>
+            <div class="banner_title">Choose your mood & Play</div>
+        </div>
+    </div>
+
+    <div class="podcasts_grid_container">
+        <div class="main_container">
+            <div class="podcasts_grid">
+                {% include "podcast/podcasts_grid_paginate.html" %}
+            </div>
+        </div>
+    </div>
+
+    {% block scripts %}
+        {{ block.super }}
+
+        <script>
+            $('.load_more_posts').click(
+                function () {
+                    $('.podcasts_grid_container').css('background',
+                            'linear-gradient(180deg, #ffffff 830px, #e84070 0)');
+            });
+        </script>
+
+        <script type="text/javascript" src="{% static 'el-pagination/js/el-pagination.js' %}"></script>
+        <script>$.endlessPaginate();</script>
+    {% endblock %}
+
+{% endblock %}
