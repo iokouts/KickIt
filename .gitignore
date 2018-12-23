@@ -6,3 +6,4 @@ KickIt/static/css/fonts.css
 __pycache__
 media
 .env
+static
