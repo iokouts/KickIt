@@ -70,6 +70,49 @@ input, button, submit {
     -webkit-transition: all 1s ease-in-out;
 }
 
+.social_button_svg {
+    height: 40px;
+}
+
+.social_button {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.fa-facebook-share svg path {
+    fill: #1f71b8;
+}
+
+.fa-twitter-share svg path {
+    fill: #009fe3;
+}
+
+.fa-tumblr-share svg path {
+    fill: #141d33;
+}
+
+.share_container {
+    text-align: center;
+}
+
+.share_title {
+    padding-bottom: 15px;
+    font-family: Neutra-Demi;
+    font-size: 16px;
+}
+
+.share_social {
+    font-size: 38px;
+}
+
+.share_social i:hover {
+    cursor: pointer;
+}
+
+.share_social a {
+    display: inline-block;
+}
+
 @media screen and (min-width: 1100px) {
         .main_container {
         width: 1050px;

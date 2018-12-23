@@ -9,7 +9,6 @@
 .social a {
     color: #000000;
 	display: inline-block;
-	font-size: 38px;
 }
 
 @media screen and (max-width: 725px) {
@@ -17,7 +16,12 @@
         max-width: 250px;
     }
 
-    .mobile_menu .social a {
+    .mobile_menu .instagram .social_button_svg rect {
+        fill: #ffffff;
+    }
+
+    .mobile_menu .instagram .social_button_svg path {
+        fill: #000000;
     }
 
     .mobile_menu_punchline {

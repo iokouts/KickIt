@@ -1,17 +1,13 @@
-{% load static %}
-
-{% block styles %}
-    <link rel="stylesheet" href="{% static 'css/social.css' %}">
-{% endblock %}
-
 <div class="social">
     <a href="{{ settings.sitesettings.SocialMediaSettings.instagram_account }}" target="_blank">
-        <i class="fab fa-instagram"></i>
+        <div class="social_button instagram">{% include "includes/instagram.html" %}</div>
     </a>
     <a href="{{ settings.sitesettings.SocialMediaSettings.facebook_page }}" target="_blank">
-        <i class="fab fa-facebook"></i>
+        <div class="social_button">{% include "includes/fb.html" %}</div>
     </a>
     <a href="{{ settings.sitesettings.SocialMediaSettings.twitter_account }}" target="_blank">
-        <i class="fab fa-twitter-square"></i>
+        <div class="social_button">{% include "includes/twitter.html" %}</div>
     </a>
+
+{#    <div id="tumblr_shareBtn" class="social_button fa-tumblr-share">{% include "includes/tumblr.html" %}</div>#}
 </div>
