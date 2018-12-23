@@ -20,6 +20,9 @@ $ python manage.py createsuperuser
 $ python manage.py runserver
 ```
 
+## Deploy with Docker
+* add static to .gitignore (gathers static with collectstatic)
+
 ## Setup
 * set site name in Wagtail Admin -> Settings -> Site
 * add social media accounts: Settings -> SiteSettings
@@ -45,7 +48,8 @@ $ python manage.py runserver
 - [x] ~~Add Video Embed App~~
 - [ ] Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
 - [ ] Clean Repo README
-- [ ] Remove fontawesome - include icons
+- [x] ~~Remove fontawesome - include icons~~
+- [ ] minify css (?)
 
 ### Server
 - [x] ~~Domain Name~~
