@@ -38,7 +38,7 @@ class PodcastIndexPage(MetadataPageMixin, Page):
             return 'podcast/podcast_index_page.html'
 
 
-class PodcastPage(Page):
+class PodcastPage(MetadataPageMixin, Page):
     podcast_image = models.ForeignKey(
         'wagtailimages.Image', null=True, blank=True,
         on_delete=models.SET_NULL, related_name='+'

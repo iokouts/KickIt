@@ -1,0 +1,16 @@
+body {
+	display: grid;
+	grid-template-areas:
+		"header"
+        "event_area "
+		"post_share_area"
+		"footer"
+}
+
+.event_area {
+    grid-area: event_area;
+}
+
+.post_share_area {
+    grid-area: post_share_area;
+}

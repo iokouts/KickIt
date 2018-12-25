@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/event_index.css' %}">
+    {% endblock %}
+
+    <div class="banner">
+        <div class="main_container">
+            <div class="icon_container">
+                {% image page.icon original as icon %}
+                <img src="{{ icon.url }}" alt="{{ page.title }}"/>
+            </div>
+            <div class="banner_title">Choose your mood & Play</div>
+        </div>
+    </div>
+
+    <div class="event_grid_container">
+        <div class="main_container">
+            <div class="podcasts_grid">
+            </div>
+        </div>
+    </div>
+
+    {% block scripts %}
+        {{ block.super }}
+
+        <script type="text/javascript" src="{% static 'el-pagination/js/el-pagination.js' %}"></script>
+        <script>$.endlessPaginate();</script>
+    {% endblock %}
+
+{% endblock %}

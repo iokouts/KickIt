@@ -1,0 +1,16 @@
+body {
+	display: grid;
+	grid-template-areas:
+		"header"
+        "banner"
+		"event_grid_container"
+		"footer"
+}
+
+.banner {
+    grid-area: banner;
+}
+
+.event_grid_container {
+    grid-area: event_grid_container;
+}
