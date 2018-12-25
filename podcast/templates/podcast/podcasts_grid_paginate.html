@@ -4,9 +4,7 @@
     {% for podcast in podcasts %}
         {% with podcast=podcast.specific %}
 
-                <div class="podcast_single"
-                     onmouseenter="changeBackground(this, '#d70b52')"
-                     onmouseleave="resetBackground(this)">
+                <div class="podcast_single">
 
                     <a href="{{ podcast.url }}">
                         <div class="podcast_img_container">
