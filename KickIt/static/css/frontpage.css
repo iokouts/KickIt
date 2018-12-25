@@ -42,7 +42,7 @@ body {
 
 .slider_box_title a {
     display: initial;
-    font-family: Neutra-Bold;
+    font-family: NBold;
 	font-size: 23px;
 }
 
@@ -61,7 +61,7 @@ body {
 }
 
 .slider_box_text p {
-	font-family: Neutra-Light;
+	font-family: NLight;
 	font-size: 17px;
 }
 
@@ -153,7 +153,7 @@ body {
 }
 
 .main_parallax_title p {
-	font-family: Neutra-Bold;
+	font-family: NBold;
 	color: #fff;
     font-size: 9vw;
 	line-height: 112px;

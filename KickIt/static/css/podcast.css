@@ -15,13 +15,13 @@ body {
 }
 
 .banner_title {
-    font-family: PFRegal-Bold;
+    font-family: pfBold;
     font-size: 25px;
     padding-top: 15px;
 }
 
 .banner_subtitle {
-    font-family: Neutra-Light;
+    font-family: NLight;
     font-size: 20px;
     color: #d70b52;
     padding-top: 10px;

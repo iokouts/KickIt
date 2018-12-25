@@ -61,7 +61,7 @@
 }
 
 .main_grid_single_info span {
-	font-family: Neutra-Light;
+	font-family: NLight;
 	font-size: 18px;
 	padding-bottom: 15px;
 	display: block;
@@ -69,7 +69,7 @@
 
 .main_grid_single_info p {
 	color: #000;
-	font-family: Neutra-Demi;
+	font-family: NDemi;
 	font-size: 28px;
     max-width: 250px;
 }

@@ -50,14 +50,14 @@ body {
 }
 
 .post_article_title {
-    font-family: PFRegal-Bold;
+    font-family: pfBold;
     font-size: 30px;
     padding-bottom: 10px;
     text-align: center;
 }
 
 .post_article_extra {
-    font-family: Neutra-Bold;
+    font-family: NBold;
     font-size: 12px;
     color: #9d9d9c;
     text-align: center;
@@ -73,7 +73,7 @@ body {
 }
 
 .post_article_body {
-    font-family: Neutra-Book;
+    font-family: NBook;
     font-size: 18px;
     padding-bottom: 55px;
 }
@@ -116,7 +116,7 @@ body {
 
 .post_tags_area ul li {
     display: inline-block;
-    font-family: Neutra-Demi;
+    font-family: NDemi;
     font-size: 16px;
     padding-right: 17px;
 }
@@ -137,7 +137,7 @@ body {
 }
 
 .post_related_title span {
-    font-family: Neutra-Bold;
+    font-family: NBold;
     font-size: 20px;
     background: #fff;
 }

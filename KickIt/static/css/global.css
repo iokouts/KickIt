@@ -41,7 +41,7 @@ input, button, submit {
 
 .load_more_posts {
     padding: 25px;
-    font-family: Neutra-Demi;
+    font-family: NDemi;
     font-size: 30px;
     color: #70706f;
     background: transparent;
@@ -61,7 +61,7 @@ input, button, submit {
 
 .endless_loading {
     font-size: 15px;
-    font-family: Neutra-Demi;
+    font-family: NDemi;
     color: #70706f;
     padding-top: 20px;
     text-transform: uppercase;
@@ -97,7 +97,7 @@ input, button, submit {
 
 .share_title {
     padding-bottom: 15px;
-    font-family: Neutra-Demi;
+    font-family: NDemi;
     font-size: 16px;
 }
 

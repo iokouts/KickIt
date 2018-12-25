@@ -1,29 +1,29 @@
 @font-face {
-	font-family: Neutra-Demi;
-	src: url(../fonts/NeutraText-Demi.otf);
+	font-family: NDemi;
+	src: url(../fonts/NDemi.otf);
 }
 
 @font-face {
-	font-family: Neutra-Light;
-	src: url(../fonts/NeutraText-Light.otf);
+	font-family: NLight;
+	src: url(../fonts/NLight.otf);
 }
 
 @font-face {
-	font-family: Neutra-Bold;
-	src: url(../fonts/NeutraText-Bold.otf);
+	font-family: NBold;
+	src: url(../fonts/NBold.otf);
 }
 
 @font-face {
-	font-family: Neutra-Book;
-	src: url(../fonts/NeutraText-Book.otf);
+	font-family: NBook;
+	src: url(../fonts/NBook.otf);
 }
 
 @font-face {
-	font-family: PFRegal-Regular;
-	src: url(../fonts/PFRegalDisplayPro-Regular.otf);
+	font-family: pfRegular;
+	src: url(../fonts/pfRegular.otf);
 }
 
 @font-face {
-	font-family: PFRegal-Bold;
-	src: url(../fonts/PFRegalDisplayPro-Bold.otf);
+	font-family: pfBold;
+	src: url(../fonts/pfBold.otf);
 }

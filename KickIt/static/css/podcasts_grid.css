@@ -22,13 +22,13 @@
 }
 
 .podcast_single_info p {
-    font-family: PFRegal-Bold;
+    font-family: pfBold;
     font-size: 26px;
     padding-bottom: 10px;
 }
 
 .podcast_single_info span {
-    font-family: Neutra-Light;
+    font-family: NLight;
     font-size: 16px;
     color: #d70b52;
 }

@@ -76,7 +76,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -106,13 +107,7 @@ TEMPLATES = [
                 'wagtail.contrib.settings.context_processors.settings',
 
                 'wagtailmenus.context_processors.wagtailmenus',
-
                 'django.template.context_processors.request',  # For EL-pagination
-
-                # 'django.template.context_processors.i18n',
-                # 'django.template.context_processors.media',
-                # 'django.template.context_processors.static',
-                # 'django.template.context_processors.tz',
             ],
         },
     },
@@ -161,8 +156,6 @@ USE_L10N = config('USE_L10N', default=True, cast=bool)
 
 USE_TZ = config('USE_TZ', default=True, cast=bool)
 
-STATIC_ROOT = config('STATIC_ROOT', default=os.path.join(BASE_DIR, 'static'))
-STATIC_URL = config('STATIC_URL', '/static/')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
@@ -175,6 +168,11 @@ STATICFILES_FINDERS = [
 STATICFILES_DIRS = [
     os.path.join(PROJECT_DIR, 'static'),
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATIC_ROOT = config('STATIC_ROOT', default=os.path.join(BASE_DIR, 'static'))
+STATIC_URL = config('STATIC_URL', '/static/')
 
 MEDIA_URL = config('MEDIA_URL', '/media/')
 MEDIA_ROOT = config('MEDIA_ROOT', default=os.path.join(BASE_DIR, 'media'))
