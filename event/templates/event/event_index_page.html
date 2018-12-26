@@ -8,20 +8,35 @@
         <link rel="stylesheet" href="{% static 'css/event_index.css' %}">
     {% endblock %}
 
-    <div class="banner">
-        <div class="main_container">
-            <div class="icon_container">
-                {% image page.icon original as icon %}
-                <img src="{{ icon.url }}" alt="{{ page.title }}"/>
-            </div>
-            <div class="banner_title">Choose your mood & Play</div>
+    {% image page.main_image original as main_image %}
+    <div class="banner" style="background-image: url('{{ main_image.url }}');">
+        <div class="banner_title">
+            <p>What's on?</p>
         </div>
     </div>
 
-    <div class="event_grid_container">
-        <div class="main_container">
-            <div class="podcasts_grid">
-            </div>
+    <div class="event_grid_area main_container">
+        <div class="event_grid_container">
+
+            {% for event in events %}
+                {% with event=event.specific %}
+                    <div class="event_single">
+                        <a href="{{ event.url }}">
+                            <div class="event_img_container">
+                                {% image event.event_image fill-260x260 as event_image%}
+                                <img src="{{ event_image.url }}"/>
+                            </div>
+                            <div class="event_info_container">
+                                <div class="event_title">{{ event.title }}</div>
+                                <div class="event_date">{{ event.date }}</div>
+                                <div class="event_venue">{{ event.venue }}</div>
+                                <div class="event_description">{{ event.description }}</div>
+                            </div>
+                        </a>
+                    </div>
+                {% endwith %}
+            {% endfor %}
+
         </div>
     </div>
 
