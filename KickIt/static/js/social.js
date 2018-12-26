@@ -32,5 +32,5 @@ document.getElementById('tumblr_shareBtn').onclick = function() {
 };
 
 document.getElementById('twitter_shareBtn').onclick = function() {
-    window.open('https://twitter.com/intent/tweet','ShareTwitter','width=540,height=600');
+    window.open('https://twitter.com/intent/tweet?text='+absolute_uri,'ShareTwitter','width=540,height=400');
 };

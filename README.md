@@ -32,17 +32,15 @@ $ python manage.py runserver
 ### Dev
 - [ ] Change PostPage Image Gallery => Image
 - [ ] Related Posts in PostPage: show the 3 posts with the biggest number of common tags
-- [ ] SEO / Share Buttons
-	* adjust ~~open-graph~~ / twitter tags
 - [x] ~~Newsletter with MailChimp~~
-- [x] ~~Add Video Embed App~~
 - [ ] Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
-- [ ] Clean Repo README
 - [ ] minify css (?)
+- [ ] SEO
 - [ ] check browser/mobile compatibility
+- [ ] consider removing wagtail-embedvideos and using default [wagtail embed](http://docs.wagtail.io/en/v2.4/advanced_topics/embeds.html) 
 
 ### Server
-- [ ] Update
+- [x] ~~Update~~
 
 ### Design
 - [ ] Author / Author Index Pages
