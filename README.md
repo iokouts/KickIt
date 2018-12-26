@@ -14,14 +14,14 @@ music blog
 $ pip install -r requirements.txt
 $ python manage.py migrate
 ```
-* creates a SQLite database file in the project directory
+* creates a SQLite database file in the project directory (default)
 ```bash
 $ python manage.py createsuperuser
 $ python manage.py runserver
 ```
 
 ## Deploy with Docker
-* add static to .gitignore (gathers static with collectstatic)
+* add nginx/media.conf to /home/dokku/.volumes/{app name}/nginx.conf.d/
 
 ## Setup
 * set site name in Wagtail Admin -> Settings -> Site
@@ -31,48 +31,28 @@ $ python manage.py runserver
 ## TODO
 ### Dev
 - [ ] Change PostPage Image Gallery => Image
-- [x] ~~HomePage(slider) vs base jQuery version~~
-- [x] ~~Ηamburger Μenu~~
-- [x] ~~Change categories functionality (remove snippet, move properties to BlogIndexPage)~~
-- [x] ~~Post Slider (BlogPage: Promote - show in frontpage slider)~~
 - [ ] Related Posts in PostPage: show the 3 posts with the biggest number of common tags
-- [x] ~~Greek Dates~~
-- [x] ~~Check posts_grid.html js~~
-- [x] ~~Main menu~~
-- [x] ~~Post Index Pagination~~
 - [ ] SEO / Share Buttons
 	* adjust ~~open-graph~~ / twitter tags
-	* ~~get FB App ID~~
-	* ~~get tumblr account (no need)~~
 - [x] ~~Newsletter with MailChimp~~
 - [x] ~~Add Video Embed App~~
 - [ ] Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
 - [ ] Clean Repo README
-- [x] ~~Remove fontawesome - include icons~~
 - [ ] minify css (?)
+- [ ] check browser/mobile compatibility
 
 ### Server
-- [x] ~~Domain Name~~
-- [x] ~~Connect server with domain~~ (51.15.117.113)
-- [x] ~~Setup with dokku~~
-- [x] ~~HTTPS~~
+- [ ] Update
 
 ### Design
-- [x] ~~Post Page~~
-- [x] ~~footer logo = font~~
-- [x] ~~Hover animations in post grid~~
-- [x] ~~Blog Page featured posts hover animations~~
 - [ ] Author / Author Index Pages
 - [ ] Podcast Page
-- [x] ~~Tags Index Page~~
-- [x] ~~Other Main Menu Pages~~
 - [ ] 404 / 500 error pages
 - [ ] favicon
-- [ ] Responsive Design
-    * ~~small desktop / tablet~~
-    * mobile
+
     
 ## Resources
+### General
 * [Let's Encrypt SSL Certificate](https://letsencrypt.org/)
 * [ngrok - tunnels to locahost. for test purposes](https://ngrok.com/)
 * [you might not need jquery](http://youmightnotneedjquery.com/)

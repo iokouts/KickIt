@@ -1,5 +1,6 @@
 html {
 	margin: 0;
+    overflow-x: hidden;
 }
 
 body {
@@ -97,11 +98,7 @@ input, button, submit {
 
 .share_title {
     padding-bottom: 15px;
-<<<<<<< HEAD
     font-family: NDemi;
-=======
-    font-family: Neutra-Demi;
->>>>>>> 91f91717ebe4daa5570a89991c95479942e01735
     font-size: 16px;
 }
 
