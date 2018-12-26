@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static wagtailcore_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags wagtailembeds_tags %}
 
 {% block content %}
 
@@ -26,10 +26,12 @@
         </div>
     </div>
 
-    <div class="podcast_area">
-        <div class="main_container">
-            {% include 'includes/social_share.html' %}
+    <div class="podcast_area main_container">
+        <div class="podcast_iframe_container">
+            {%  include_block page.specific.get_embed_podcast %}
         </div>
+
+        {% include 'includes/social_share.html' %}
     </div>
 
     <div class="main_container post_share_area">

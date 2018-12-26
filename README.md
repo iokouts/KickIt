@@ -40,6 +40,7 @@ $ python manage.py runserver
 - [ ] Clean Repo README
 - [ ] minify css (?)
 - [ ] check browser/mobile compatibility
+- [ ] consider removing wagtail-embedvideos and using default [wagtail embed](http://docs.wagtail.io/en/v2.4/advanced_topics/embeds.html) 
 
 ### Server
 - [ ] Update

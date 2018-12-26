@@ -4,9 +4,13 @@ from wagtail.core.models import Page, Orderable
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel, PageChooserPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 
+from wagtail.embeds import embeds
+from wagtail.embeds.exceptions import EmbedException
+
 from wagtailmetadata.models import MetadataPageMixin
 
 from babel.dates import format_date
+
 
 # Create your models here.
 
@@ -46,6 +50,7 @@ class PodcastPage(MetadataPageMixin, Page):
     date = models.DateField("Podcast date", default=models.fields.datetime.date.today)
     media_url = models.CharField(max_length=250)
     description_tag = models.CharField(max_length=250, default='')
+    # embed = EmbedBlock()
 
     content_panels = Page.content_panels + [
         ImageChooserPanel('podcast_image'),
@@ -53,6 +58,13 @@ class PodcastPage(MetadataPageMixin, Page):
         FieldPanel('media_url'),
         FieldPanel('description_tag'),
     ]
+
+    def get_embed_podcast(self):
+        try:
+            embed = embeds.get_embed(self.media_url)
+            return embed.html
+        except EmbedException:
+            return 'Something went wrong! Invalid or not existing URL!'
 
     # search_fields = Page.search_fields + [
     #     index.SearchField('intro'),
@@ -62,10 +74,9 @@ class PodcastPage(MetadataPageMixin, Page):
     # ]
 
     # def get_context(self, request):
-    #     # Update context to include only published posts, ordered by reverse-chron
-    #     context = super().get_context(request)
-    #     blogpages = BlogPage.objects.live().order_by('-first_published_at')[:3]
-    #     context['blogpages'] = blogpages
+        # context = super().get_context(request)
+        # blogpages = BlogPage.objects.live().order_by('-first_published_at')[:3]
+        # context['blogpages'] = blogpages
 
     def greek_date(self):
         return format_date(self.date, locale='el_GR')
@@ -84,5 +95,3 @@ class PodcastPage(MetadataPageMixin, Page):
         This should be plain text, not HTML.
         """
         return self.title
-
-
