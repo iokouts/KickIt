@@ -3,14 +3,76 @@ body {
 	grid-template-areas:
 		"header"
         "banner"
-		"event_grid_container"
+		"event_grid_area"
 		"footer"
 }
 
 .banner {
     grid-area: banner;
+    height: 500px;
+    text-align: center;
+    background: #000 no-repeat center;
+	background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.banner_title {
+    width: 100%;
+    text-align: center;
+}
+
+.banner_title p {
+	font-family: pfBold;
+	color: #ffffff;
+    font-size: 66px;
+}
+
+.event_grid_area {
+    grid-area: event_grid_area;
+    padding: 95px 0 20px 0;
 }
 
 .event_grid_container {
-    grid-area: event_grid_container;
+    padding: 0 50px;
+}
+
+.event_single {
+    height: 260px;
+}
+
+.event_single a {
+    height: 100%;
+    display: flex;
+}
+
+.event_info_container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.event_img_container {
+    padding-right: 20px;
+    height: 100%;
+}
+
+.event_img_container img {
+    height: 100%;
+}
+
+.event_title {
+    font-family: pfBold;
+    font-size: 30px;
+}
+
+.event_date , .event_venue, .event_description{
+    font-family: NDemi;
+    font-size: 22px;
+}
+
+.event_date, .event_venue {
+    text-transform: uppercase;
 }
