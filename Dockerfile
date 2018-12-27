@@ -10,7 +10,7 @@ RUN pip install gunicorn
 COPY . /code/
 WORKDIR /code/
 
-RUN useradd wagtail
+RUN adduser --uid 1002 --disabled-password --gecos '' --no-create-home wagtail
 RUN chown -R wagtail /code
 USER wagtail
 
