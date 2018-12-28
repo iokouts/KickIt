@@ -27,26 +27,33 @@ $ python manage.py runserver
 * set site name in Wagtail Admin -> Settings -> Site
 * add social media accounts: Settings -> SiteSettings
 * set mailchimp newsletter Subscribe Form: KickIt/templates/includes/footer.html
+* create Collections for media and manage permissions of User Groups
 
 ## TODO
 ### Dev
-- [ ] Change PostPage Image Gallery => Image
-- [ ] Related Posts in PostPage: show the 3 posts with the biggest number of common tags
-- [x] ~~Newsletter with MailChimp~~
 - [ ] Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
-- [ ] minify css (?)
-- [ ] SEO
+- [ ] change functionality of Post Page main image
+- [ ] add Image Gallery to Post Page template
+- [ ] Related Posts in PostPage: show the 3 posts with the biggest number of common tags
+- [ ] consider removing wagtail-embedvideos and using default [wagtail embed](http://docs.wagtail.io/en/v2.4/advanced_topics/embeds.html)
+- [ ] Add Podcasts Tags (same as post tags?)
+- [x] ~~Newsletter with MailChimp~~
 - [ ] check browser/mobile compatibility
-- [ ] consider removing wagtail-embedvideos and using default [wagtail embed](http://docs.wagtail.io/en/v2.4/advanced_topics/embeds.html) 
+- [ ] SEO
+- [ ] improve readability with HTML5 tags
+- [ ] minify css (django asset-managers)[https://djangopackages.org/grids/g/asset-managers/]
+- [ ] add help text to model properties
 
 ### Server
-- [x] ~~Update~~
+- [ ] Check Preview Page - Bad Request
 
 ### Design
+- [ ] Event Page
 - [ ] Author / Author Index Pages
-- [ ] Podcast Page
+- [x] ~~Podcast Page~~
 - [ ] 404 / 500 error pages
 - [ ] favicon
+- [ ] admin icon
 
     
 ## Resources
