@@ -41,7 +41,7 @@ $ python manage.py runserver
 - [ ] check browser/mobile compatibility
 - [ ] SEO
 - [ ] improve readability with HTML5 tags
-- [ ] minify css (django asset-managers)[https://djangopackages.org/grids/g/asset-managers/]
+- [ ] minify css [django asset-managers](https://djangopackages.org/grids/g/asset-managers/)
 - [ ] add help text to model properties
 
 ### Server
