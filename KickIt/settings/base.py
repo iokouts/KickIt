@@ -17,8 +17,6 @@ import dj_database_url
 from decouple import Csv, config
 import sentry_sdk
 
-sentry_sdk.init("https://6aa536f4c94f4eb49dacb836fa9a664a@sentry.io/1360550")
-
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
@@ -31,6 +29,9 @@ SECRET_KEY = config('SECRET_KEY')
 
 EMAIL_BACKEND = config('EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
 
+# Sentry - Error tracking
+if not DEBUG:
+    sentry_sdk.init("https://6aa536f4c94f4eb49dacb836fa9a664a@sentry.io/1360550")
 
 # Application definition
 
