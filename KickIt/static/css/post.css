@@ -86,7 +86,11 @@ body {
     padding-bottom: 25px;
     text-align: justify;
     line-height: 25px;
-    text-indent: 1em;
+}
+
+.post_article_body .rich-text > p > a {
+    display: initial;
+    color: #b4214f;
 }
 
 .post_video_area {
