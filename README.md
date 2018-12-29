@@ -35,7 +35,8 @@ $ python manage.py runserver
 - [ ] change functionality of Post Page main image
 - [ ] add Image Gallery to Post Page template
 - [ ] Related Posts in PostPage: show the 3 posts with the biggest number of common tags
-- [ ] consider removing wagtail-embedvideos and using default [wagtail embed](http://docs.wagtail.io/en/v2.4/advanced_topics/embeds.html)
+- [x] ~~consider removing wagtail-embedvideos and using default wagtail embed~~
+- [ ] uninstall wagtail_embed_videos 
 - [ ] Add Podcasts Tags (same as post tags?)
 - [x] ~~Newsletter with MailChimp~~
 - [ ] check browser/mobile compatibility
@@ -74,9 +75,10 @@ $ python manage.py runserver
 ### Django / Wagtail
 * [wagtailmenus](https://github.com/rkhleics/wagtailmenus)
 * [wagtail metadata](https://github.com/takeflight/wagtail-metadata)
-* [wagtail embed videos](https://github.com/infoportugal/wagtail-embedvideos)
+* [~~wagtail embed videos~~](https://github.com/infoportugal/wagtail-embedvideos)
 * Pagination
 	* [django-el-pagination](https://django-el-pagination.readthedocs.io/en/latest/)
 	* [reddit help](https://www.reddit.com/r/django/comments/9p70uf/adding_load_more_functionality_to_wagtail_via/)
 * [django-newsletter](https://github.com/dokterbob/django-newsletter)
 * [wagtail site settings](https://vix.digital/insights/creating-using-custom-settings-in-your-wagtail-site/)
+* [wagtail embed](http://docs.wagtail.io/en/v2.4/advanced_topics/embeds.html)

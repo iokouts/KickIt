@@ -104,7 +104,11 @@ class BlogPage(MetadataPageMixin, Page):
         verbose_name='show in homepage slider',
         default=False
     )
-    video_url = models.CharField(max_length=250, blank=True)
+    video_url = models.CharField(max_length=250, default='', blank=True)
+    post_image = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True,
+        on_delete=models.SET_NULL, related_name='+'
+    )
     author = models.ForeignKey(
          'blog.AuthorPage', null=True, blank=True,
          on_delete=models.SET_NULL, related_name='+'
@@ -118,28 +122,22 @@ class BlogPage(MetadataPageMixin, Page):
 
         return context
 
-    def main_image(self):
-        gallery_item = self.gallery_images.first()
-        if gallery_item:
-            return gallery_item.image
-        else:
-            return None
-
     def get_embed_video(self):
         try:
-            embed = embeds.get_embed(self.video_url)
-            return embed.html
+            if self.video_url.strip():
+                embed = embeds.get_embed(self.video_url)
+                return embed.html
         except EmbedException:
-            return 'Something went wrong while embeding the video! Invalid or not existing video URL!'
+            return self.video_url+'Something went wrong while embeding the video! Invalid or not existing video URL!'
 
     def greek_date(self):
         return format_date(self.date, locale='el_GR')
 
     def get_meta_image(self):
         """A relevant Wagtail Image to show. Optional."""
-        gallery_item = self.gallery_images.first()
-        if gallery_item:
-            return gallery_item.image
+        # gallery_item = self.gallery_images.first()
+        if self.post_image:
+            return self.post_image
         else:
             return None
 
@@ -164,6 +162,7 @@ class BlogPage(MetadataPageMixin, Page):
             FieldPanel('show_in_homepage_slider'),
             PageChooserPanel('author'),
         ], heading="Post information"),
+        ImageChooserPanel('post_image'),
         FieldPanel('intro'),
         FieldPanel('body'),
         FieldPanel('video_url'),

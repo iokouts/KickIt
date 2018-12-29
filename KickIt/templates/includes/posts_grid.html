@@ -9,7 +9,7 @@
                  onmouseleave="resetBackground(this)">
                 <a href="{{ post.url }}">
                     <div class="grid_img_container">
-                        {% image post.main_image fill-310x200 as postImage %}
+                        {% image post.post_image fill-310x200 as postImage %}
                         <img src="{{ postImage.url }}"/>
                     </div>
                     <div class="main_grid_single_info">

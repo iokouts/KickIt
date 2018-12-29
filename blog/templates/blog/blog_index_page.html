@@ -22,7 +22,7 @@
 
             {% with blog_featured|first as post %}
             <a class="featured_post_img_container" href="{{ post.url }}">
-                {% image post.specific.main_image original as postImage %}
+                {% image post.specific.post_image original as postImage %}
                 <div class="featured_post_image" style="background-image: url({{ postImage.url }})"></div>
             </a>
             <div class="featured_post_info">
@@ -50,7 +50,7 @@
                             onmouseenter="changeBackground(this, '{{ page.main_color }}')"
                             onmouseleave="resetBackground(this)">
                             <a href="{{ post.url }}">
-                                {% image post.specific.main_image fill-420x230 as postImage %}
+                                {% image post.specific.post_image fill-420x230 as postImage %}
                                 <div class="subfeatured_img_container" style="background-image: url({{ postImage.url }})"></div>
                                 <div class="subfeatured_info_container">
                                     <div class="subfeatured_title"><p>{{ post.title }}</p></div>
@@ -67,7 +67,7 @@
                              onmouseenter="changeBackground(this, '{{ page.main_color|safe }}')"
                              onmouseleave="resetBackground(this)">
                             <a href="{{ post.url }}">
-                                {% image post.specific.main_image fill-420x230 as postImage %}
+                                {% image post.specific.post_image fill-420x230 as postImage %}
                                 <div class="subfeatured_img_container" style="background-image: url({{ postImage.url }})"></div>
                                 <div class="subfeatured_info_container">
                                     <div class="subfeatured_title">{{ post.title }}</div>
