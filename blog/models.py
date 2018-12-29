@@ -1,5 +1,4 @@
 from django.db import models
-from django import forms
 
 from wagtail.core.models import Page, Orderable
 from wagtail.core.fields import RichTextField
@@ -7,10 +6,10 @@ from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel, PageChooserPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.models import register_snippet
-from wagtail.snippets.edit_handlers import SnippetChooserPanel
 from wagtail.search import index
 
-from wagtail_embed_videos.edit_handlers import EmbedVideoChooserPanel
+from wagtail.embeds import embeds
+from wagtail.embeds.exceptions import EmbedException
 from wagtailmetadata.models import MetadataPageMixin
 
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
@@ -105,18 +104,11 @@ class BlogPage(MetadataPageMixin, Page):
         verbose_name='show in homepage slider',
         default=False
     )
+    video_url = models.CharField(max_length=250, blank=True)
     author = models.ForeignKey(
          'blog.AuthorPage', null=True, blank=True,
          on_delete=models.SET_NULL, related_name='+'
      )
-    video = models.ForeignKey(
-        'wagtail_embed_videos.EmbedVideo',
-        verbose_name="Video",
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+'
-    )
 
     def get_context(self, request):
         # Update context to include only published posts, ordered by reverse-chron
@@ -132,6 +124,13 @@ class BlogPage(MetadataPageMixin, Page):
             return gallery_item.image
         else:
             return None
+
+    def get_embed_video(self):
+        try:
+            embed = embeds.get_embed(self.video_url)
+            return embed.html
+        except EmbedException:
+            return 'Something went wrong while embeding the video! Invalid or not existing video URL!'
 
     def greek_date(self):
         return format_date(self.date, locale='el_GR')
@@ -167,7 +166,7 @@ class BlogPage(MetadataPageMixin, Page):
         ], heading="Post information"),
         FieldPanel('intro'),
         FieldPanel('body'),
-        EmbedVideoChooserPanel('video'),
+        FieldPanel('video_url'),
         InlinePanel('gallery_images', label="Gallery images"),
     ]
 

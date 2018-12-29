@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags wagtailimages_tags static embed_video_tags %}
+{% load wagtailcore_tags wagtailimages_tags static wagtailembeds_tags %}
 
 {% block content %}
 
@@ -45,11 +45,7 @@
 
     <div class="main_container post_video_area">
         <div class="post_video_container">
-            {% if page.video %}
-                {% video page.video.url as video %}
-                    {% video video '800x400' %}
-                {% endvideo %}
-             {% endif %}
+            {%  include_block page.specific.get_embed_video %}
         </div>
     </div>
 
