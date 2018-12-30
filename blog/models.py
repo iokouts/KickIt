@@ -17,7 +17,7 @@ from modelcluster.contrib.taggit import ClusterTaggableManager
 from taggit.models import TaggedItemBase, Tag as TaggitTag
 
 from babel.dates import format_date
-
+from unidecode import unidecode
 # Create your models here.
 
 
@@ -113,6 +113,15 @@ class BlogPage(MetadataPageMixin, Page):
          'blog.AuthorPage', null=True, blank=True,
          on_delete=models.SET_NULL, related_name='+'
      )
+
+    # override full_clean to get nice slug urls, without greek characters
+    def full_clean(self, *args, **kwargs):
+        # first call the built-in cleanups (including default slug generation)
+        super(BlogPage, self).full_clean(*args, **kwargs)
+
+        # convert greek characters to english
+        if self.slug:
+            self.slug = unidecode(self.slug)
 
     def get_context(self, request):
         # Update context to include only published posts, ordered by reverse-chron
