@@ -32,20 +32,16 @@ body {
 .featured_post_inner {
     z-index: 200;
     position: relative;
-}
-
-.featured_post_info {
-    display: inline-block;
+    display: flex;
 }
 
 .featured_post_img_container {
-    width: 485px;
     height: 280px;
-    display: inline-block
 }
 
 .featured_post_image {
     height: 100%;
+    width: 485px;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -57,10 +53,9 @@ body {
 
 .featured_post_title {
     font-family: pfBold;
-    font-size: 45px;
+    font-size: 40px;
     line-height: 50px;
     color: #191b1a;
-    max-width: 400px;
 }
 
 .featured_post_title a:hover {
@@ -71,7 +66,6 @@ body {
 	font-family: NBook;
     font-size: 18px;
     color: #191b1a;
-    max-width: 400px;
     line-height: 22px;
 }
 
@@ -126,7 +120,7 @@ body {
 }
 
 .subfeatured_info_container {
-    padding: 10px;
+    padding: 20px 10px;
 }
 
 .subfeatured_title {
@@ -136,11 +130,11 @@ body {
 }
 
 .subfeatured_text {
-    padding-top: 5px;
+    padding-top: 15px;
     font-family: NLight;
     font-size: 17px;
-    max-width: 400px;
-    overflow: hidden;
+    /*max-width: 400px;*/
+    /*overflow: hidden;*/
     text-overflow: ellipsis;
 }
 
@@ -189,6 +183,16 @@ body {
 
     .featured_post_inner {
         text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .featured_post_img_container {
+        margin: 0 auto;
+    }
+
+    .featured_post_title {
+        font-size: 35px;
+        line-height: 40px;
     }
 
     .subfeatured_area {
@@ -240,6 +244,7 @@ body {
         text-align: center;
         width: 310px;
         height: 200px;
+        display: block;
     }
 
     .featured_post_img_container {
@@ -250,12 +255,12 @@ body {
 
     .featured_post_image {
         background-size: contain;
+        width: 100%;
     }
 
     .featured_post_title {
-        font-family: NDemi;
-	    font-size: 28px;
-        text-align: center;
+	    font-size: 20px;
+        line-height: 25px;
         padding-top: 0;
     }
 
@@ -291,14 +296,13 @@ body {
     }
 
     .subfeatured_title {
-        padding-top: 0;
+        padding: 0 10px;
         font-family: NDemi;
         display: flex;
         align-items: center;
         justify-content: center;
         height: 150px;
-        max-width: 100%;
-        font-size: 28px;
+        font-size: 22px;
     }
 
     .main_posts_grid {
