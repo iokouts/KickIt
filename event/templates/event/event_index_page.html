@@ -11,7 +11,7 @@
     {% image page.main_image original as main_image %}
     <div class="banner" style="background-image: url('{{ main_image.url }}');">
         <div class="banner_title">
-            <p>What's on?</p>
+            <h1>What's on?</h1>
         </div>
     </div>
 
@@ -21,18 +21,20 @@
             {% for event in events %}
                 {% with event=event.specific %}
                     <div class="event_single">
-                        <a href="{{ event.url }}">
-                            <div class="event_img_container">
-                                {% image event.event_image fill-260x260 as event_image%}
-                                <img src="{{ event_image.url }}"/>
+                        <div class="event_img_container">
+                            {% image event.event_image fill-260x260 as event_image%}
+                            <img src="{{ event_image.url }}"/>
+                        </div>
+                        <div class="event_info_container">
+                            <div class="event_title">
+                                <a href="{{ event.event_link }}" target="_blank">{{ event.title }}</a>
                             </div>
-                            <div class="event_info_container">
-                                <div class="event_title">{{ event.title }}</div>
-                                <div class="event_date">{{ event.date }}</div>
-                                <div class="event_venue">{{ event.venue }}</div>
-                                <div class="event_description">{{ event.description }}</div>
+                            <div class="event_date">{{ event.date }}</div>
+                            <div class="event_venue">
+                                <a href="{{ event.venue_link }}" target="_blank">{{ event.venue }}</a>
                             </div>
-                        </a>
+                            <div class="event_description">{{ event.description }}</div>
+                        </div>
                     </div>
                 {% endwith %}
             {% endfor %}

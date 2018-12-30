@@ -9,6 +9,11 @@ body {
 	overflow-x: hidden;
 }
 
+h1, h2, h3 {
+    margin: 0;
+    font-weight: 300;
+}
+
 ul {
 	margin: 0;
 	padding: 0;

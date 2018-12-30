@@ -32,7 +32,7 @@ $ python manage.py runserver
 ## TODO
 ### Dev
 - [ ] Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
-- [ ] change functionality of Post Page main image
+- [x] ~~change functionality of Post Page main image~~
 - [ ] add Image Gallery to Post Page template
 - [ ] Related Posts in PostPage: show the 3 posts with the biggest number of common tags
 - [x] ~~consider removing wagtail-embedvideos and using default wagtail embed~~
@@ -49,11 +49,11 @@ $ python manage.py runserver
 - [ ] Check Preview Page - Bad Request
 
 ### Design
-- [ ] Event Page
+- [x] ~~Event Page~~
 - [ ] Author / Author Index Pages
 - [x] ~~Podcast Page~~
 - [ ] 404 / 500 error pages
-- [ ] favicon
+- [x] ~~favicon~~
 - [ ] admin icon
 
     

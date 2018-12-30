@@ -36,13 +36,17 @@ class EventPage(MetadataPageMixin, Page):
         on_delete=models.SET_NULL, related_name='+'
     )
     date = models.DateField("Event date", default=models.fields.datetime.date.today)
+    event_link = models.CharField(max_length=250, blank=True)
     venue = models.CharField(max_length=250)
+    venue_map_link = models.CharField(max_length=250, blank=True)
     description = models.CharField(max_length=250)
 
     content_panels = Page.content_panels + [
         ImageChooserPanel('event_image'),
         FieldPanel('date'),
+        FieldPanel('event_link'),
         FieldPanel('venue'),
+        FieldPanel('venue_map_link'),
         FieldPanel('description'),
     ]
 

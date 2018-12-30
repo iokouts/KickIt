@@ -22,7 +22,7 @@ body {
     text-align: center;
 }
 
-.banner_title p {
+.banner_title h1 {
 	font-family: pfBold;
 	color: #ffffff;
     font-size: 66px;
@@ -39,6 +39,7 @@ body {
 
 .event_single {
     height: 260px;
+    display: flex;
 }
 
 .event_single a {
@@ -75,4 +76,79 @@ body {
 
 .event_date, .event_venue {
     text-transform: uppercase;
+}
+
+@media screen and (max-width: 725px) {
+    .banner {
+        height: 400px;
+    }
+
+    .banner_title h1 {
+        font-size: 50px;
+    }
+
+    .event_grid_area {
+        padding-top: 60px;
+    }
+
+    .event_grid_container {
+        padding: 0 25px;
+    }
+
+    .event_single {
+        height: 200px;
+    }
+
+    .event_title {
+        font-size: 22px;
+    }
+
+    .event_info_container {
+        width: 100%;
+    }
+
+    .event_date , .event_venue, .event_description{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .banner {
+        height: 250px;
+    }
+
+    .event_grid_area {
+        padding-top: 40px;
+    }
+
+    .event_grid_container {
+        padding: 0 10px;
+    }
+
+    .event_single {
+        height: 200px;
+    }
+
+    .event_img_container {
+        padding-right: 10px;
+        width: 160px;
+    }
+
+    .event_img_container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .event_title {
+        font-size: 20px;
+    }
+
+    .event_info_container {
+        padding-bottom: 5px;
+    }
+
+    .event_date , .event_venue, .event_description{
+        font-size: 14px;
+    }
 }
