@@ -1,6 +1,6 @@
 $(function(){
     var stickymenu = $('#sticky_menu');
-    var stickymenuoffset = stickymenu.offset().top + 5;
+    var stickymenuoffset = stickymenu.offset().top + 200;
     var logo_image = $('#logo_path');
 
     var pathname = window.location.pathname; // Returns path only
