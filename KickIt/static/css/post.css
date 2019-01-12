@@ -93,6 +93,15 @@ body {
     color: #b4214f;
 }
 
+.post_article_body .rich-text > img {
+    width: 100%;
+    height: auto;
+    max-height: 800px;
+    object-fit: contain;
+    object-position: left;
+    max-width: 900px;
+}
+
 .post_video_area {
     grid-area: post_video_area;
     padding-bottom: 20px;
