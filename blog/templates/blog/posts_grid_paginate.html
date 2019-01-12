@@ -7,7 +7,7 @@
             <div class="main_grid_single" onmouseenter="changeBackground(this, '{{ category.specific.main_color|safe }}')" onmouseleave="resetBackground(this)">
                 <a href="{{ post.url }}">
                     <div class="grid_img_container">
-                        {% image post.main_image fill-310x200 as postImage%}
+                        {% image post.post_image fill-310x200 as postImage%}
                         <img src="{{ postImage.url }}"/>
 
                     </div>
