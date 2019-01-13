@@ -22,6 +22,20 @@
         </div>
     </div>
 
+    <div class="main_container post_article_title_area">
+        <div class="post_article_title_container">
+            <div class="post_article_title">{{ page.title }}</div>
+            <div class="post_article_extra">
+                <p class="author">{{ page.specific.author.name }}</p>/
+                <a class="category" style="color: {{ post_category.specific.main_color }};" href="{{ post_category.url }}">{{ post_category.title }}</a>/
+                <div class="time">{{ page.greek_date }}</div>
+            </div>
+            <div class="post_article_intro">
+                <p>{{ page.intro }}</p>
+            </div>
+        </div>
+    </div>
+
     <div class="main_container post_image_area">
         <div class="post_image_container">
             {% image page.post_image fill-1050x600 as pageImage %}
@@ -30,15 +44,6 @@
     </div>
 
     <div class="main_container post_article_area">
-        <div class="post_article_title_container">
-            <div class="post_article_title">{{ page.title }}</div>
-            <div class="post_article_extra">
-                <p class="author">{{ page.specific.author.name }}</p>/
-                <a class="category" style="color: {{ post_category.specific.main_color }};" href="{{ post_category.url }}">{{ post_category.title }}</a>/
-                <div class="time">{{ page.greek_date }}</div>
-            </div>
-        </div>
-
         <div class="post_article_body">{{ page.body|richtext }}</div>
     </div>
     {% endwith %}

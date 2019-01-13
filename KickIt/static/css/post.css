@@ -3,6 +3,7 @@ body {
 	grid-template-areas:
 		"header"
         "post_mobile_banner"
+        "post_article_title_area"
         "post_image_area"
         "post_article_area"
         "post_video_area"
@@ -27,7 +28,6 @@ body {
 
 .post_image_area {
     grid-area: post_image_area;
-    padding-top: 80px;
 }
 
 .post_image_container {
@@ -43,10 +43,20 @@ body {
     padding-top: 60px;
 }
 
+.post_article_title_area {
+    grid-area: post_article_title_area;
+    padding-top: 50px;
+}
+
 .post_article_title_container{
     margin: 0 auto;
     max-width: 810px;
     padding-bottom: 40px;
+}
+
+.post_article_intro {
+    padding-top: 20px;
+    text-align: center;
 }
 
 .post_article_title {
@@ -201,9 +211,7 @@ body {
 }
 
 @media screen and (min-width: 1100px) {
-    .post_image_area{
-        padding-top: 150px;
-    }
+
 }
 
 @media screen and (max-width: 1100px) {
@@ -250,10 +258,6 @@ body {
 @media screen and (max-width: 500px) {
     .post_mobile_banner {
         display: block;
-    }
-
-    .post_image_area {
-        padding-top: 50px;
     }
 
     .post_video_container iframe, .responsive-object iframe  {
