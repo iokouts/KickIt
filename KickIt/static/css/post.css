@@ -18,7 +18,7 @@ body {
     grid-area: post_mobile_banner;
     display: none;
     width: 100%;
-    height: 50px;
+    height: 60px;
 }
 
 #category_label {
@@ -200,8 +200,8 @@ body {
 }
 
 .responsive-object {
-    padding: 0 20px !important;
-    text-align: center;
+    padding: 0 !important;
+    text-align: left;
 }
 
 .responsive-object iframe {

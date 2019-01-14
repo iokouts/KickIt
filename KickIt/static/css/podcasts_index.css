@@ -9,7 +9,7 @@ body {
 
 .banner {
     grid-area: banner;
-    padding: 50px 0;
+    padding: 40px 0;
     text-align: center;
 }
 

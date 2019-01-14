@@ -34,6 +34,8 @@ body {
 }
 
 .event_grid_container {
+    display: grid;
+    grid-row-gap: 20px;
     padding: 0 50px;
 }
 
@@ -52,11 +54,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-bottom: 30px;
+    padding: 15px 0;
 }
 
 .event_img_container {
-    padding-right: 20px;
+    padding-right: 15px;
     height: 100%;
 }
 
@@ -66,12 +68,12 @@ body {
 
 .event_title {
     font-family: pfBold;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .event_date , .event_venue, .event_description{
     font-family: NDemi;
-    font-size: 22px;
+    font-size: 19px;
 }
 
 .event_date, .event_venue {
