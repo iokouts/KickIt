@@ -142,6 +142,10 @@ class BlogPage(MetadataPageMixin, Page):
     def greek_date(self):
         return format_date(self.date, locale='el_GR')
 
+    def get_meta_url(self):
+        """The URL of this object, including protocol and domain"""
+        return self.get_full_url()
+
     def get_meta_image(self):
         """A relevant Wagtail Image to show. Optional."""
         # gallery_item = self.gallery_images.first()
