@@ -255,6 +255,7 @@ body {
 
     .featured_post_image {
         background-size: contain;
+        background-position: center;
         width: 100%;
     }
 
@@ -265,7 +266,7 @@ body {
     }
 
     .featured_post_info {
-        padding: 0;
+        padding: 10px 0 0 0;
     }
 
     .featured_post_subtitle, .featured_post_extra, .main_grid_single_info span, .subfeatured_text {
