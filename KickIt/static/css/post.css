@@ -41,6 +41,7 @@ body {
 .post_article_area {
     grid-area: post_article_area;
     padding-top: 60px;
+    max-width: 800px;
 }
 
 .post_article_title_area {
@@ -108,8 +109,20 @@ body {
     height: auto;
     max-height: 800px;
     object-fit: contain;
-    object-position: left;
     max-width: 800px;
+    object-position: left;
+}
+
+.right {
+    object-position: right !important;
+}
+
+.left {
+    object-position: left !important;
+}
+
+.center {
+    object-position: center !important;
 }
 
 .post_video_area {
