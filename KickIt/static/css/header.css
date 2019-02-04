@@ -82,6 +82,10 @@ nav {
 }
 
 @media screen and (min-width: 726px) and (max-width: 1100px) {
+    .sticky_menu .menu_holder {
+        padding-left: 10px;
+    }
+
     .sticky_menu .menu ul li {
         font-size: 20px;
         padding-right: 15px;

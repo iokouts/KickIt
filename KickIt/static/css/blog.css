@@ -49,6 +49,7 @@ body {
 .featured_post_info {
     vertical-align: top;
     padding: 15px 0 0 25px;
+    margin: 0 auto;
 }
 
 .featured_post_title {
