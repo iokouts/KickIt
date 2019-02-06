@@ -14,3 +14,4 @@ whitenoise==4.1.1
 sentry-sdk==0.6.5
 django-embed-video==1.2.0
 wagtail-embed-videos==0.4.2
+django-extensions==2.1.5
