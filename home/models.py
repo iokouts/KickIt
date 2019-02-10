@@ -34,7 +34,7 @@ class HomePage(MetadataPageMixin, Page):
         slider_posts = BlogPage.objects.live().filter(show_in_homepage_slider=True).order_by('-first_published_at')[:4]
         context['slider_posts'] = slider_posts
 
-        featured_posts = BlogPage.objects.live().order_by('-first_published_at')[:6]
+        featured_posts = BlogPage.objects.live().exclude(pk__in=slider_posts).order_by('-first_published_at')[:6]
         context['featured_posts'] = featured_posts
 
         return context
