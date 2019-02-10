@@ -1,7 +1,7 @@
 from django.db import models
 from wagtail.core.models import Page, Orderable
 
-from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel, PageChooserPanel
+from wagtail.admin.edit_handlers import FieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 
 from wagtailmetadata.models import MetadataPageMixin
@@ -23,9 +23,8 @@ class EventIndexPage(MetadataPageMixin, Page):
 
     def get_context(self, request):
         context = super().get_context(request)
-        events = self.get_children().live().order_by('-first_published_at')
 
-        context['events'] = events
+        context['events'] = EventPage.objects.live().order_by('-date')
 
         return context
 
