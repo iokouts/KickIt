@@ -9,18 +9,23 @@
         <div class="cookie-text">
             {% trans 'This website uses cookies to make your experience better.' %}
         </div>
-        <div class="cookie-button outer" onclick="Cookielaw.createCookielawCookie()">
-            <div class="inner">
+        <div class="close-cookie-container ">
+            <div class="close-cookie" onclick="Cookielaw.createCookielawCookie()">
                 <label>OK</label>
             </div>
         </div>
-        <div class="close-cookies"></div>
+        {% comment %} <div class="cookie-button outer" onclick="Cookielaw.createCookielawCookie()">
+            <div class="inner">
+                <label>OK</label>
+            </div>
+        </div> {% endcomment %}
+        {% comment %} <div class="close-cookies"></div> {% endcomment %}
 </div>
 {% comment %} type="button"  {% endcomment %}
 
 <script type="application/javascript">
 $(document).ready(function () {
-$('.close-cookies').click(function () {
+$('.inner').click(function () {
     $(this).parent().hide();
 });
 });
