@@ -1,4 +1,5 @@
 {% load static wagtailuserbar %}
+{% load cookielaw_tags %}
 
 {% block head %}
     {% include "includes/head.html" %}
@@ -17,6 +18,7 @@
 
     <footer>
         {% include "includes/footer.html" %}
+        {% cookielaw_banner %}
     </footer>
 
     {% block scripts %}

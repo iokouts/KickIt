@@ -65,6 +65,7 @@ INSTALLED_APPS = [
 
     'modelcluster',
     'taggit',
+    'cookielaw',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -112,7 +113,7 @@ TEMPLATES = [
 
                 'wagtailmenus.context_processors.wagtailmenus',
 
-                'django.template.context_processors.request',  # For EL-pagination
+                'django.template.context_processors.request',  # For EL-pagination & Cookie-law
 
                 # 'django.template.context_processors.i18n',
                 # 'django.template.context_processors.media',
