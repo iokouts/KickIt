@@ -57,7 +57,6 @@ INSTALLED_APPS = [
     'wagtail.search',
     'wagtail.admin',
     'wagtail.core',
-    'wagtail_embed_videos',
     'embed_video',
     'wagtailmetadata',
 
