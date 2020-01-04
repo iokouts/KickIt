@@ -1,7 +1,7 @@
-wagtail==2.6
+wagtail==2.7
 Django==2.2.8
-django-modelcluster==4.2
-django-taggit==0.23.0
+django-modelcluster==5
+django-taggit==1.2.0
 wagtail-metadata==2.0.1
 Babel==2.6.0
 wagtailmenus==2.11.1
