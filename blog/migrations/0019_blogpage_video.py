@@ -7,7 +7,6 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('wagtail_embed_videos', '0002_auto_20180822_0945'),
         ('blog', '0018_auto_20181014_2040'),
     ]
 
@@ -15,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='blogpage',
             name='video',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='wagtail_embed_videos.EmbedVideo', verbose_name='Video'),
+            field=models.CharField(blank=True, max_length=250),
         ),
     ]
