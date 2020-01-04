@@ -6,22 +6,15 @@
 
 <script src="{% static 'cookielaw/js/cookielaw.js' %}"></script>
 <div id="CookielawBanner">
-        <div class="cookie-text">
-            {% trans 'This website uses cookies to make your experience better.' %}
+    <div class="cookie-text">
+        {{ settings.sitesettings.GeneralConfigurations.cookies_conscent_text }}
+    </div>
+    <div class="close-cookie-container ">
+        <div class="close-cookie" onclick="Cookielaw.createCookielawCookie()">
+            <label>OK</label>
         </div>
-        <div class="close-cookie-container ">
-            <div class="close-cookie" onclick="Cookielaw.createCookielawCookie()">
-                <label>OK</label>
-            </div>
-        </div>
-        {% comment %} <div class="cookie-button outer" onclick="Cookielaw.createCookielawCookie()">
-            <div class="inner">
-                <label>OK</label>
-            </div>
-        </div> {% endcomment %}
-        {% comment %} <div class="close-cookies"></div> {% endcomment %}
+    </div>
 </div>
-{% comment %} type="button"  {% endcomment %}
 
 <script type="application/javascript">
 $(document).ready(function () {
