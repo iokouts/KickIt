@@ -6,3 +6,4 @@ media
 .env
 static
 package-lock.json
+.vscode
