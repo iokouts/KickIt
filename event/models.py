@@ -24,7 +24,7 @@ class EventIndexPage(MetadataPageMixin, Page):
     def get_context(self, request):
         context = super().get_context(request)
 
-        context['events'] = EventPage.objects.live().order_by('-date')
+        context['events'] = EventPage.objects.live().order_by('date')
 
         return context
 
