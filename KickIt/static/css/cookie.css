@@ -1,0 +1,48 @@
+#CookielawBanner {
+	background: #191b1a;
+	font-family: pfRegular;
+	font-size: 20px;
+    color: #ffffff;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+    text-align: center;
+}
+
+.cookie-text {
+    display: inline-block;
+    padding-right: 15px;
+}
+.close-cookie-container {
+    display: inline-block;
+}
+
+.close-cookie {
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    background: #ffed00;
+}
+
+.close-cookie label {
+    color: #191b1a;
+    font-size: 12px;
+    text-transform: uppercase;
+    /* transition: all .3s ease-in; */
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .cookie-text {
+        width: 75%;
+    }
+
+    .close-cookie-container {
+        vertical-align: top;
+        padding-top: 10px;
+    }
+
+}

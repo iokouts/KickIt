@@ -1,0 +1,25 @@
+{% load i18n static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/cookie.css' %}">
+{% endblock %}
+
+<script src="{% static 'cookielaw/js/cookielaw.js' %}"></script>
+<div id="CookielawBanner">
+    <div class="cookie-text">
+        {{ settings.sitesettings.GeneralConfigurations.cookies_conscent_text }}
+    </div>
+    <div class="close-cookie-container ">
+        <div class="close-cookie" onclick="Cookielaw.createCookielawCookie()">
+            <label>OK</label>
+        </div>
+    </div>
+</div>
+
+<script type="application/javascript">
+$(document).ready(function () {
+$('.inner').click(function () {
+    $(this).parent().hide();
+});
+});
+</script>
