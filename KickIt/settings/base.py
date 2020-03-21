@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'sitesettings',
     'podcast',
     'event',
+    'plain',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
