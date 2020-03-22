@@ -1,0 +1,46 @@
+body {
+    display: grid;
+    grid-template-areas: "radio_area" "chat_area" "logo_area";
+    background-color: #000;
+}
+
+.radio_area {
+    margin: 0 auto;
+    padding-top: 50px;
+    width: 500px;
+    grid-area: radio_area;
+}
+
+.radio_iframe_container {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.chat_area {
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 500px;
+    height: 700px;
+    grid-area: chat_area;
+}
+
+.chat_iframe_container {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.logo_area {
+    display: flex;
+    grid-area: logo_area;
+    justify-content: flex-end;
+}
+
+.logo {
+    padding: 20px;
+    width: 200px;
+}
+
+#logo_path {
+    fill: #ffed00;
+}
