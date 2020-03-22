@@ -12,6 +12,14 @@ nav {
     fill: #000000;
 }
 
+.radio_dot {
+    background: #000;
+}
+
+.radio_dot svg path {
+    fill: #ffed00;
+}
+
 .sticky_menu .menu_holder {
     display: block;
     padding-top: 0;
@@ -36,8 +44,11 @@ nav {
 .sticky_menu .logo {
 	display: block;
 	text-align: center;
-    width: 190px;
     margin: 0 auto;
+}
+
+.sticky_menu .logo a > svg {
+    width: 190px;
 }
 
 /*sticky*/
@@ -51,13 +62,24 @@ nav {
 	padding-top: 12px;
 }
 
-.sticky_menu.sticky .logo {
-	display: inline-block;
+.sticky_menu.sticky .logo a > svg {
 	width: 110px;
 }
 
 .sticky_menu.sticky .logo img {
 	height: 40px;
+}
+
+.sticky_menu.sticky .radio_dot {
+    background-color: #fff;
+}
+
+.sticky_menu.sticky .radio_dot svg path {
+    fill: #000;
+}
+
+.sticky_menu.sticky .radio_dot:hover {
+    background-color: #ffed00;
 }
 
 .sticky_menu.sticky .menu {
@@ -81,8 +103,19 @@ nav {
     }
 
     .sticky_menu .logo {
-        width: 130px;
         display: inline-block;
+    }
+    
+    .sticky_menu .logo a > svg {
+        width: 130px;
+    }
+
+    .radio_dot {
+        background: #fff;
+    }
+    
+    .radio_dot svg path {
+        fill: #000;
     }
 
     .sticky_menu.sticky {

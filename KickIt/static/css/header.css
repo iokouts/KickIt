@@ -14,13 +14,52 @@ nav {
     display: none;
 }
 
-.sticky_menu .logo {
+.sticky_menu .logo a > svg {
     width: 110px;
+}
+
+.sticky_menu .logo a {
+    display: inline-block;
 }
 
 #logo_path {
     fill: #fff;
 }
+
+.radio_dot {
+	height: 30px;
+	width:  30px;
+	border-radius: 50%;
+    background: #fff;
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0 0 3px -2px;
+    text-align: center;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+
+.radio_dot:hover {
+    cursor: pointer;
+    background: #ffed00;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+    transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+
+.radio_dot svg {
+    padding: 4px 0 0 4px;
+    width: 14px;
+}
+
+.radio_dot svg path {
+    fill: #000;
+}
+
 
 .sticky_menu.sticky {
     position: fixed;
