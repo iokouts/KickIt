@@ -4,22 +4,24 @@ body {
     background-color: #000;
 }
 
+.chat_area, .radio_area {
+    width: 500px;
+}
+
 .radio_area {
     margin: 0 auto;
     padding-top: 50px;
-    width: 500px;
     grid-area: radio_area;
 }
 
 .radio_iframe_container {
     background-color: #ffffff;
-    padding: 20px;
+    width: 100%;
 }
 
 .chat_area {
     margin: 0 auto;
     padding-top: 20px;
-    width: 500px;
     height: 700px;
     grid-area: chat_area;
 }
@@ -34,6 +36,7 @@ body {
     display: flex;
     grid-area: logo_area;
     justify-content: flex-end;
+    padding-right: 20px;
 }
 
 .logo {
@@ -43,4 +46,10 @@ body {
 
 #logo_path {
     fill: #ffed00;
+}
+
+@media screen and (max-width: 500px) {
+    .chat_area, .radio_area {
+        width: 350px;
+    }
 }
