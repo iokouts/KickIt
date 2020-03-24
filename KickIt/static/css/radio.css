@@ -4,19 +4,10 @@ body {
     background-color: #000;
 }
 
-.chat_area, .radio_area {
-    width: 500px;
-}
-
 .radio_area {
     margin: 0 auto;
     padding-top: 50px;
     grid-area: radio_area;
-}
-
-.radio_iframe_container {
-    background-color: #ffffff;
-    width: 100%;
 }
 
 .chat_area {
@@ -26,10 +17,21 @@ body {
     grid-area: chat_area;
 }
 
+.chat_area, .radio_area {
+    width: 500px;
+}
+
+.radio_iframe_container {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 10px
+}
+
 .chat_iframe_container {
     width: 100%;
     height: 100%;
     background-color: #ffffff;
+    padding: 10px
 }
 
 .logo_area {
@@ -37,6 +39,7 @@ body {
     grid-area: logo_area;
     justify-content: flex-end;
     padding-right: 20px;
+    margin-top: 20px;
 }
 
 .logo {
