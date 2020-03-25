@@ -17,21 +17,14 @@ body {
     grid-area: chat_area;
 }
 
-.chat_area, .radio_area {
-    width: 500px;
-}
-
-.radio_iframe_container {
+.chat_iframe_container, .radio_iframe_container {
     background-color: #ffffff;
-    width: 100%;
+    width: 500px;
     padding: 10px
 }
 
 .chat_iframe_container {
-    width: 100%;
     height: 100%;
-    background-color: #ffffff;
-    padding: 10px
 }
 
 .logo_area {
@@ -52,7 +45,7 @@ body {
 }
 
 @media screen and (max-width: 500px) {
-    .chat_area, .radio_area {
+    .chat_iframe_container, .radio_iframe_container {
         width: 350px;
     }
 }
