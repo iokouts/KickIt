@@ -31,10 +31,6 @@ body {
     background-color: #181818;
 }
 
-.chat_iframe_container iframe html body {
-    background-color: red !important;
-}
-
 .logo_area {
     display: flex;
     grid-area: logo_area;
