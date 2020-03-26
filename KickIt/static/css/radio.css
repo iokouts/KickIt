@@ -18,13 +18,21 @@ body {
 }
 
 .chat_iframe_container, .radio_iframe_container {
-    background-color: #ffffff;
     width: 500px;
     padding: 10px
 }
 
+.radio_iframe_container {
+    background-color: #ffffff;
+}
+
 .chat_iframe_container {
     height: 100%;
+    background-color: #181818;
+}
+
+.chat_iframe_container iframe html body {
+    background-color: red !important;
 }
 
 .logo_area {
