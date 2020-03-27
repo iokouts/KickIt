@@ -1,4 +1,4 @@
-{% load static %}
+{% load static wagtailcore_tags %}
 
 {% block head %}
     {% include "includes/head.html" %}
@@ -25,7 +25,7 @@
 
     <div class="logo_area">
         <div class="logo">
-            <a href="/home">
+            <a href="{% slugurl 'home' %}">
                 <svg viewBox="0 0 50.453 19.298" id="logo_img">
                     <defs>
                         <clipPath id="a">
