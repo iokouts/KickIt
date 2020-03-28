@@ -13,6 +13,13 @@ class RadioPage(MetadataPageMixin,Page):
         on_delete=models.SET_NULL, related_name='+'
     )
 
+    def get_meta_image(self):
+        """A relevant Wagtail Image to show. Optional."""
+        if self.radio_image:
+            return self.radio_image
+        else:
+            return None
+
     content_panels = Page.content_panels + [
         FieldPanel('radio_embed_url'),
         FieldPanel('chat_embed_url'),
