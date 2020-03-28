@@ -119,10 +119,6 @@ input, button, submit {
     display: inline-block;
 }
 
-.radio_dot {
-    display: none !important;
-}
-
 @media screen and (min-width: 1100px) {
         .main_container {
         width: 1050px;
