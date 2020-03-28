@@ -7,33 +7,36 @@ body {
 .radio_area {
     margin: 0 auto;
     padding-top: 50px;
-    width: 500px;
     grid-area: radio_area;
-}
-
-.radio_iframe_container {
-    background-color: #ffffff;
-    padding: 20px;
 }
 
 .chat_area {
     margin: 0 auto;
     padding-top: 20px;
-    width: 500px;
     height: 700px;
     grid-area: chat_area;
 }
 
-.chat_iframe_container {
-    width: 100%;
-    height: 100%;
+.chat_iframe_container, .radio_iframe_container {
+    width: 500px;
+    padding: 10px
+}
+
+.radio_iframe_container {
     background-color: #ffffff;
+}
+
+.chat_iframe_container {
+    height: 100%;
+    background-color: #181818;
 }
 
 .logo_area {
     display: flex;
     grid-area: logo_area;
     justify-content: flex-end;
+    padding-right: 20px;
+    margin-top: 20px;
 }
 
 .logo {
@@ -43,4 +46,10 @@ body {
 
 #logo_path {
     fill: #ffed00;
+}
+
+@media screen and (max-width: 500px) {
+    .chat_iframe_container, .radio_iframe_container {
+        width: 350px;
+    }
 }

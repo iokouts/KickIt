@@ -4,6 +4,10 @@ venv
 __pycache__
 media
 .env
-static
+
+static/*
+!static/css/
+!static/js/
+
 package-lock.json
 .vscode
