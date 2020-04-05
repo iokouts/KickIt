@@ -132,13 +132,12 @@ DATABASES = {
     'default': config('DATABASE_URL', cast=dj_database_url.parse)
 }
 
-search_backend = 'wagtail.search.backends.db'
-if not DEBUG:
-    search_backend = 'wagtail.contrib.postgres_search.backend'
+# if DEBUG:
+# 'BACKEND' = 'wagtail.search.backends.db'
 
 WAGTAILSEARCH_BACKENDS = {
     'default': {
-        'BACKEND': search_backend,
+        'BACKEND': 'wagtail.contrib.postgres_search.backend',
     }
 }
 
