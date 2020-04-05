@@ -1,12 +1,12 @@
 {% load static %}
 
 <div class="newsletter">
-    <div class="newsletter_title">Newsletter</div>
-    <div class="newsletter_subtitle">Join the Fam with no spam</div>
+    <div class="newsletter_title">Search</div>
+    <div class="newsletter_subtitle">You may be lucky today</div>
 
 	<form action="{% url 'search' %}" method="get">
         <input type="text" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
-        <input type="submit" value="Search" class="button">
+		<input id="submit" type="submit" value="Kick It!" class="button">
     </form>
 
 <!-- Begin Mailchimp Signup Form -->
@@ -28,7 +28,6 @@
 			</div>
 		</form>
 	</div> {% endcomment %}
-
 <!--End mc_embed_signup-->
 
 </div>
