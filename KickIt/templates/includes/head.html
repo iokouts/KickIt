@@ -16,8 +16,12 @@
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta charset="UTF-8"/>
-
-    {% comment %} {% meta_tags %} {% endcomment %}
+    
+    {% comment %} exclude search page, as it has no Page model {% endcomment %}
+    {% if page %}
+        {% meta_tags %}
+    {% endif %}
+    
     <meta property="og:type" content="website" />
 
     <title>KickIt!: {{ page.title }}</title>
