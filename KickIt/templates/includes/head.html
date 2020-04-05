@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
+	{# Global site tag (gtag.js) - Google Analytics #}
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138159489-1"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta charset="UTF-8"/>
     
-    {% comment %} exclude search page, as it has no Page model {% endcomment %}
+    {# exclude search page, as it has no Page model #}
     {% if page %}
         {% meta_tags %}
     {% endif %}
