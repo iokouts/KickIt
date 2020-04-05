@@ -1,0 +1,19 @@
+.search_pagination {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.search_pagination > a {
+    display: inline-block;
+}
+
+.search_pagination > a, .no_results {
+    padding: 25px;
+    font-family: NDemi;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.no_results {
+    text-align: center;
+}

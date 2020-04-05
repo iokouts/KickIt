@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'wagtail.contrib.styleguide',
     'wagtail.contrib.settings',
     'wagtail.contrib.modeladmin',
+    'wagtail.contrib.postgres_search',
     'wagtail.embeds',
     'wagtail.sites',
     'wagtail.users',
@@ -79,8 +80,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'el_pagination',
-
-
 ]
 
 MIDDLEWARE = [
@@ -118,11 +117,6 @@ TEMPLATES = [
                 'wagtailmenus.context_processors.wagtailmenus',
 
                 'django.template.context_processors.request',  # For EL-pagination & Cookie-law
-
-                # 'django.template.context_processors.i18n',
-                # 'django.template.context_processors.media',
-                # 'django.template.context_processors.static',
-                # 'django.template.context_processors.tz',
             ],
         },
     },
@@ -136,6 +130,16 @@ WSGI_APPLICATION = 'KickIt.wsgi.application'
 
 DATABASES = {
     'default': config('DATABASE_URL', cast=dj_database_url.parse)
+}
+
+search_backend = 'wagtail.search.backends.db'
+if not DEBUG:
+    search_backend = 'wagtail.contrib.postgres_search.backend'
+
+WAGTAILSEARCH_BACKENDS = {
+    'default': {
+        'BACKEND': search_backend,
+    }
 }
 
 
