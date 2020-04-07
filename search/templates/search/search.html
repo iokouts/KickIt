@@ -1,38 +1,76 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags %}
 
-{% block body_class %}template-searchresults{% endblock %}
-
-{% block title %}Search{% endblock %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block content %}
-    <h1>Search</h1>
 
-    <form action="{% url 'search' %}" method="get">
-        <input type="text" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
-        <input type="submit" value="Search" class="button">
-    </form>
+{% block styles %}
+	<link rel="stylesheet" href="{% static 'css/tags_page.css' %}">
+	<link rel="stylesheet" href="{% static 'css/posts_grid.css' %}">
+	<link rel="stylesheet" href="{% static 'css/search.css' %}">
+{% endblock %}
 
-    {% if search_results %}
-        <ul>
-            {% for result in search_results %}
-                <li>
-                    <h4><a href="{% pageurl result %}">{{ result }}</a></h4>
-                    {% if result.search_description %}
-                        {{ result.search_description }}
-                    {% endif %}
-                </li>
+<div class="main_container tags_main_container">
+    <div class="tags_banner_container">
+		<img src="{% static 'assets/kickit-favicon-large.png' %}" alt="Kickit"/>
+    </div>
+	<h4>?{{ search_query }}</h4>
+</div>
+
+<div class="tags_posts_area">
+    <div class="main_container">
+
+        {% if search_results %}
+        <div class="main_posts_grid">
+
+            {% for post in search_results %}
+            {% with post=post.specific %}
+                {% with post.get_parent as category%}
+                <div class="main_grid_single"
+                    onmouseenter="changeBackground(this, '{{ category.specific.main_color|safe }}')"
+                    onmouseleave="resetBackground(this)">
+                    <a href="{{ post.url }}">
+                        <div class="grid_img_container">
+                            {% image post.post_image fill-310x200 as postImage%}
+                            <img src="{{ postImage.url }}" />
+
+                        </div>
+                        <div class="main_grid_single_info">
+                            <span style="color:{{ category.specific.main_color }}">{{ category.title }}</span>
+                            <p>{{ post.title }}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endwith %}
+            {% endwith %}
             {% endfor %}
-        </ul>
+        </div>
 
-        {% if search_results.has_previous %}
-            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
-        {% endif %}
+        {% comment %} {% if result.search_description %}
+        {{ result.search_description }}
+        {% endif %} {% endcomment %}
 
-        {% if search_results.has_next %}
-            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
+        <div class="search_pagination">
+            {% if search_results.has_previous %}
+            <a id="prev" href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Back</a>
+            {% endif %}
+
+            {% if search_results.has_next %}
+            <a id="next" href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">More...</a>
+            {% endif %}
+        </div>
+
+        {% elif search_query %}
+		<div class="no_results">Try again!</div>
         {% endif %}
-    {% elif search_query %}
-        No results found
-    {% endif %}
+    </div>
+</div>
+
+{% block scripts %}
+{{ block.super }}
+
+<script type="text/javascript" src="{% static 'el-pagination/js/el-pagination.js' %}"></script>
+<script>$.endlessPaginate();</script>
+{% endblock %}
+
 {% endblock %}

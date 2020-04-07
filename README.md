@@ -31,14 +31,10 @@ $ python manage.py runserver
 
 ## TODO
 ### Dev
-- [ ] Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)
-- [x] ~~change functionality of Post Page main image~~
 - [ ] add Image Gallery to Post Page template
 - [ ] Related Posts in PostPage: show the 3 posts with the biggest number of common tags
-- [x] ~~consider removing wagtail-embedvideos and using default wagtail embed~~
 - [ ] uninstall wagtail_embed_videos 
 - [ ] Add Podcasts Tags (same as post tags?)
-- [x] ~~Newsletter with MailChimp~~
 - [ ] check browser/mobile compatibility
 - [ ] SEO
 - [ ] improve readability with HTML5 tags
@@ -49,11 +45,8 @@ $ python manage.py runserver
 - [ ] Check Preview Page - Bad Request
 
 ### Design
-- [x] ~~Event Page~~
 - [ ] Author / Author Index Pages
-- [x] ~~Podcast Page~~
 - [ ] 404 / 500 error pages
-- [x] ~~favicon~~
 - [ ] admin icon
 
     
@@ -75,10 +68,10 @@ $ python manage.py runserver
 ### Django / Wagtail
 * [wagtailmenus](https://github.com/rkhleics/wagtailmenus)
 * [wagtail metadata](https://github.com/takeflight/wagtail-metadata)
-* [~~wagtail embed videos~~](https://github.com/infoportugal/wagtail-embedvideos)
 * Pagination
 	* [django-el-pagination](https://django-el-pagination.readthedocs.io/en/latest/)
 	* [reddit help](https://www.reddit.com/r/django/comments/9p70uf/adding_load_more_functionality_to_wagtail_via/)
 * [django-newsletter](https://github.com/dokterbob/django-newsletter)
 * [wagtail site settings](https://vix.digital/insights/creating-using-custom-settings-in-your-wagtail-site/)
 * [wagtail embed](http://docs.wagtail.io/en/v2.4/advanced_topics/embeds.html)
+* Manage Cookies [django-cookie-consent](https://django-cookie-consent.readthedocs.io/en/latest/index.html)

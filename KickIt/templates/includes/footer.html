@@ -1,9 +1,15 @@
 {% load static %}
 
 <div class="newsletter">
-    <div class="newsletter_title">Newsletter</div>
-    <div class="newsletter_subtitle">Join the Fam with no spam</div>
+    <div class="newsletter_title">Search</div>
+    <div class="newsletter_subtitle">You may be lucky today</div>
 
+	<form action="{% url 'search' %}" method="get">
+        <input type="text" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
+		<input id="submit" type="submit" value="Kick It!" class="button">
+    </form>
+
+{% comment %} 
 <!-- Begin Mailchimp Signup Form -->
 	<div id="mc_embed_signup" class="form_container">
 		<form action="https://kickit.us7.list-manage.com/subscribe/post?u=32e09dcf4a7229c803049b7fa&amp;id=223c37b432" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
@@ -23,8 +29,8 @@
 			</div>
 		</form>
 	</div>
-
 <!--End mc_embed_signup-->
+{% endcomment %}
 
 </div>
 <div class="footer_main">

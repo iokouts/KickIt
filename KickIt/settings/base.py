@@ -16,6 +16,7 @@ import os
 import dj_database_url
 from decouple import Csv, config
 import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
@@ -31,7 +32,10 @@ EMAIL_BACKEND = config('EMAIL_BACKEND', default='django.core.mail.backends.conso
 
 # Sentry - Error tracking
 if not DEBUG:
-    sentry_sdk.init("https://6aa536f4c94f4eb49dacb836fa9a664a@sentry.io/1360550")
+    sentry_sdk.init(
+        dsn="https://6aa536f4c94f4eb49dacb836fa9a664a@sentry.io/1360550",
+        integrations=[DjangoIntegration()]
+    )
 
 # Application definition
 
@@ -49,6 +53,7 @@ INSTALLED_APPS = [
     'wagtail.contrib.styleguide',
     'wagtail.contrib.settings',
     'wagtail.contrib.modeladmin',
+    'wagtail.contrib.postgres_search',
     'wagtail.embeds',
     'wagtail.sites',
     'wagtail.users',
@@ -75,8 +80,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'el_pagination',
-
-
 ]
 
 MIDDLEWARE = [
@@ -114,11 +117,6 @@ TEMPLATES = [
                 'wagtailmenus.context_processors.wagtailmenus',
 
                 'django.template.context_processors.request',  # For EL-pagination & Cookie-law
-
-                # 'django.template.context_processors.i18n',
-                # 'django.template.context_processors.media',
-                # 'django.template.context_processors.static',
-                # 'django.template.context_processors.tz',
             ],
         },
     },
@@ -132,6 +130,15 @@ WSGI_APPLICATION = 'KickIt.wsgi.application'
 
 DATABASES = {
     'default': config('DATABASE_URL', cast=dj_database_url.parse)
+}
+
+# if DEBUG:
+# 'BACKEND' = 'wagtail.search.backends.db'
+
+WAGTAILSEARCH_BACKENDS = {
+    'default': {
+        'BACKEND': 'wagtail.contrib.postgres_search.backend',
+    }
 }
 
 
