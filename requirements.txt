@@ -1,4 +1,4 @@
-wagtail==2.8
+wagtail==2.8.2
 Django==2.2.10
 django-modelcluster==5
 django-taggit==1.2.0
