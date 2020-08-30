@@ -138,7 +138,7 @@ join taggit_tag t on t.id = bt.tag_id
 where tag_id in ({','.join(list(map(str,tag_ids)))})
 and b.page_ptr_id != {self.page_ptr_id}
 group by (page_ptr_id, p.id) 
-order by tag_count desc
+order by tag_count desc, p.first_published_at desc
 limit 3"""
             blogpages = BlogPage.objects.raw(query)
         
