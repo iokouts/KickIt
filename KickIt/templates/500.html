@@ -1,13 +1,26 @@
-<!DOCTYPE html>
-<html class="no-js">
-    <head>
-        <meta charset="utf-8" />
-        <title>Internal server error</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </head>
-    <body>
-        <h1>Internal server error</h1>
+{% extends "base.html" %}
 
-        <h2>Sorry, there seems to be an error. Please try again soon.</h2>
-    </body>
-</html>
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'css/error.css' %}">
+    {% endblock %}
+
+    <div class="banner">
+        <div class="main_container">
+            <div class="icon_container">
+                <img src="{% static 'assets/kickit-favicon-large.png' %}" alt="Kickit"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="message">
+        <div class="main_container">
+            <h1>F@#k!</h1>
+    
+            <h2>Sorry, there seems to be an error. Please try again soon.</h2>
+        </div>
+    </div>
+{% endblock %}
