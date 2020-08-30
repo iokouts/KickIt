@@ -32,8 +32,6 @@ $ python manage.py runserver
 ## TODO
 ### Dev
 - [ ] add Image Gallery to Post Page template
-- [ ] Related Posts in PostPage: show the 3 posts with the biggest number of common tags
-- [ ] uninstall wagtail_embed_videos 
 - [ ] Add Podcasts Tags (same as post tags?)
 - [ ] check browser/mobile compatibility
 - [ ] SEO

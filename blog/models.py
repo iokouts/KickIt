@@ -126,7 +126,25 @@ class BlogPage(MetadataPageMixin, Page):
     def get_context(self, request):
         # Update context to include only published posts, ordered by reverse-chron
         context = super().get_context(request)
-        blogpages = BlogPage.objects.live().order_by('-first_published_at')[:3]
+
+        # find the posts with the most common tags
+        if self.tags:
+            tag_ids = self.tags.values_list('id', flat=True)
+
+            query = f"""select b.page_ptr_id, p.title, count(bt.tag_id) as tag_count from blog_blogpage b 
+join wagtailcore_page p on b.page_ptr_id = p.id 
+join blog_blogpagetag bt on bt.content_object_id = b.page_ptr_id 
+join taggit_tag t on t.id = bt.tag_id 
+where tag_id in ({','.join(list(map(str,tag_ids)))})
+and b.page_ptr_id != {self.page_ptr_id}
+group by (page_ptr_id, p.id) 
+order by tag_count desc, p.first_published_at desc
+limit 3"""
+            blogpages = BlogPage.objects.raw(query)
+        
+        if not blogpages:
+            blogpages = BlogPage.objects.live().exclude(pk=self.id).order_by('-first_published_at')[:3]
+
         context['blogpages'] = blogpages
 
         return context
