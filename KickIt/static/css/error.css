@@ -1,0 +1,42 @@
+body {
+	display: grid;
+	grid-template-areas:
+		"header"
+		"banner"
+		"message"
+		"footer"
+}
+
+.banner {
+  grid-area: banner;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.message {
+  grid-area: message;
+  text-align: center;
+  padding: 200px 0;
+  height: 150px;
+  background: #e84070;
+}
+
+.message h1 {
+  font-family: pfBold;
+  font-size: 40px;
+  padding-top: 15px;
+  color: #ffffff;
+}
+
+.message h2 {
+  font-family: pfRegular;
+  font-size: 25px;
+  padding-top: 15px;
+  color: #000000;
+}
+
+@media screen and (max-width: 725px) {
+  .message {
+    padding: 50px 0;
+  }
+}

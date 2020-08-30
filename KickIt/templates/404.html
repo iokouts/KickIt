@@ -1,9 +1,26 @@
 {% extends "base.html" %}
 
-{% block body_class %}template-404{% endblock %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block content %}
-    <h1>Page not found</h1>
 
-    <h2>Sorry, this page could not be found.</h2>
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'css/error.css' %}">
+    {% endblock %}
+
+    <div class="banner">
+        <div class="main_container">
+            <div class="icon_container">
+                <img src="{% static 'assets/kickit-favicon-large.png' %}" alt="Kickit"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="message">
+        <div class="main_container">
+            <h1>Unlucky!</h1>
+    
+            <h2>Sorry, this page could not be found.</h2>
+        </div>
+    </div>
 {% endblock %}

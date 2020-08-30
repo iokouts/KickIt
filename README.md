@@ -26,7 +26,7 @@ $ python manage.py runserver
 ## Setup
 * set site name in Wagtail Admin -> Settings -> Site
 * add social media accounts: Settings -> SiteSettings
-* set mailchimp newsletter Subscribe Form: KickIt/templates/includes/footer.html
+* ~~set mailchimp newsletter Subscribe Form: KickIt/templates/includes/footer.html~~
 * create Collections for media and manage permissions of User Groups
 
 ## TODO
@@ -39,13 +39,8 @@ $ python manage.py runserver
 - [ ] minify css [django asset-managers](https://djangopackages.org/grids/g/asset-managers/)
 - [ ] add help text to model properties
 
-### Server
-- [ ] Check Preview Page - Bad Request
-
 ### Design
 - [ ] Author / Author Index Pages
-- [ ] 404 / 500 error pages
-- [ ] admin icon
 
     
 ## Resources
