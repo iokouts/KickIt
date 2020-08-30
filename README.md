@@ -41,7 +41,6 @@ $ python manage.py runserver
 
 ### Design
 - [ ] Author / Author Index Pages
-- [ ] admin icon
 
     
 ## Resources
