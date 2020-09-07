@@ -1,9 +1,16 @@
-{% load static wagtailuserbar %}
+{% load static wagtailuserbar compress %}
 {% load cookielaw_tags %}
 
 {% block head %}
     {% include "includes/head.html" %}
 {% endblock head %}
+
+{% block scripts %}
+{% endblock %}
+
+{% compress js %}
+<script type="module" src="{% static 'js/main.js' %}"></script>
+{% endcompress %}
 
 <body>
     {% wagtailuserbar %}
@@ -20,12 +27,6 @@
         {% include "includes/footer.html" %}
         {% cookielaw_banner %}
     </footer>
-
-    {% block scripts %}
-        <script src="{% static 'js/jquery-1.7.min.js' %}"></script>
-        <script src="{% static 'js/main.js' %}"></script>
-    {% endblock %}
-
 </body>
 
 </html>

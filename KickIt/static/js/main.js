@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 $(function(){
     var stickymenu = $('#sticky_menu');
     var stickymenuoffset = stickymenu.offset().top + 200;
@@ -18,17 +20,17 @@ $(function(){
     });
 });
 
-function changeBackground(x, color){
+window.changeBackground = function changeBackground(x, color){
     x.style.background = color;
 }
 
-function resetBackground(x){
+window.resetBackground = function resetBackground(x){
     var color;
     (screen.width <= 500) ? color = '#f7f6f6' : color='#fff';
     x.style.background = color;
 }
 
-function hamburgerButtonClick(){
+window.click_circle = function hamburgerButtonClick(){
     var hamburger = $('.hamburger');
     var menu = $('.menu');
 
@@ -46,6 +48,6 @@ function hamburgerButtonClick(){
     }
 }
 
-function openRadioPage(){
+window.open_radio = function openRadioPage(){
     window.open('/radio', 'Listen Live', 'width=800,height=1100');
-} 
+}

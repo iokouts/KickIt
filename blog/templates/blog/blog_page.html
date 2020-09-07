@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags wagtailimages_tags static wagtailembeds_tags %}
+{% load wagtailcore_tags wagtailimages_tags static wagtailembeds_tags compress %}
 
 {% block content %}
 
-    {% block styles %}
+    {% compress css inline %}
         <link rel="stylesheet" href="{% static 'css/post.css' %}">
         <link rel="stylesheet" href="{% static 'css/posts_grid.css' %}">
-    {% endblock %}
+    {% endcompress %}
 
     <script>
         var fb_app_id = '{{ settings.sitesettings.SocialMediaSettings.fb_app_id|escapejs }}';
@@ -45,6 +45,15 @@
 
     <div class="main_container post_article_area">
         <div class="post_article_body">{{ page.body|richtext }}</div>
+
+        <div>
+            {% for loop_cycle in self.gallery_images.all %}
+            {% image loop_cycle.image fill-900x400 as img %}
+            <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}">
+                <img src="{{ img.url }}" class="d-block w-100" alt="{{ img.alt }}">
+            </div>
+            {% endfor %}
+        </div>
     </div>
     {% endwith %}
 
@@ -84,15 +93,15 @@
 
     <div class="main_container just_space"></div>
 
-    {% block scripts %}
-    {{ block.super }}
+    {% compress js %}
         <script src="{% static 'js/social.js' %}"></script>
-        <script>
+    {% endcompress %}
+    {% compress js %}
+        <script defer>
             $(document).ready(function(){
                $('p > a').attr('target', '_blank');
             });
         </script>
-    {% endblock %}
-
+    {% endcompress %}
 
 {% endblock %}

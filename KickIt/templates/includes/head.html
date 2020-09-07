@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags wagtailmetadata_tags %}
+{% load static wagtailcore_tags wagtailmetadata_tags compress %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,19 +29,22 @@
     <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico'%}"/>
 
     {# Global stylesheets #}
+    {% compress css inline %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
     <link rel="stylesheet" href="{% static 'css/social.css' %}">
-
-    {% if page.slug == 'home' %}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/header_frontpage.css' %}">
-    {% endif %}
-
     {# Fonts #}
     <link rel="stylesheet" type="text/css" href="{% static 'css/fonts.css' %}">
+    {% endcompress %}
+    
+    {% if page.slug == 'home' %}
+        {% compress css inline %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/header_frontpage.css' %}">
+        {% endcompress %}
+    {% endif %}
 
-    {# Extra CSS #}
+    <!-- {# Extra CSS #}
     {% block styles %}
-    {% endblock %}
+    {% endblock %} -->
 </head>

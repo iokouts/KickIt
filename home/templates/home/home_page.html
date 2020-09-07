@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static wagtailcore_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags compress %}
 
 {% block content %}
 
@@ -8,28 +8,14 @@
         <title>KickIt!</title>
     {% endblock %}
 
-    {% block styles %}
+    {% compress css inline %}
         <link rel="stylesheet" href="{% static 'css/frontpage.css' %}" type="text/css">
         <link rel="stylesheet" href="{% static 'css/posts_grid.css' %}" type="text/css">
-        <link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css">
-    {% endblock %}
+    {% endcompress %}
 
-    {% block scripts %}
-        {{ block.super }}
-        <script src="{% static 'js/jquery.flexslider.js' %}"></script>
-        <script type="text/javascript" charset="utf-8">
-            $(window).load(function () {
-                $('.flexslider').flexslider({
-                    animation: "fade",
-                    slideshow: true,
-                    slideshowSpeed: 4000,
-                    controlNav: false,
-                    prevText: '<',
-                    nextText: '>'
-                });
-            });
-        </script>
-    {% endblock %}
+    {% compress js %}
+    <script type="module" src="{% static 'js/frontpage.js' %}"></script>
+    {% endcompress %}
 
     <div class="main_container slider_area">
         <div class="flexslider frontpage_slider" id="frontpage_slider">
