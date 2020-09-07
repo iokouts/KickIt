@@ -9,5 +9,9 @@ static/*
 !static/css/
 !static/js/
 
+node_modules/*
+
 package-lock.json
 .vscode
+
+run
