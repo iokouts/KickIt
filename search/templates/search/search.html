@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
-{% load static wagtailcore_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags compress %}
 
 {% block content %}
 
-{% block styles %}
-	<link rel="stylesheet" href="{% static 'css/tags_page.css' %}">
-	<link rel="stylesheet" href="{% static 'css/posts_grid.css' %}">
-	<link rel="stylesheet" href="{% static 'css/search.css' %}">
-{% endblock %}
+{% compress css inline %}
+    <link rel="stylesheet" href="{% static 'css/tags_page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/posts_grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+{% endcompress %}
 
 <div class="main_container tags_main_container">
     <div class="tags_banner_container">
@@ -66,11 +66,8 @@
     </div>
 </div>
 
-{% block scripts %}
-{{ block.super }}
-
-<script type="text/javascript" src="{% static 'el-pagination/js/el-pagination.js' %}"></script>
-<script>$.endlessPaginate();</script>
-{% endblock %}
+{% compress js %}
+<script type="module" src="{% static 'js/paginate.js' %}"></script>
+{% endcompress %}
 
 {% endblock %}

@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% load static wagtailcore_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags compress %}
 
 {% block content %}
 
-    {% block styles %}
+    {% compress css inline %}
         <link rel="stylesheet" href="{% static 'css/tags_page.css' %}">
         <link rel="stylesheet" href="{% static 'css/posts_grid.css' %}">
-    {% endblock %}
+    {% endcompress %}
 
     <div class="main_container">
         <h4>{{ page.name }}</h4>
@@ -25,8 +25,6 @@
     </div>
 
     {% block scripts %}
-        {{ block.super }}
-
         <script type="text/javascript" src="{% static 'el-pagination/js/el-pagination.js' %}"></script>
         <script>$.endlessPaginate();</script>
     {% endblock %}
