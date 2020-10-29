@@ -412,29 +412,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   -webkit-overflow-scrolling: touch;
   overflow: auto;
 }
-.lg-outer .lg-has-vimeo .lg-video-play {
-  background: url("../img/vimeo-play.png") no-repeat scroll 0 0 transparent;
-}
-.lg-outer .lg-has-vimeo:hover .lg-video-play {
-  background: url("../img/vimeo-play.png") no-repeat scroll 0 -58px transparent;
-}
-.lg-outer .lg-has-html5 .lg-video-play {
-  background: transparent url("../img/video-play.png") no-repeat scroll 0 0;
-  height: 64px;
-  margin-left: -32px;
-  margin-top: -32px;
-  width: 64px;
-  opacity: 0.8;
-}
-.lg-outer .lg-has-html5:hover .lg-video-play {
-  opacity: 1;
-}
-.lg-outer .lg-has-youtube .lg-video-play {
-  background: url("../img/youtube-play.png") no-repeat scroll 0 0 transparent;
-}
-.lg-outer .lg-has-youtube:hover .lg-video-play {
-  background: url("../img/youtube-play.png") no-repeat scroll 0 -60px transparent;
-}
 .lg-outer .lg-video-object {
   width: 100% !important;
   height: 100% !important;
