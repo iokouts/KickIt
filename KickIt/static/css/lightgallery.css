@@ -3,7 +3,7 @@
 * Copyright (c) 2020 Sachin N; Licensed GPLv3 */
 @font-face {
   font-family: 'lg';
-  src: url("../fonts/lg.ttf?22t19m") format("truetype"), url("../fonts/lg.woff?22t19m") format("woff"), url("../fonts/lg.svg?22t19m#lg") format("svg");
+  src: url("../fonts/lg.otf");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -869,7 +869,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   white-space: nowrap;
 }
 .lg-outer .lg-item {
-  background: url("../img/loading.gif") no-repeat scroll center center transparent;
+  background: url("../assets/loading.gif") no-repeat scroll center center transparent;
   display: none !important;
 }
 .lg-outer.lg-css3 .lg-prev-slide, .lg-outer.lg-css3 .lg-current, .lg-outer.lg-css3 .lg-next-slide {
@@ -1019,4 +1019,3 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   transition: left 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
 }
 
-/*# sourceMappingURL=lightgallery.css.map */
