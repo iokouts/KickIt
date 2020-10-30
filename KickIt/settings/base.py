@@ -31,10 +31,12 @@ SECRET_KEY = config('SECRET_KEY')
 EMAIL_BACKEND = config('EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
 
 # Sentry - Error tracking
+SENTRY_ENV = config('SENTRY_ENV', default='staging')
 if not DEBUG:
     sentry_sdk.init(
         dsn="https://6aa536f4c94f4eb49dacb836fa9a664a@sentry.io/1360550",
-        integrations=[DjangoIntegration()]
+        integrations=[DjangoIntegration()],
+        environment=SENTRY_ENV
     )
 
 # Application definition
