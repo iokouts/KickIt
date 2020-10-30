@@ -31,7 +31,6 @@ $ python manage.py runserver
 
 ## TODO
 ### Dev
-- [ ] add Image Gallery to Post Page template
 - [ ] Add Podcasts Tags (same as post tags?)
 - [ ] check browser/mobile compatibility
 - [ ] SEO
@@ -57,6 +56,7 @@ $ python manage.py runserver
     * [tumblr buttons](https://www.tumblr.com/buttons)
 
 * [MailChimp API](https://developer.mailchimp.com/documentation/mailchimp/guides/get-started-with-mailchimp-api-3/#resources)
+* [LightGallery Post Image Gallery](https://github.com/sachinchoolur/lightGallery) - [Codepen Demo](https://codepen.io/sachinchoolur/pen/QjLNMM)
 
 ### Django / Wagtail
 * [wagtailmenus](https://github.com/rkhleics/wagtailmenus)
