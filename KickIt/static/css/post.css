@@ -238,6 +238,7 @@ body {
 .gallery {
     width: 100%;
     margin: 0 auto;
+    padding: 0 5px;
 }
 
 .gallery > ul {
@@ -364,6 +365,14 @@ body {
         height: 300px;
     }
 
+    .gallery > ul > li {
+        width: 160px;
+    }
+
+    .post_gallery_area {
+        padding-top: 30px;
+    }
+
     .post_related_area .main_posts_grid {
         padding-left: 10px;
         padding-right: 10px;
@@ -398,5 +407,9 @@ body {
     .post_related_area .main_posts_grid .grid_img_container {
         width: 100px;
         height: 100%;
+    }
+
+    .gallery > ul > li {
+        width: 120px;
     }
 }
