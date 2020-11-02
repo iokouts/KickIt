@@ -7,12 +7,31 @@
     {% block styles %}
         <link rel="stylesheet" href="{% static 'css/post.css' %}">
         <link rel="stylesheet" href="{% static 'css/posts_grid.css' %}">
+
+        {% if page.gallery_images %}
+        <link rel="stylesheet" href="{% static 'css/lightgallery.css' %}" type="text/css">
+        {% endif %}
     {% endblock %}
 
-    <script>
-        var fb_app_id = '{{ settings.sitesettings.SocialMediaSettings.fb_app_id|escapejs }}';
-        var absolute_uri= '{{ request.build_absolute_uri }}';
-    </script>
+    {% block scripts %}
+    {{ block.super }}
+        {% if page.gallery_images %}
+        <script src="{% static 'js/lightgallery.min.js' %}"></script>
+        <script type="text/javascript">
+            $(document).ready(() => {
+            $("#lightgallery").lightGallery({
+                pager: true,
+                zoom: true
+            });
+            });
+        </script>
+        {% endif %}
+
+        <script>
+            var fb_app_id = '{{ settings.sitesettings.SocialMediaSettings.fb_app_id|escapejs }}';
+            var absolute_uri= '{{ request.build_absolute_uri }}';
+        </script>
+    {% endblock %}
 
     {% with page.get_parent as post_category %}
     <div class="post_mobile_banner" style="background: {{ post_category.specific.main_color }}">
@@ -48,12 +67,34 @@
     </div>
     {% endwith %}
 
-    {% if page.video_url %}
-        <div class="main_container post_video_area">
-            <div class="post_video_container">
-                {%  include_block page.specific.get_embed_video %}
-            </div>
+    {% if page.gallery_images %}
+    <div class="main_container post_gallery_area">
+        <div class="gallery">
+            <ul id="lightgallery">
+            {% for gallery_image in page.gallery_images.all %}
+            {% image gallery_image.image original as img %}
+            <li data-src="{{ img.url }}">
+                <a href="">
+                {% image gallery_image.image fill-400x300 as thumb %}
+                  <img class="img-responsive" src="{{ thumb.url }}">
+                  <div class="gallery-poster">
+                    <img src="{% static 'assets/zoom.png' %}" alt="zoom"/>
+                  </div>
+                </a>
+            </li>
+            {% endfor %}
+            </ul>
+          </div>
         </div>
+    </div>
+    {% endif %}
+
+    {% if page.video_url %}
+    <div class="main_container post_video_area">
+        <div class="post_video_container">
+            {%  include_block page.specific.get_embed_video %}
+        </div>
+    </div>
     {% endif %}
 
     <div class="main_container post_share_area">
@@ -61,13 +102,13 @@
     </div>
 
     {% if page.tags.all.count %}
-        <div class="main_container post_tags_area">
-            <ul>
-                {% for tag in page.tags.all %}
-                    <li><a href="{% slugurl 'tags' %}?tag={{ tag }}">#{{ tag }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
+    <div class="main_container post_tags_area">
+        <ul>
+            {% for tag in page.tags.all %}
+                <li><a href="{% slugurl 'tags' %}?tag={{ tag }}">#{{ tag }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
     {% endif %}
 
     {% if blogpages %}
@@ -84,15 +125,11 @@
 
     <div class="main_container just_space"></div>
 
-    {% block scripts %}
-    {{ block.super }}
-        <script src="{% static 'js/social.js' %}"></script>
-        <script>
-            $(document).ready(function(){
-               $('p > a').attr('target', '_blank');
-            });
-        </script>
-    {% endblock %}
-
+    <script src="{% static 'js/social.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+            $('p > a').attr('target', '_blank');
+        });
+    </script>
 
 {% endblock %}
