@@ -75,13 +75,13 @@
                 {% for gallery_image in page.gallery_images.all %}
                 {% image gallery_image.image original as img %}
                 <li data-src="{{ img.url }}">
-                    <a href="">
-                    {% image gallery_image.image fill-400x300 as thumb %}
-                    <img class="img-responsive" src="{{ thumb.url }}">
-                    <div class="gallery-poster">
-                        <img src="{% static 'assets/zoom.png' %}" alt="zoom"/>
+                    <div class="li-img">
+                        {% image gallery_image.image fill-400x300 as thumb %}
+                        <img class="img-responsive" src="{{ thumb.url }}">
+                        <div class="gallery-poster">
+                            <img src="{% static 'assets/zoom.png' %}" alt="zoom"/>
+                        </div>
                     </div>
-                    </a>
                 </li>
                 {% endfor %}
                 </ul>
