@@ -1,11 +1,8 @@
-body {
-	display: grid;
+main {
 	grid-template-areas:
-		"header"
 		"slider_area"
 		"parallax_area"
 		"posts_area"
-		"footer"
 }
 
 .slider_area {

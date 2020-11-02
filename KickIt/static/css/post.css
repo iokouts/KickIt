@@ -1,7 +1,5 @@
-body {
-	display: grid;
+main {
 	grid-template-areas:
-		"header"
         "post_mobile_banner"
         "post_article_title_area"
         "post_image_area"
@@ -12,7 +10,6 @@ body {
         "post_tags_area"
         "post_related_area"
         "just_space"
-		"footer"
 }
 
 .post_mobile_banner {
@@ -59,6 +56,11 @@ body {
 .post_article_intro {
     padding-top: 20px;
     text-align: center;
+}
+
+.post_article_intro h2 {
+    font-family: pfRegular;
+    font-size: 20px;
 }
 
 .post_article_title {

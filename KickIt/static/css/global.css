@@ -4,9 +4,27 @@ html {
 }
 
 body {
+    display: grid;
 	margin: 0;
 	width: 100%;
-	overflow-x: hidden;
+    overflow-x: hidden;
+	grid-template-areas:
+		"header"
+        "main"
+		"footer"
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+}
+
+footer {
+    grid-area: footer;
 }
 
 h1, h2, h3 {

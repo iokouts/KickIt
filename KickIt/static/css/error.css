@@ -1,10 +1,7 @@
-body {
-	display: grid;
+main {
 	grid-template-areas:
-		"header"
 		"banner"
 		"message"
-		"footer"
 }
 
 .banner {

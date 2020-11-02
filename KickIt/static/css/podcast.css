@@ -1,11 +1,8 @@
-body {
-	display: grid;
+main {
 	grid-template-areas:
-		"header"
         "banner"
         "podcast_area "
 		"post_share_area"
-		"footer"
 }
 
 .banner {
