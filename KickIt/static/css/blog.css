@@ -1,11 +1,8 @@
-body {
-	display: grid;
+main {
 	grid-template-areas:
-		"header"
         "featured_post"
         "subfeatured_area"
 		"posts_area"
-		"footer"
 }
 
 .featured_post_container {

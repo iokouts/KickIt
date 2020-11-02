@@ -1,7 +1,10 @@
 body {
-    display: grid;
-    grid-template-areas: "radio_area" "chat_area" "logo_area";
     background-color: #000;
+    display: grid;
+    grid-template-areas:
+        "radio_area"
+        "chat_area"
+        "logo_area"
 }
 
 .radio_area {

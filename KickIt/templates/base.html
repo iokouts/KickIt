@@ -8,13 +8,17 @@
 <body>
     {% wagtailuserbar %}
 
+    <header>
     {% block header %}
         {# Header contains the main_navigation block #}
         {% include "includes/header.html" with parent=site_root calling_page=self %}
     {% endblock header %}
+    </header>
 
+    <main>
     {% block content %}
     {% endblock content %}
+    </main>
 
     <footer>
         {% include "includes/footer.html" %}
