@@ -1,7 +1,5 @@
-body {
-	display: grid;
+main {
 	grid-template-areas:
-		"header"
         "post_mobile_banner"
         "post_article_title_area"
         "post_image_area"
@@ -12,7 +10,6 @@ body {
         "post_tags_area"
         "post_related_area"
         "just_space"
-		"footer"
 }
 
 .post_mobile_banner {
@@ -59,6 +56,11 @@ body {
 .post_article_intro {
     padding-top: 20px;
     text-align: center;
+}
+
+.post_article_intro h2 {
+    font-family: pfRegular;
+    font-size: 20px;
 }
 
 .post_article_title {
@@ -254,7 +256,7 @@ body {
     list-style: outside none none;
 }
   
-  .gallery > ul > li a {
+  .gallery > ul > li .li-img {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 3px;
     display: block;
@@ -263,7 +265,7 @@ body {
     float: left;
   }
   
-  .gallery > ul > li a > img {
+  .gallery > ul > li .li-img > img {
     -webkit-transition: -webkit-transform 0.15s ease 0s;
     -moz-transition: -moz-transform 0.15s ease 0s;
     -o-transition: -o-transform 0.15s ease 0s;
@@ -273,17 +275,21 @@ body {
     height: 100%;
     width: 100%;
   }
+
+  .gallery > ul > li .li-img:hover {
+      cursor: pointer;
+  }
   
-  .gallery > ul > li a:hover > img {
+  .gallery > ul > li .li-img:hover > img {
     -webkit-transform: scale3d(1.2, 1.2, 1.2);
     transform: scale3d(1.2, 1.2, 1.2);
   }
   
-  .gallery > ul > li a:hover .gallery-poster > img {
+  .gallery > ul > li .li-img:hover .gallery-poster > img {
     opacity: 1;
   }
   
-  .gallery > ul > li a .gallery-poster {
+  .gallery > ul > li .li-img .gallery-poster {
     background-color: rgba(0, 0, 0, 0.1);
     bottom: 0;
     left: 0;
@@ -295,7 +301,7 @@ body {
     transition: background-color 0.15s ease 0s;
   }
   
-  .gallery > ul > li a .gallery-poster > img {
+  .gallery > ul > li .li-img .gallery-poster > img {
     left: 50%;
     margin-left: -10px;
     margin-top: -10px;
@@ -307,7 +313,7 @@ body {
     transition: opacity 0.3s ease 0s;
   }
   
-  .gallery > ul > li a:hover .gallery-poster {
+  .gallery > ul > li .li-img:hover .gallery-poster {
     background-color: rgba(0, 0, 0, 0.5);
   }
 

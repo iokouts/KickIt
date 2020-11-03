@@ -1,11 +1,8 @@
-body {
-	display: grid;
+main {
 	grid-template-areas:
-		"header"
         "featured_post"
         "subfeatured_area"
 		"posts_area"
-		"footer"
 }
 
 .featured_post_container {
@@ -134,8 +131,6 @@ body {
     padding-top: 15px;
     font-family: NLight;
     font-size: 17px;
-    /*max-width: 400px;*/
-    /*overflow: hidden;*/
     text-overflow: ellipsis;
 }
 
