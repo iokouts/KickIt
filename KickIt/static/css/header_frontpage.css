@@ -16,7 +16,7 @@ nav {
     background: #000;
 }
 
-.radio_dot svg path {
+.radio_dot .radio_dot_svg path {
     fill: #ffed00;
 }
 
@@ -114,7 +114,7 @@ nav {
         background: #fff;
     }
     
-    .radio_dot svg path {
+    .radio_dot .radio_dot_svg path {
         fill: #000;
     }
 
