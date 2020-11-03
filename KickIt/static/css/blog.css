@@ -131,8 +131,6 @@ main {
     padding-top: 15px;
     font-family: NLight;
     font-size: 17px;
-    /*max-width: 400px;*/
-    /*overflow: hidden;*/
     text-overflow: ellipsis;
 }
 
