@@ -45,7 +45,3 @@ function hamburgerButtonClick(){
         menu.removeClass(mobile_menu);
     }
 }
-
-function openRadioPage(){
-    window.open('/radio', 'Listen Live', 'width=800,height=1100');
-} 

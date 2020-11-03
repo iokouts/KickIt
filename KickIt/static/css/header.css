@@ -51,12 +51,12 @@ nav {
     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 }
 
-.radio_dot svg {
-    padding: 4px 0 0 4px;
-    width: 14px;
+.radio_dot .radio_dot_svg {
+    padding: 6px 0 0 4px;
+    width: 14px !important;
 }
 
-.radio_dot svg path {
+.radio_dot .radio_dot_svg path {
     fill: #000;
 }
 
