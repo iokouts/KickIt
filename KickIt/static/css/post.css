@@ -122,6 +122,22 @@ main {
     height: 400px;
 }
 
+.post_article_body > blockquote {
+    margin: 40px 40px 0 40px;
+    font-family: pfB-Black;
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+}
+
+.post_article_body > blockquote > span {
+    display: block;
+    color: #ffed00;
+    font-size: 200px;
+    margin-bottom: -20px;
+}
+
 .right {
     object-position: right !important;
 }
@@ -369,6 +385,16 @@ main {
 
     .post_video_container iframe, .responsive-object iframe  {
         height: 300px;
+    }
+
+    .post_article_body > blockquote {
+        margin: 40px 20px 0 20px;
+        font-size: 30px;
+        line-height: 30px;
+    }
+    
+    .post_article_body > blockquote > span {
+        font-size: 170px;
     }
 
     .gallery > ul > li {
