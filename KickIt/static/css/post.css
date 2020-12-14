@@ -123,7 +123,7 @@ main {
 }
 
 .post_article_body > blockquote {
-    margin: 40px 40px 0 40px;
+    margin: 40px 40px 20px 40px;
     font-family: pfB-Black;
     font-size: 40px;
     line-height: 40px;
@@ -388,7 +388,7 @@ main {
     }
 
     .post_article_body > blockquote {
-        margin: 40px 20px 0 20px;
+        margin: 40px 20px 20px 20px;
         font-size: 30px;
         line-height: 30px;
     }
