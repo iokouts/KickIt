@@ -39,3 +39,4 @@ def register_blockquote_feature(features):
     # 6. (optional) Add the feature to the default features list to make it available
     # on rich text fields that do not specify an explicit 'features' list
     features.default_features.append('blockquote')
+    
