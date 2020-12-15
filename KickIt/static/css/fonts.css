@@ -27,3 +27,8 @@
 	font-family: pfBold;
 	src: url(../fonts/pfBold.otf);
 }
+
+@font-face {
+	font-family: pfB-Black;
+	src: url(../fonts/pfB-Black.otf);
+}
