@@ -141,7 +141,6 @@ nav {
         padding-left: 60px;
     }
 
-
     .hamburger {
         display: inline-block;
         border-radius: 45px;
@@ -163,6 +162,7 @@ nav {
         background: #191b1a;
         padding-top: 10px;
         color: #ffffff;
+        z-index: 1000;
     }
 
     .mobile_menu * {
