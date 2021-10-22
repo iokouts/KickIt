@@ -8,7 +8,7 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.models import register_snippet
 from wagtail.search import index
 
-from wagtail.embeds import embeds
+from wagtail.embeds.embeds import get_embed
 from wagtail.embeds.exceptions import EmbedException
 from wagtailmetadata.models import MetadataPageMixin
 
@@ -152,8 +152,8 @@ limit 3"""
     def get_embed_video(self):
         try:
             if self.video_url.strip():
-                embed = embeds.get_embed(self.video_url)
-                return embed.html
+                embed = get_embed(self.video_url)
+                return embed.url
         except EmbedException:
             return self.video_url+'Something went wrong while embeding the video! Invalid or not existing video URL!'
 

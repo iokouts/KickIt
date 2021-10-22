@@ -62,7 +62,7 @@ class PodcastPage(MetadataPageMixin, Page):
     def get_embed_podcast(self):
         try:
             embed = embeds.get_embed(self.media_url)
-            return embed.html
+            return embed.url
         except EmbedException:
             return 'Something went wrong! Invalid or not existing URL!'
 
