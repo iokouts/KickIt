@@ -4,7 +4,7 @@ from wagtail.core.models import Page, Orderable
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel, PageChooserPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 
-from wagtail.embeds import embeds
+from wagtail.embeds.embeds import get_embed
 from wagtail.embeds.exceptions import EmbedException
 
 from wagtailmetadata.models import MetadataPageMixin
@@ -61,7 +61,7 @@ class PodcastPage(MetadataPageMixin, Page):
 
     def get_embed_podcast(self):
         try:
-            embed = embeds.get_embed(self.media_url)
+            embed = get_embed(self.media_url)
             return embed.url
         except EmbedException:
             return 'Something went wrong! Invalid or not existing URL!'
