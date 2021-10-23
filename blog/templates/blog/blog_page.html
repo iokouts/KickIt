@@ -93,7 +93,7 @@
         {% if page.video_url %}
         <div class="main_container post_video_area">
             <div class="post_video_container">
-                {%  include_block page.specific.get_embed_video %}
+                {% embed page.get_embed_video %}
             </div>
         </div>
         {% endif %}
