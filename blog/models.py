@@ -52,6 +52,11 @@ class BlogTagIndexPage(Page):
     def get_meta_image(self):
         pass
 
+    def get_twitter_card_type(self, arg):
+        pass
+
+    def get_meta_image_url(self, arg):
+        pass
 
 class BlogPageTag(TaggedItemBase):
     content_object = ParentalKey('BlogPage', related_name='post_tags', on_delete=models.CASCADE)
