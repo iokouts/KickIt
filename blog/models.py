@@ -4,7 +4,7 @@ from wagtail.core.models import Page, Orderable
 from wagtail.core.fields import RichTextField
 
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel, PageChooserPanel
-from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.images.edit_handlers import FieldPanel
 from wagtail.snippets.models import register_snippet
 from wagtail.search import index
 
@@ -28,7 +28,7 @@ class BlogTagIndexPage(Page):
     )
 
     content_panels = Page.content_panels + [
-        ImageChooserPanel('icon'),
+        FieldPanel('icon'),
     ]
 
     def get_context(self, request):
@@ -76,8 +76,8 @@ class BlogIndexPage(MetadataPageMixin, Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('intro', classname="full"),
-        ImageChooserPanel('icon'),
-        ImageChooserPanel('mobile_banner'),
+        FieldPanel('icon'),
+        FieldPanel('mobile_banner'),
         FieldPanel('main_color'),
     ]
 
@@ -198,7 +198,7 @@ limit 3"""
             FieldPanel('show_in_homepage_slider'),
             PageChooserPanel('author'),
         ], heading="Post information"),
-        ImageChooserPanel('post_image'),
+        FieldPanel('post_image'),
         FieldPanel('intro'),
         FieldPanel('body'),
         FieldPanel('video_url'),
@@ -218,7 +218,7 @@ class BlogPageGalleryImage(Orderable):
     caption = models.CharField(blank=True, max_length=250)
 
     panels = [
-        ImageChooserPanel('image'),
+        FieldPanel('image'),
         FieldPanel('caption'),
     ]
 
@@ -238,11 +238,11 @@ class AuthorPage(MetadataPageMixin, Page):
     content_panels = Page.content_panels + [
         FieldPanel('name'),
         FieldPanel('description'),
-        ImageChooserPanel('image'),
+        FieldPanel('image'),
         FieldPanel('body')
     ]
 
-    search_fields = [
+    search_fields = Page.search_fields + [
         index.SearchField('name'),
     ]
 

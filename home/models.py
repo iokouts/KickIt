@@ -3,7 +3,6 @@ from django.db import models
 from wagtail.core.models import Page
 from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import (FieldPanel, MultiFieldPanel)
-from wagtail.images.edit_handlers import ImageChooserPanel
 
 from wagtailmetadata.models import MetadataPageMixin
 
@@ -24,7 +23,7 @@ class HomePage(MetadataPageMixin, Page):
     content_panels = Page.content_panels + [
         MultiFieldPanel([
             FieldPanel('parallax_text'),
-            ImageChooserPanel('parallax_image'),
+            FieldPanel('parallax_image'),
         ], heading="Parallax"),
         FieldPanel('body', classname="full"),
     ]

@@ -2,7 +2,6 @@ from django.db import models
 from wagtail.core.models import Page
 from wagtailmetadata.models import MetadataPageMixin
 from wagtail.admin.edit_handlers import FieldPanel
-from wagtail.images.edit_handlers import ImageChooserPanel
 
 # Create your models here.
 class RadioPage(MetadataPageMixin,Page):
@@ -23,5 +22,5 @@ class RadioPage(MetadataPageMixin,Page):
     content_panels = Page.content_panels + [
         FieldPanel('radio_embed_url'),
         FieldPanel('chat_embed_url'),
-        ImageChooserPanel('radio_image'),
+        FieldPanel('radio_image'),
     ]

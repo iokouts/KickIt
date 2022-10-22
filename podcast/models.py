@@ -1,8 +1,7 @@
 from django.db import models
-from wagtail.core.models import Page, Orderable
+from wagtail.core.models import Page
 
-from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel, PageChooserPanel
-from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.admin.edit_handlers import FieldPanel
 
 from wagtail.embeds.embeds import get_embed
 from wagtail.embeds.exceptions import EmbedException
@@ -22,7 +21,7 @@ class PodcastIndexPage(MetadataPageMixin, Page):
     )
 
     content_panels = Page.content_panels + [
-        ImageChooserPanel('icon'),
+        FieldPanel('icon'),
     ]
 
     def get_context(self, request):
@@ -50,10 +49,9 @@ class PodcastPage(MetadataPageMixin, Page):
     date = models.DateField("Podcast date", default=models.fields.datetime.date.today)
     media_url = models.CharField(max_length=250)
     description_tag = models.CharField(max_length=250, default='')
-    # embed = EmbedBlock()
 
     content_panels = Page.content_panels + [
-        ImageChooserPanel('podcast_image'),
+        FieldPanel('podcast_image'),
         FieldPanel('date'),
         FieldPanel('media_url'),
         FieldPanel('description_tag'),
@@ -65,18 +63,6 @@ class PodcastPage(MetadataPageMixin, Page):
             return embed.url
         except EmbedException:
             return 'Something went wrong! Invalid or not existing URL!'
-
-    # search_fields = Page.search_fields + [
-    #     index.SearchField('intro'),
-    #     index.SearchField('body'),
-    #     index.SearchField('author'),
-    #     index.SearchField('tags'),
-    # ]
-
-    # def get_context(self, request):
-        # context = super().get_context(request)
-        # blogpages = BlogPage.objects.live().order_by('-first_published_at')[:3]
-        # context['blogpages'] = blogpages
 
     def greek_date(self):
         return format_date(self.date, locale='el_GR')
