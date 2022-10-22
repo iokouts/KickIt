@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'wagtail.contrib.styleguide',
     'wagtail.contrib.settings',
     'wagtail.contrib.modeladmin',
-    'wagtail.contrib.postgres_search',
+    'wagtail.search.backends.database',
     'wagtail.embeds',
     'wagtail.sites',
     'wagtail.users',
@@ -139,7 +139,7 @@ DATABASES = {
 
 WAGTAILSEARCH_BACKENDS = {
     'default': {
-        'BACKEND': 'wagtail.contrib.postgres_search.backend',
+        'BACKEND': 'wagtail.search.backends.database',
     }
 }
 
@@ -205,6 +205,7 @@ MEDIA_ROOT = config('MEDIA_ROOT', default=os.path.join(BASE_DIR, 'media'))
 # Wagtail settings
 
 WAGTAIL_SITE_NAME = config('WAGTAIL_SITE_NAME', default='KickIt')
+WAGTAILADMIN_BASE_URL = config('WAGTAILADMIN_BASE_URL', default='https://kickit.gr/admin')
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
