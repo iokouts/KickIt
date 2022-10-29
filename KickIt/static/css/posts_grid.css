@@ -54,6 +54,7 @@
 .main_grid_single a {
     text-decoration: none;
     height: 100%;
+    display: flex;
 }
 
 .main_grid_single_info {
