@@ -42,6 +42,7 @@
     -moz-transition: all .5s ease-in;
     transition: all .5s ease-in;
     -webkit-transition: all .5s ease-in;
+    text-decoration: none;
 }
 
 .main_grid_single:hover .grid_img_container img {
