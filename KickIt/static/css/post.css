@@ -351,20 +351,19 @@ main {
     .post_related_area .main_posts_grid .main_grid_single {
         width: 500px;
         height: 180px;
+        flex-direction: row;
     }
 
-    .post_related_area .main_posts_grid .grid_img_container,
     .post_related_area .main_posts_grid .main_grid_single_info {
         display: inline-block;
     }
 
     .post_related_area .main_posts_grid .grid_img_container {
         width: 180px;
-        height: 180px;
     }
 
     .post_related_area .main_posts_grid .grid_img_container img {
-        object-fit: cover;
+        height: 100%;
     }
 
     .post_related_area .main_posts_grid .main_grid_single_info {
@@ -419,7 +418,7 @@ main {
 
     .post_related_area .main_posts_grid .grid_img_container {
         width: 145px;
-        height: 145px;
+        height: 100%;
     }
 
     .post_related_area .main_posts_grid .main_grid_single_info {
