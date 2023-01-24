@@ -1,4 +1,4 @@
-ansible==4.8.0
+ansible==7.0.0
 ansible-core==2.11.6
 anyascii==0.3.1
 asgiref==3.5.2
