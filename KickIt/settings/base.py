@@ -212,3 +212,6 @@ WAGTAIL_SITE_NAME = config('WAGTAIL_SITE_NAME', default='KickIt')
 BASE_URL = config('BASE_URL', default='http://kickit.gr')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Fixes 'Video unavailable Watch on Youtube' error
+SECURE_REFERRER_POLICY = "no-referrer-when-downgrade"
